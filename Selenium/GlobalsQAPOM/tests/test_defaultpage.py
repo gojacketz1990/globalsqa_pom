@@ -9,7 +9,8 @@ class TestMethods():
 
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
-        demoPage.gotoTabs()
+        demoTabsPage = demoPage.gotoTabs()
+        demoTabsPage.expandSectionThree()
 
         time.sleep(3)
 

@@ -9,4 +9,11 @@ class DemoPage(BasePage):
         self.demoSitePageLocators = DemoSitePageLocators()
 
     def gotoTabs(self):
+        from pages.demosite_TabsPage import DemoTabsPage
+
+
+
+
+
         self.element_click(self.demoSitePageLocators.tabs_locator)
+        return DemoTabsPage(self.driver)
