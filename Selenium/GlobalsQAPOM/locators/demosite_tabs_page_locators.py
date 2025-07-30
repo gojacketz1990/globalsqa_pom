@@ -4,6 +4,6 @@ class DemoTabsPageLocators():
     ]
 
     section_three_locator = [
-        ("xpath", "//h3[text()='Section 4']"),
+        ("xpath", "//h3[text()='Section 3']"),
         ("id", "ui-id-5"),
     ]
