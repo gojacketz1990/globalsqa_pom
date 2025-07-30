@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9b23aa70-96b2-4e87-bf53-f5012487ecd8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/locators/bootswatch_main_page_locators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/bootswatchmainpage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_defaultpage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bootswatch-POM/Documentation/HeaderNavigation.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/HeaderNavigation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bootswatch-POM/Documentation/LocatorExplanation.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/LocatorExplanation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bootswatch-POM/Documentation/PageObjectModelSetup.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/PageObjectModelSetup.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bootswatch-POM/Documentation/Reporting.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/Reporting.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bootswatch-POM/Documentation/method_usage.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/method_usage.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bootswatch-POM/Documentation/parserOptions.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/parserOptions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bootswatch-POM/Documentation/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bootswatch-POM/Documentation/setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/setup.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bootswatch-POM/pages/BasePage.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/BasePage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bootswatch-POM/pages/bootswatch-default-page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/bootswatchdefaultpage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bootswatch-POM/pages/bootswatch-main-page.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bootswatch-POM/tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bootswatch-POM/utilities/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/__init__.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="30bMbr0ijKzrSy6d8p8MSo7y1xq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9b23aa70-96b2-4e87-bf53-f5012487ecd8" name="Changes" comment="" />
+      <created>1753891894126</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1753891894126</updated>
+    </task>
+    <servers />
+  </component>
+</project>
