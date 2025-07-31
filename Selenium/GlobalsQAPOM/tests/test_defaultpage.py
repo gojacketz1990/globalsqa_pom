@@ -7,14 +7,14 @@ class TestMethods():
 
 
 
-    # def test_gotoDemoPage(self):
-    #     globalsqaPage = GlobalsqaMainPage(self.driver)
-    #     demoPage = globalsqaPage.header.gotoDemoSitePage()
-    #     demoTabsPage = demoPage.gotoTabs()
-    #     success = demoTabsPage.expandSectionThree()
-    #     assert success, "Accordion section three should expand"
-    #     time.sleep(3)  # optional, better to wait dynamically
-    #
+    def test_gotoDemoPage(self):
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        demoPage = globalsqaPage.header.gotoDemoSitePage()
+        demoTabsPage = demoPage.gotoTabs()
+        success = demoTabsPage.expandSectionThree()
+        assert success, "Accordion section three should expand"
+        time.sleep(3)  # optional, better to wait dynamically
+
 
 
     def test_demoSliders(self):
