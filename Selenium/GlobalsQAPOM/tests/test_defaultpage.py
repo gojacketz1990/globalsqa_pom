@@ -5,14 +5,15 @@ from pages.globalsqa_mainpage import GlobalsqaMainPage
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestMethods():
 
-    def test_gotoDemoPage(self):
 
+
+    def test_gotoDemoPage(self):
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
         demoTabsPage = demoPage.gotoTabs()
-        demoTabsPage.expandSectionThree()
-
-        time.sleep(3)
+        success = demoTabsPage.expandSectionThree()
+        assert success, "Accordion section three should expand"
+        time.sleep(3)  # optional, better to wait dynamically
 
 
 
