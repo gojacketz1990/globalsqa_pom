@@ -317,6 +317,31 @@ class BasePage:
         value_to_set = min_value + ((max_value - min_value) * value / 100)
         self.driver.execute_script("arguments[0].value = arguments[1]; arguments[0].dispatchEvent(new Event('change'));", slider, value_to_set)
 
+
+    def set_slider_to_value(self, slider_element, handle_element, target_value, min_value, max_value):
+        slider_width = self.driver.execute_script("return arguments[0].offsetWidth;", slider_element)
+        range = max_value - min_value
+        if not (min_value <= target_value <= max_value):
+            raise ValueError(f"Value {target_value} out of range {min_value}–{max_value}")
+
+        relative_pos = (target_value - min_value) / range
+        target_x = slider_width * relative_pos
+
+        # Current position of handle (left style %)
+        current_left = float(self.driver.execute_script("return arguments[0].style.left;", handle_element).replace('%','') or 0)
+        current_x = slider_width * current_left / 100
+
+        offset = target_x - current_x
+
+        actions = ActionChains(self.driver)
+        actions.move_to_element(handle_element).click_and_hold().move_by_offset(offset, 0).release().perform()
+
+
+    def drag_element_by_offset(self, element, offset_x, offset_y=0):
+        actions = ActionChains(self.driver)
+        actions.move_to_element(element).click_and_hold().move_by_offset(offset_x, offset_y).release().perform()
+
+
     def get_progress_bar_value(self, progress_bar_locator):
         """Return value of a progress bar."""
         progress_bar = self.get_element(progress_bar_locator)

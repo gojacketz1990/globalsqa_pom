@@ -10,10 +10,11 @@ class DemoPage(BasePage):
 
     def gotoTabs(self):
         from pages.demosite_TabsPage import DemoTabsPage
-
-
-
-
-
         self.element_click(self.demoSitePageLocators.tabs_locator)
         return DemoTabsPage(self.driver)
+
+
+    def gotoSlider(self):
+        from pages.demosite_SliderPage import DemoSliderPage
+        self.element_click(self.demoSitePageLocators.slider_locator)
+        return DemoSliderPage(self.driver)
