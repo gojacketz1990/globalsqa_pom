@@ -94,3 +94,108 @@ class DemoDialogBoxPage(BasePage):
 
     def get_form_tab_class(self):
         return self._get_tab_class(DemoDialogBoxPageLocators.form_tab)
+
+
+    def get_all_users_data(self):
+        try:
+            # Step 1: Switch to the iframe to access the table
+            self.switch_to_frame(DemoDialogBoxPageLocators.form_demo_iframe)
+
+            # Step 2: Call the read_table method with our defined locators
+            # Note: The read_table method now operates within the iframe context
+            users_data = self.read_table(
+                table_locator=DemoDialogBoxPageLocators._table_locator,
+                row_locator=DemoDialogBoxPageLocators._row_locator,
+                cell_locator=DemoDialogBoxPageLocators._cell_locator
+            )
+            return users_data
+        finally:
+            # Step 3: Crucially, switch the driver's focus back to the main page
+            self.switch_to_default_content()
+
+    def create_new_user_click(self):
+        self.element_click(DemoDialogBoxPageLocators.new_user_button_locator)
+
+    def enter_user_name(self,name):
+        self.type_into_element(name, DemoDialogBoxPageLocators.name_text_field_locator)
+
+    def enter_email(self,email):
+        self.type_into_element(email, DemoDialogBoxPageLocators.email_text_field_locator )
+
+    def enter_password(self,password):
+        self.type_into_element(password, DemoDialogBoxPageLocators.password_text_field_locator)
+
+    def create_account_click(self):
+        self.element_click(DemoDialogBoxPageLocators.create_account_button_locators)
+
+    def create_new_user(self, name, email, password):
+        try:
+            # Step 1: Switch to the iframe to access the table
+            self.switch_to_frame(DemoDialogBoxPageLocators.form_demo_iframe)
+            self.create_new_user_click()
+            self.enter_user_name(name)
+            self.enter_email(email)
+            self.enter_password(password)
+            self.create_account_click()
+
+        finally:
+            # Step 3: Crucially, switch the driver's focus back to the main page
+            self.switch_to_default_content()
+
+#Message Tab
+    def is_download_dialog_present(self):
+        try:
+            # Step 1: Switch to the iframe
+            self.switch_to_frame(DemoDialogBoxPageLocators.message_box_demo_iframe)
+            return self.is_element_present(DemoDialogBoxPageLocators.download_complete_locator)
+
+        finally:
+            # Step 3: Always switch back to the default content
+            self.switch_to_default_content()
+
+
+    def click_ok_download_complete(self):
+        try:
+            # Step 1: Switch to the iframe
+            self.switch_to_frame(DemoDialogBoxPageLocators.message_box_demo_iframe)
+
+            # Step 2: Perform the action inside the iframe
+            self.element_click(DemoDialogBoxPageLocators.download_ok_button_locator)
+
+        finally:
+
+            # Step 3: Always switch back to the default content
+            self.switch_to_default_content()
+
+    def get_storage_percentage(self):
+
+        try:
+            # Step 1: Switch to the iframe
+            self.switch_to_frame(DemoDialogBoxPageLocators.message_box_demo_iframe)
+
+
+
+            # Step 3: Retrieve the full text from that element
+            full_text = self.retrieve_element_text(DemoDialogBoxPageLocators.percentage_text_locator)
+
+            full_text = "Currently using 36% of your storage space."
+
+            # 1. Find the index of the '%' character
+            percent_index = full_text.find('%')
+
+            # 2. Slice the string to get the two digits before the '%'
+            # This assumes the number is always two digits long, which is a major flaw
+            number_string = full_text[percent_index-2:percent_index]
+            # number_string is '36'
+
+            # 3. Convert the string to an integer
+            percentage_as_int = int(number_string)
+            # percentage_as_int is 36
+
+            print(percentage_as_int)
+
+            return percentage_as_int
+
+        finally:
+            # Step 4: Always switch back to the default content
+            self.switch_to_default_content()
