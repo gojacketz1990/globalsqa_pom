@@ -143,12 +143,32 @@ class DemoDialogBoxPage(BasePage):
             self.switch_to_default_content()
 
 #Message Tab
-    def is_download_dialog_present(self):
+    # def is_download_dialog_present(self):
+    #     try:
+    #         # Step 1: Switch to the iframe
+    #         self.switch_to_frame(DemoDialogBoxPageLocators.message_box_demo_iframe)
+    #         return self.is_element_present(DemoDialogBoxPageLocators.download_complete_locator)
+    #
+    #     finally:
+    #         # Step 3: Always switch back to the default content
+    #         self.switch_to_default_content()
+
+    def is_download_dialog_present(self) -> bool:
+        """
+        Checks if the 'empty recycle bin' dialog element is present on the page.
+        This is a safe way to check for element existence without an exception.
+        """
+        self.logger.info("Checking for the presence of the 'empty recycle bin' element.")
         try:
             # Step 1: Switch to the iframe
             self.switch_to_frame(DemoDialogBoxPageLocators.message_box_demo_iframe)
-            return self.is_element_present(DemoDialogBoxPageLocators.download_complete_locator)
 
+            # Step 2: Look for the element inside the iframe
+            self.wait_for_element_to_be_visible(DemoDialogBoxPageLocators.download_complete_locator, timeout=1)
+            return True
+        except:
+            # If the element is not found within the timeout, return False
+            return False
         finally:
             # Step 3: Always switch back to the default content
             self.switch_to_default_content()
@@ -199,3 +219,67 @@ class DemoDialogBoxPage(BasePage):
         finally:
             # Step 4: Always switch back to the default content
             self.switch_to_default_content()
+
+
+    def confirm_delete_all_items(self):
+        try:
+            # Step 1: Switch to the iframe
+            self.switch_to_frame(DemoDialogBoxPageLocators.confirmation_box_demo_iframe)
+
+            # Step 2: Perform the action inside the iframe
+            self.element_click(DemoDialogBoxPageLocators.confirmation_box_delete_all)
+
+        finally:
+
+            # Step 3: Always switch back to the default content
+            self.switch_to_default_content()
+
+    def confirm_cancel_delete(self):
+        try:
+            # Step 1: Switch to the iframe
+            self.switch_to_frame(DemoDialogBoxPageLocators.confirmation_box_demo_iframe)
+
+            # Step 2: Perform the action inside the iframe
+            self.element_click(DemoDialogBoxPageLocators.confirmation_box_cancel)
+
+        finally:
+
+            # Step 3: Always switch back to the default content
+            self.switch_to_default_content()
+
+    # NEW METHODS FOR DIALOG BOX INTERACTION
+    def click_confirmation_dialog_button(self, button_name: str):
+        """
+        Clicks the OK or Cancel button in the confirmation dialog.
+        """
+        if button_name.lower() == "delete all items":
+            self.element_click(DemoDialogBoxPageLocators.confirmation_box_delete_all)
+            self.logger.info("Clicked OK on the confirmation dialog.")
+        elif button_name.lower() == "cancel":
+            self.element_click(DemoDialogBoxPageLocators.confirmation_box_cancel)
+            self.logger.info("Clicked Cancel on the confirmation dialog.")
+        else:
+            pytest.fail(f"Invalid button name: {button_name}. Use 'ok' or 'cancel'.")
+
+
+        #Message Tab
+    def is_empty_recycle_bin_present(self) -> bool:
+        """
+        Checks if the 'empty recycle bin' dialog element is present on the page.
+        This is a safe way to check for element existence without an exception.
+        """
+        self.logger.info("Checking for the presence of the 'empty recycle bin' element.")
+        try:
+            # Step 1: Switch to the iframe
+            self.switch_to_frame(DemoDialogBoxPageLocators.confirmation_box_demo_iframe)
+
+            # Step 2: Look for the element inside the iframe
+            self.wait_for_element_to_be_visible(DemoDialogBoxPageLocators.empty_recycle_bin_locator, timeout=1)
+            return True
+        except:
+            # If the element is not found within the timeout, return False
+            return False
+        finally:
+            # Step 3: Always switch back to the default content
+            self.switch_to_default_content()
+

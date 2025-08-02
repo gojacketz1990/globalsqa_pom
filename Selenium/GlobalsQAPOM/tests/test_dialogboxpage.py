@@ -3,6 +3,27 @@ from pages.globalsqa_mainpage import GlobalsqaMainPage
 
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestDialogBoxTabs:
+
+    def test_confirmation_box_cancel(self):
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        demoPage = globalsqaPage.header.gotoDemoSitePage()
+        demoDialogBoxPage = demoPage.gotoDialogBox()
+        demoDialogBoxPage.click_confirmation_tab()
+        demoDialogBoxPage.confirm_cancel_delete()
+
+        assert not demoDialogBoxPage.is_empty_recycle_bin_present(), \
+            "FAIL: The confirmation dialog box did not disappear after clicking 'OK'."
+
+
+    def test_confirmation_box_delete_all(self):
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        demoPage = globalsqaPage.header.gotoDemoSitePage()
+        demoDialogBoxPage = demoPage.gotoDialogBox()
+        demoDialogBoxPage.click_confirmation_tab()
+        demoDialogBoxPage.confirm_delete_all_items()
+
+        assert not demoDialogBoxPage.is_empty_recycle_bin_present(), \
+            "FAIL: The confirmation dialog box did not disappear after clicking 'OK'."
     #
     # def test_message_box_tab_activation(self):
     #     """
@@ -151,22 +172,8 @@ class TestDialogBoxTabs:
         demoDialogBoxPage.click_message_box_tab()
 
         demoDialogBoxPage.click_ok_download_complete()
+        assert not demoDialogBoxPage.is_download_dialog_present(), \
+            "FAIL: The confirmation dialog box did not disappear after clicking 'OK'."
 
-        #storage_message = demoDialogBoxPage.get_storage_percentage()
 
-        # Print the result
-        #print("The storage message is:")
-        #print(storage_message)
 
-        # assert demoDialogBoxPage.is_download_dialog_present(), "Download complete dialog was not displayed."
-        #
-        # # Step 2: Check the storage percentage
-        # # Note: You can use a more dynamic check if the number changes
-        # storage_percentage = demoDialogBoxPage.get_storage_percentage()
-        # assert storage_percentage == 36, f"Expected 36% storage, but got {storage_percentage}%."
-        #
-        # # Step 3: Click the "Ok" button
-        # demoDialogBoxPage.click_ok_on_dialog()
-        #
-        # # Optional: Assert the dialog is no longer present after clicking OK
-        # assert not demoPage.is_element_present(demoDialogBoxPage._dialog_locator), "Dialog did not close after clicking Ok."

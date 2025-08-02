@@ -72,10 +72,22 @@ class DemoDialogBoxPageLocators():
         ("id", "dialog-message"),
     ]
 
+    empty_recycle_bin_locator = [
+        ("id", "dialog-message"),
+    ]
+
     download_ok_button_locator = [
         ("xpath", "//button[text()='Ok']"),
     ]
 
     percentage_text_locator = [
         ("xpath", "//div[@id='dialog-message']/p[2]")
+    ]
+
+    confirmation_box_delete_all = [
+        ("xpath", "//button[text()='Delete all items']"),
+    ]
+
+    confirmation_box_cancel = [
+        ("xpath", "//button[text()='Cancel']"),
     ]
