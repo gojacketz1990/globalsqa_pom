@@ -43,7 +43,7 @@ class TestDragAndDrop:
         item_to_drag = "High Tatras"
 
         # Drag and drop the item (you would have a method for this)
-        demoDragDropPage.drag_item_to_trash(item_to_drag)
+        demoDragDropPage.select_items_with_drag_and_drop(item_to_drag)
 
         # Assertion 1: The item should now be in the trash
         assert demoDragDropPage.is_item_in_trash(item_to_drag), \

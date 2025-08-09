@@ -39,7 +39,7 @@ class DemoDragDropPageLocators():
     ]
     # Dynamic locator for an item within the trash container
     trash_item_by_name = [
-        ("xpath", "//div[@id='trash']/ul/li[./h5[text()='{}']]")
+        ("xpath", "//div[@id='trash']//h5[text()='{}']/parent::li")
     ]
 
 

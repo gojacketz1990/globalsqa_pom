@@ -33,18 +33,32 @@ class DemoDragDropPage(BasePage):
 
     def is_item_in_trash(self, item_name: str) -> bool:
         """
-        Verifies if a specific gallery item is present in the trash container.
+        Checks if a specific gallery item is in the trash container.
+
+        Args:
+            item_name (str): The name of the item to check for (e.g., 'High Tatras').
+
+        Returns:
+            bool: True if the item is found in the trash, False otherwise.
         """
-        trash_item_locator = self.get_dynamic_locator(DemoDragDropPageLocators.trash_item_by_name, item_name)
+        self.switch_to_frame(DemoDragDropPageLocators.photo_manager_demo_iframe)
+        trash_item_locator = self.get_dynamic_locator(
+            DemoDragDropPageLocators.trash_item_by_name,
+            item_name
+        )
 
         try:
-            # Use get_element_clickable to wait for the element to be present and clickable
-            self.get_element_clickable(trash_item_locator)
-            self.logger.info(f"Item '{item_name}' found in trash.")
+            # Use get_element to check for existence without needing it to be clickable
+            self.get_element(trash_item_locator)
+            self.logger.info(f"Item '{item_name}' found in the trash.")
             return True
         except NoSuchElementException:
-            self.logger.warning(f"Item '{item_name}' not found in trash.")
+            self.logger.warning(f"Item '{item_name}' was not found in the trash.")
             return False
+        finally:
+            # Step 5: Always switch back to the default content.
+            self.switch_to_default_content()
+            self.logger.info("Switched back to default content.")
 
 
 
@@ -114,8 +128,6 @@ class DemoDragDropPage(BasePage):
             # Step 3: Perform the drag-and-drop action using ActionChains.
             self.logger.info("Performing drag-and-drop from start to end element.")
             self.click_and_drag_elements(start_element,end_element)
-
-
         except Exception as e:
             self.logger.error(f"Failed to perform drag-and-drop multiselect: {e}")
             raise # Re-raise the exception.
@@ -129,9 +141,25 @@ class DemoDragDropPage(BasePage):
         """
         Performs a drag-and-drop of the non-valid item to the droppable area.
         """
-        self.switch_to_frame(DemoDragDropPageLocators.demo_iframe)
+        self.switch_to_frame(DemoDragDropPageLocators.accepted_elements_demo_iframe)
         try:
             draggable = self.get_element(DemoDragDropPageLocators.draggable_not_droppable_locator)
+            droppable = self.get_element(DemoDragDropPageLocators.droppable_area_locator)
+
+            self.logger.info("Attempting to drag non-valid item to droppable area.")
+            self.click_and_drag_elements(draggable,droppable)
+
+            self.logger.info("Drag-and-drop action completed.")
+        finally:
+            self.switch_to_default_content()
+
+    def drag_and_drop_item_to_trash(self) -> None:
+        """
+        Performs a drag-and-drop of the non-valid item to the droppable area.
+        """
+        self.switch_to_frame(DemoDragDropPageLocators.accepted_elements_demo_iframe)
+        try:
+            draggable = self.get_element(DemoDragDropPageLocators.draggable_and_droppable_locator)
             droppable = self.get_element(DemoDragDropPageLocators.droppable_area_locator)
 
             self.logger.info("Attempting to drag non-valid item to droppable area.")
@@ -147,7 +175,7 @@ class DemoDragDropPage(BasePage):
         Returns:
             bool: True if the droppable item remains unchanged, False otherwise.
         """
-        self.switch_to_frame(DemoDragDropPageLocators.demo_iframe)
+        self.switch_to_frame(DemoDragDropPageLocators.accepted_elements_demo_iframe)
         try:
             droppable_element = self.get_element(DemoDragDropPageLocators.droppable_area_locator)
             current_class = droppable_element.get_attribute("class")
@@ -161,8 +189,9 @@ class DemoDragDropPage(BasePage):
         """
         Retrieves the text of the droppable area.
         """
-        self.switch_to_frame(DemoDragDropPageLocators.demo_iframe)
+        self.switch_to_frame(DemoDragDropPageLocators.accepted_elements_demo_iframe)
         try:
             return self.retrieve_element_text(DemoDragDropPageLocators.droppable_area_locator)
         finally:
             self.switch_to_default_content()
+
