@@ -88,7 +88,7 @@ class TestDragAndDrop:
         initial_text = demoDragDropPage.get_droppable_text()
 
         # Perform the drag and drop of the non-valid item
-        demoDragDropPage.drag_and_drop_nonvalid_item()
+        demoDragDropPage.drag_and_drop_invalid_item_to_trash()
 
         # Assertion 1: The droppable area's class has not changed
         assert demoDragDropPage.is_droppable_item_unchanged() is True, \
@@ -97,4 +97,30 @@ class TestDragAndDrop:
         # Assertion 2: The text of the droppable area has not changed
         final_text = demoDragDropPage.get_droppable_text()
         assert initial_text == final_text, \
+            "The text of the droppable area changed, indicating an invalid drop was accepted."
+
+
+    def test_droppable_item_can_be_dropped(self):
+
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        demoPage = globalsqaPage.header.gotoDemoSitePage()
+
+        # Step 1: Click the "Message Box" tab to reveal the download button
+        demoDragDropPage = demoPage.gotoDragDrop()
+
+        demoDragDropPage.click_accepted_elements_tab()
+
+        # Get the initial state of the droppable area for comparison
+        initial_text = demoDragDropPage.get_droppable_text()
+
+        # Perform the drag and drop of the non-valid item
+        demoDragDropPage.drag_and_drop_valid_item_to_trash()
+
+        # Assertion 1: The droppable area's class has not changed
+        assert demoDragDropPage.is_droppable_item_unchanged() is False, \
+            "The droppable area changed state, indicating a valid drop was accepted."
+
+        # Assertion 2: The text of the droppable area has not changed
+        final_text = demoDragDropPage.get_droppable_text()
+        assert final_text == "Dropped!", \
             "The text of the droppable area changed, indicating an invalid drop was accepted."

@@ -66,6 +66,7 @@ class DemoDragDropPage(BasePage):
         """
         Verifies if a specific gallery item is present in the original gallery.
         """
+        self.switch_to_frame(DemoDragDropPageLocators.photo_manager_demo_iframe)
         gallery_item_locator = self.get_dynamic_locator(DemoDragDropPageLocators.gallery_item_by_name, item_name)
 
         try:
@@ -76,6 +77,10 @@ class DemoDragDropPage(BasePage):
         except NoSuchElementException:
             self.logger.info(f"Item '{item_name}' is no longer in the gallery.")
             return False
+        finally:
+            # Step 5: Always switch back to the default content.
+            self.switch_to_default_content()
+            self.logger.info("Switched back to default content.")
 
     def get_gallery_item_by_name(self, item_name: str):
         """
@@ -89,7 +94,7 @@ class DemoDragDropPage(BasePage):
         """
         # Create a dynamic locator for the specific item
 
-        #self.switch_to_frame(DemoDragDropPageLocators.photo_manager_demo_iframe)
+        self.switch_to_frame(DemoDragDropPageLocators.photo_manager_demo_iframe)
         item_locator = self.get_dynamic_locator(DemoDragDropPageLocators.gallery_item_by_name, item_name)
 
         try:
@@ -98,6 +103,10 @@ class DemoDragDropPage(BasePage):
         except NoSuchElementException:
             self.logger.error(f"Gallery item with name '{item_name}' not found.")
             raise
+        finally:
+            # Step 5: Always switch back to the default content.
+            self.switch_to_default_content()
+            self.logger.info("Switched back to default content.")
 
 
 
@@ -137,7 +146,9 @@ class DemoDragDropPage(BasePage):
             self.switch_to_default_content()
             self.logger.info("Switched back to default content.")
 
-    def drag_and_drop_nonvalid_item(self) -> None:
+
+
+    def drag_and_drop_invalid_item_to_trash(self) -> None:
         """
         Performs a drag-and-drop of the non-valid item to the droppable area.
         """
@@ -153,7 +164,7 @@ class DemoDragDropPage(BasePage):
         finally:
             self.switch_to_default_content()
 
-    def drag_and_drop_item_to_trash(self) -> None:
+    def drag_and_drop_valid_item_to_trash(self) -> None:
         """
         Performs a drag-and-drop of the non-valid item to the droppable area.
         """
@@ -195,3 +206,18 @@ class DemoDragDropPage(BasePage):
         finally:
             self.switch_to_default_content()
 
+    def drag_and_drop_valid_item(self) -> None:
+        """
+        Performs a drag-and-drop of the non-valid item to the droppable area.
+        """
+        self.switch_to_frame(DemoDragDropPageLocators.accepted_elements_demo_iframe)
+        try:
+            draggable = self.get_element(DemoDragDropPageLocators.draggable_and_droppable_locator)
+            droppable = self.get_element(DemoDragDropPageLocators.droppable_area_locator)
+
+            self.logger.info("Attempting to drag non-valid item to droppable area.")
+            self.click_and_drag_elements(draggable,droppable)
+
+            self.logger.info("Drag-and-drop action completed.")
+        finally:
+            self.switch_to_default_content()
