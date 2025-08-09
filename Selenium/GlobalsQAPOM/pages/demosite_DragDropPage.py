@@ -141,7 +141,7 @@ class DemoDragDropPage(BasePage):
         finally:
             self.switch_to_default_content()
 
-   def is_droppable_item_unchanged(self) -> bool:
+    def is_droppable_item_unchanged(self) -> bool:
         """
         Verifies that the droppable area's class has not changed after a drop.
         Returns:
