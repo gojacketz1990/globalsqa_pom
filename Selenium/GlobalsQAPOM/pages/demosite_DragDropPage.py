@@ -94,7 +94,7 @@ class DemoDragDropPage(BasePage):
         """
         # Create a dynamic locator for the specific item
 
-        self.switch_to_frame(DemoDragDropPageLocators.photo_manager_demo_iframe)
+        #self.switch_to_frame(DemoDragDropPageLocators.photo_manager_demo_iframe)
         item_locator = self.get_dynamic_locator(DemoDragDropPageLocators.gallery_item_by_name, item_name)
 
         try:
@@ -103,10 +103,10 @@ class DemoDragDropPage(BasePage):
         except NoSuchElementException:
             self.logger.error(f"Gallery item with name '{item_name}' not found.")
             raise
-        finally:
+        #finally:
             # Step 5: Always switch back to the default content.
-            self.switch_to_default_content()
-            self.logger.info("Switched back to default content.")
+        #    self.switch_to_default_content()
+            #self.logger.info("Switched back to default content.")
 
 
 

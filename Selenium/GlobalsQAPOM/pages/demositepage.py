@@ -76,11 +76,15 @@ class DemoPage(BasePage):
         return DemoToolBarPage(self.driver)
 
     def gotoDatePicker(self):
+
         from pages.demosite_DatePickerPage import DemoDatePickerPage
+        self.scroll_to_element(self.demoSitePageLocators.datepicker_locator)
         self.element_click(self.demoSitePageLocators.datepicker_locator)
         return DemoDatePickerPage(self.driver)
 
     def gotoDragDrop(self):
+
         from pages.demosite_DragDropPage import DemoDragDropPage
+        self.scroll_to_element(self.demoSitePageLocators.dragdrop_locator)
         self.element_click(self.demoSitePageLocators.dragdrop_locator)
         return DemoDragDropPage(self.driver)

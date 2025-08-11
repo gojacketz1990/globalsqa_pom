@@ -64,11 +64,11 @@ class BasePage:
         Iterates through the locator list of tuples until it find the element or runs out of locators and
         returns a NoSuchElementException
         """
-        wait = WebDriverWait(self.driver, timeout) if timeout else self.wait
+        wait_obj = WebDriverWait(self.driver, timeout) if timeout else self.wait
         for locator_type, locator_value in locators:
             try:
                 by_method = self._get_by_method(locator_type)
-                return wait.until(expected_condition((by_method, locator_value)))
+                return wait_obj.until(expected_condition((by_method, locator_value)))
             except (NoSuchElementException, TimeoutException):
                 self.logger.info(f"Locator failed: {locator_type}={locator_value}. Retrying with next locator.")
                 continue
@@ -91,11 +91,37 @@ class BasePage:
         raise NoSuchElementException(f"Elements not found using any of the provided locators: {locators}")
 
 
+    # A single helper method to find one or many elements
+    # This can replace both of the above
+    def _find_with_wait(self, locators, expected_condition, find_all=False, timeout=None):
+        """
+        Private helper method to find one or more elements.
+        """
+        wait_obj = WebDriverWait(self.driver, timeout) if timeout else self.wait
+        for locator_type, locator_value in locators:
+            try:
+                by_method = self._get_by_method(locator_type)
+                if find_all:
+                    return wait_obj.until(EC.presence_of_all_elements_located((by_method, locator_value)))
+                else:
+                    return wait_obj.until(expected_condition((by_method, locator_value)))
+            except (NoSuchElementException, TimeoutException):
+                self.logger.info(f"Locator failed: {locator_type}={locator_value}. Retrying with next locator.")
+                continue
+        raise NoSuchElementException(f"Elements not found using any of the provided locators: {locators}")
 
-    def get_element(self, locators):
-        """Find a single web element using self-healing locators."""
-        return self._find_element_with_wait(locators, EC.presence_of_element_located)
+    # Your public methods would then call this:
+    def get_element(self, locators, timeout=None):
+        return self._find_with_wait(locators, EC.presence_of_element_located, timeout=timeout)
 
+    def get_elements(self, locators, timeout=None):
+        return self._find_with_wait(locators, None, find_all=True, timeout=timeout)
+
+
+    def get_element(self, locators, timeout=None):
+        """Directly Callable
+        Finds a single web element using self-healing locators."""
+        return self._find_element_with_wait(locators, EC.presence_of_element_located, timeout)
 
     def get_element_clickable(self, locators, timeout=None):
         """Find a single web element that is clickable using self-healing locators."""

@@ -19,7 +19,7 @@ class DemoDragDropPageLocators():
     ]
 
     photo_manager_demo_iframe =  [
-        ("xpath", "//div[@rel-title='Photo Manager']//iframe")
+        ("xpath", "//div[@rel-title='Photo Manager']/p/iframe")
     ]
 
     accepted_elements_demo_iframe =  [
