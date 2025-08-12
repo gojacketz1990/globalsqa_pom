@@ -4,6 +4,15 @@ class DemoToolBarPageLocators():
         ("class_name", "demo-frame"), # Keep this as a fallback if you like
     ]
 
+    toolbar_demo_iframe =  [
+        ("xpath", "//div[@rel-title='Toolbar']/p/iframe")
+    ]
+
+    splitbutton_demo_iframe =  [
+        ("xpath", "//div[@rel-title='SplitButton']/p/iframe")
+    ]
+
+
     click_tool_bar_locator = [
         ("id","Toolbar"),
         ("xpath", "//li[normalize-space()='Toolbar']")

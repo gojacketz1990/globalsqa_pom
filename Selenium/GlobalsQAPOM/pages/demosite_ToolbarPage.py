@@ -33,7 +33,7 @@ class DemoToolBarPage(BasePage):
         Args:
             size (str): The visible text of the font size to select (e.g., '12px').
         """
-        self.switch_to_frame(DemoToolBarPageLocators.demo_iframe)
+        self.switch_to_frame(DemoToolBarPageLocators.toolbar_demo_iframe)
         try:
             self.select_all_text_in_element(DemoToolBarPageLocators.document_locator)
             self.logger.info(f"Attempting to select font size: {textsize}")
@@ -65,7 +65,7 @@ class DemoToolBarPage(BasePage):
         Returns:
             bool: True if the font tag with the correct size is found, False otherwise.
         """
-        self.switch_to_frame(DemoToolBarPageLocators.demo_iframe)
+        self.switch_to_frame(DemoToolBarPageLocators.toolbar_demo_iframe)
         try:
             self.logger.info(f"Attempting to verify font tag with size='{expected_size_attribute}'.")
 
@@ -105,7 +105,7 @@ class DemoToolBarPage(BasePage):
             action_text (str): The visible text of the option to select
                                (e.g., 'Open...', 'Save', 'Delete').
         """
-        self.switch_to_frame(self.demoToolBarPageLocators.demo_iframe)
+        self.switch_to_frame(self.demoToolBarPageLocators.splitbutton_demo_iframe)
         try:
             self.logger.info(f"Attempting to select action: '{action_text}' from dropdown.")
 
@@ -127,7 +127,7 @@ class DemoToolBarPage(BasePage):
             self.switch_to_default_content()
 
     def click_run_last_option_button(self):
-        self.switch_to_frame(self.demoToolBarPageLocators.demo_iframe)
+        self.switch_to_frame(self.demoToolBarPageLocators.splitbutton_demo_iframe)
         try:
             # Step 1: Click the visible dropdown button to open the menu
             self.element_click(self.demoToolBarPageLocators.run_last_option_button_locator)
@@ -140,7 +140,7 @@ class DemoToolBarPage(BasePage):
         """
         Retrieves the text from all items in the output list.
         """
-        self.switch_to_frame(self.demoToolBarPageLocators.demo_iframe)
+        self.switch_to_frame(self.demoToolBarPageLocators.splitbutton_demo_iframe)
         try:
             # Find all <li> elements that match the locator
             output_elements = self.get_elements(self.demoToolBarPageLocators.output_list_items_locator)
