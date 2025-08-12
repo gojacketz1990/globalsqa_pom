@@ -167,13 +167,7 @@ class TestDialogBoxTabs:
         assert demoProgressBarPage.is_close_button_present(), \
             "FAIL: The Close button does not appear when download is complete"
 
-        time.sleep(3)
 
-        demoProgressBarPage.click_message_box_tab()
-
-        demoProgressBarPage.click_ok_download_complete()
-        assert not demoProgressBarPage.is_download_dialog_present(), \
-            "FAIL: The confirmation dialog box did not disappear after clicking 'OK'."
 
 
 

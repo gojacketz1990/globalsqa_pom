@@ -18,7 +18,7 @@ class TestSelectElements:
         # Step 1: Click the "Message Box" tab to reveal the download button
         demoSelectElementsPage = demoPage.gotoSelectElements()
 
-        demoSelectElementsPage.select_item_by_text("Item 5")
+        demoSelectElementsPage.select_multiple_items_by_text(["Item 5"])
 
         time.sleep(3)
 
