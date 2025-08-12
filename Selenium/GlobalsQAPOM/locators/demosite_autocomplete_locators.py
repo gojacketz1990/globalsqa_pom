@@ -37,6 +37,9 @@ class DemoAutocompletePageLocators():
     ]
 
     combobox_autosuggestions_locator = [
-        ("css",".ui-autocomplete li"),
-        ("xpath","ui-autocomplete')]//li")
+        ("css",".ui-autocomplete li div"),
+        ("xpath","ui-autocomplete')]//li/div")
     ]
+
+    # Dynamic locator to find a specific suggestion by its text
+    combobox_suggestion_by_text = [("xpath", "//ul[@id='ui-id-1']/li/div[text()='{}']")]

@@ -59,7 +59,7 @@ class TestDropdown:
         demoAutocompletePage = demoPage.gotoAutocomplete()
 
         demoAutocompletePage.enter_text_into_search("and")
-
+        time.sleep(3)
         # --- 3. Assertion ---
         suggestions = demoAutocompletePage.get_autocomplete_suggestions()
         expected_suggestions_count = 5
@@ -99,6 +99,8 @@ class TestDropdown:
         demoAutocompletePage.enter_text_combobox_search("ja")
         expected_text = "JavaScript"
         demoAutocompletePage.select_combobox_suggestion_by_text(expected_text)
+
+        time.sleep(3)
 
         input_value = demoAutocompletePage.get_combobox_input_value()
 

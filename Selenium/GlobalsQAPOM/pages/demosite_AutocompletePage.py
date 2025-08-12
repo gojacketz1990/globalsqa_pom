@@ -60,11 +60,18 @@ class DemoAutocompletePage(BasePage):
         Waits for and returns a list of all visible autocomplete suggestions.
         Handles the potential for stale elements as the list updates.
         """
+        self.switch_to_frame(DemoAutocompletePageLocators.categories_demo_iframe)
+
         try:
             return self.wait_for_all_elements_to_be_visible(DemoAutocompletePageLocators.autocomplete_suggestions_locator)
         except TimeoutException:
             self.logger.info("No autocomplete suggestions appeared within the timeout.")
             return []
+        finally:
+            # 3. Always switch back to the default content
+            self.switch_to_default_content()
+
+
 
     def select_suggestion_by_text(self, text):
         """
@@ -77,7 +84,7 @@ class DemoAutocompletePage(BasePage):
         self.switch_to_frame(DemoAutocompletePageLocators.categories_demo_iframe)
 
         try:
-            suggestions = self.get_autocomplete_suggestions()
+            suggestions = self.wait_for_all_elements_to_be_visible(DemoAutocompletePageLocators.autocomplete_suggestions_locator)
             for suggestion in suggestions:
                 # Note: The text.strip() is crucial to handle any leading/trailing whitespace
                 if suggestion.text.strip() == text:
@@ -99,6 +106,7 @@ class DemoAutocompletePage(BasePage):
             # Crucial step: Always switch back to the default content
             # so other test methods don't fail because they are in the wrong frame.
             self.switch_to_default_content()
+
 
     def get_search_input_value(self):
         """
@@ -155,17 +163,25 @@ class DemoAutocompletePage(BasePage):
         finally:
             self.switch_to_default_content()
 
-    def select_combobox_suggestion_by_text(self, text):
+    def select_combobox_suggestion_by_text(self, text: str):
         """
         Switches to the combobox iframe, finds a suggestion by text, clicks it,
         and switches back to the default content.
         """
         self.switch_to_frame(DemoAutocompletePageLocators.combobox_demo_iframe)
         try:
-            self.element_click(DemoAutocompletePageLocators.combobox_autosuggestions_locator)
-            self.logger.info(f"Clicked on combobox suggestion: '{text}'")
+            # Create a dynamic locator for the specific suggestion
+            suggestion_locator = self.get_dynamic_locator(
+                DemoAutocompletePageLocators.combobox_suggestion_by_text,
+                text
+            )
+
+            # Find and click the specific element with the given text
+            self.element_click(suggestion_locator)
+            self.logger.info(f"Successfully clicked on combobox suggestion: '{text}'")
             return True
-        except NoSuchElementException:
+
+        except (NoSuchElementException, TimeoutException):
             self.logger.warning(f"Combobox suggestion '{text}' not found.")
             return False
         finally:
