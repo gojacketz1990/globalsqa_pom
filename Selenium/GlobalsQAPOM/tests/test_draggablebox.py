@@ -85,3 +85,33 @@ class TestDraggableBox:
         # Step 1: Click the "Message Box" tab to reveal the download button
         demoDraggableBoxPage = demoPage.gotoDraggableBox()
         demoDraggableBoxPage.click_handle_tab()
+        x_offset, y_offset = 50, 50
+
+        # Test 1: Verify the handle is draggable
+        # -------------------------------------
+        initial_handle_position = demoDraggableBoxPage.get_first_handle_element_position()
+        demoDraggableBoxPage.drag_first_handle_element_by_offset(x_offset, y_offset)
+        final_handle_position = demoDraggableBoxPage.get_first_handle_element_position()
+
+        # Assert that the position has changed
+        assert final_handle_position['x'] != initial_handle_position['x'], "Handle drag failed: X position did not change."
+        assert final_handle_position['y'] != initial_handle_position['y'], "Handle drag failed: Y position did not change."
+
+        # Test 2: Verify the container is NOT draggable
+        # ---------------------------------------------
+        # Get the position again after the first drag
+        initial_container_position = demoDraggableBoxPage.get_first_container_element_position()
+        demoDraggableBoxPage.drag_first_container_element_by_offset(x_offset, y_offset)
+        final_container_position = demoDraggableBoxPage.get_first_container_element_position()
+
+        # Assert that the position has NOT changed
+        assert final_container_position['x'] == initial_container_position['x'], "Container drag succeeded unexpectedly."
+        assert final_container_position['y'] == initial_container_position['y'], "Container drag succeeded unexpectedly."
+
+    def test_constraints_drag_and_drop(self):
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        demoPage = globalsqaPage.header.gotoDemoSitePage()
+
+        # Step 1: Click the "Message Box" tab to reveal the download button
+        demoDraggableBoxPage = demoPage.gotoDraggableBox()
+        demoDraggableBoxPage.click_constraints_tab()

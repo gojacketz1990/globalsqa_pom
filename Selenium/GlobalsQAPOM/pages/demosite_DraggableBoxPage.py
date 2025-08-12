@@ -1,5 +1,6 @@
 from pages.BasePage import BasePage
 from locators.demosite_draggable_box_page_locators import DemoDraggableBoxPageLocators
+from selenium.webdriver import ActionChains
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, StaleElementReferenceException
 import time
 import datetime
@@ -115,5 +116,89 @@ class DemoDraggableBoxPage(BasePage):
         except Exception as e:
             self.logger.error(f"Failed to perform drag action: {e}")
             raise
+        finally:
+            self.switch_to_default_content()
+
+    def get_first_handle_element_position(self) -> dict:
+        """
+        Retrieves the current x and y coordinates of an element.
+        """
+        self.switch_to_frame(DemoDraggableBoxPageLocators.handle_iframe)
+        try:
+            element = self.get_element(DemoDraggableBoxPageLocators.draggable_handle)
+            return element.location
+        finally:
+            self.switch_to_default_content()
+
+    def get_first_container_element_position(self) -> dict:
+        """
+        Retrieves the current x and y coordinates of an element.
+        """
+        self.switch_to_frame(DemoDraggableBoxPageLocators.handle_iframe)
+        try:
+            element = self.get_element(DemoDraggableBoxPageLocators.draggable_container)
+            return element.location
+        finally:
+            self.switch_to_default_content()
+
+    def drag_first_handle_element_by_offset(self, x_offset: int, y_offset: int):
+        """
+        Performs a drag-and-drop action by offset on a specified element.
+        """
+        self.switch_to_frame(DemoDraggableBoxPageLocators.handle_iframe)
+        try:
+            element_to_drag = self.get_element(DemoDraggableBoxPageLocators.draggable_handle)
+            self.drag_element_by_offset(element_to_drag, x_offset,y_offset)
+        finally:
+            self.switch_to_default_content()
+
+    # def drag_first_container_element_by_offset(self, x_offset: int, y_offset: int):
+    #     """
+    #     Performs a drag-and-drop action by offset on a specified element.
+    #     """
+    #     self.switch_to_frame(DemoDraggableBoxPageLocators.handle_iframe)
+    #     try:
+    #         element_to_drag = self.get_element(DemoDraggableBoxPageLocators.draggable_container)
+    #         self.drag_element_by_offset(element_to_drag, x_offset,y_offset)
+    #     finally:
+    #         self.switch_to_default_content()
+
+    def drag_first_container_element_by_offset(self, x_offset: int, y_offset: int):
+        """
+        Attempts to drag the container using a granular ActionChains sequence.
+        This is for testing that the container does NOT move.
+        """
+
+        handle_height = self.get_handle_height()
+        self.switch_to_frame(DemoDraggableBoxPageLocators.handle_iframe)
+
+
+        try:
+            container_element = self.get_element(DemoDraggableBoxPageLocators.draggable_container)
+
+            actions = ActionChains(self.driver)
+            # Move to a point just below the handle and perform the drag attempt
+            actions.move_to_element_with_offset(container_element, 10, handle_height + 10)
+            actions.click_and_hold()
+            actions.move_by_offset(x_offset, y_offset)
+            actions.release()
+            actions.perform()
+
+            self.logger.info("Attempted to drag container using a granular sequence.")
+        except Exception as e:
+            self.logger.error(f"Error while attempting to drag container: {e}")
+            raise
+        finally:
+            self.switch_to_default_content()
+
+
+    def get_handle_height(self) -> int:
+        """
+        Retrieves the height of the draggable handle element.
+        """
+        self.switch_to_frame(DemoDraggableBoxPageLocators.handle_iframe)
+        try:
+            handle_element = self.get_element(DemoDraggableBoxPageLocators.draggable_handle)
+            return handle_element.size['height']
         finally:
             self.switch_to_default_content()

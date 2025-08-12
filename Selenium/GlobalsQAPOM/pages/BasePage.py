@@ -418,6 +418,13 @@ class BasePage:
         actions = ActionChains(self.driver)
         actions.move_to_element(element).click_and_hold().move_by_offset(offset_x, offset_y).release().perform()
 
+    def drag_element_not_center(self, element, offset_x, offset_y=0):
+        actions = ActionChains(self.driver)
+        actions.click_and_hold(element)
+        actions.move_by_offset(offset_x, offset_y)
+        actions.release()
+        actions.perform()
+
 
     def get_progress_bar_value(self, progress_bar_locator):
         """Return value of a progress bar."""

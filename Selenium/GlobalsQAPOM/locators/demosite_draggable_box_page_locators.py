@@ -50,3 +50,13 @@ class DemoDraggableBoxPageLocators():
     event_stop_count = [
         ("xpath", "//li[@id='event-stop']/span[@class='count']")
     ]
+
+    # Main container element that should not be draggable
+    draggable_container = [
+        ("id", "draggable")
+    ]
+    # The specific handle element that *is* draggable
+    draggable_handle = [
+        ("css", "#draggable .ui-draggable-handle")
+    ]
+
