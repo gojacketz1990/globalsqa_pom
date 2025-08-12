@@ -36,3 +36,17 @@ class DemoDraggableBoxPageLocators():
     ]
 
 
+    check_events_box_locator  = [
+        ("id","draggable"),
+    ]
+
+    # Event counters (targeting the span with the count)
+    event_start_count = [
+        ("xpath", "//li[@id='event-start']/span[@class='count']")
+    ]
+    event_drag_count = [
+        ("xpath", "//li[@id='event-drag']/span[@class='count']")
+    ]
+    event_stop_count = [
+        ("xpath", "//li[@id='event-stop']/span[@class='count']")
+    ]
