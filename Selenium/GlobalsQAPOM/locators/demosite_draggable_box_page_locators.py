@@ -60,3 +60,26 @@ class DemoDraggableBoxPageLocators():
         ("css", "#draggable .ui-draggable-handle")
     ]
 
+    #Constraints Tab
+
+    vertical_drag_locator = [
+        ("id", "draggable")
+    ]
+
+    horizontal_drag_locator = [
+        ("id", "draggable2")
+    ]
+
+    box_contained_locator = [
+        ("id", "draggable3")
+    ]
+
+    contained_in_box_locator = [
+        ("id","draggable4")
+    ]
+
+    dom_container_locator = [
+        ("id","containment-wrapper")
+    ]
+
+
