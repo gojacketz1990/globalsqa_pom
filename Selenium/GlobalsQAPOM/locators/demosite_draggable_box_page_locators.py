@@ -30,3 +30,9 @@ class DemoDraggableBoxPageLocators():
     handle_iframe =  [
         ("xpath", "//div[@rel-title='Handle']/p/iframe")
     ]
+
+    simple_drag_box_locator = [
+        ("id","draggable"),
+    ]
+
+
