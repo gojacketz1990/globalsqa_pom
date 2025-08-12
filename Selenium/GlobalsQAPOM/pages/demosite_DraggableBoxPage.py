@@ -19,3 +19,15 @@ class DemoDraggableBoxPage(BasePage):
         self.logger.info(f"Clicking the tab with locator: {tab_locator}")
         self.element_click(tab_locator)
         time.sleep(2)
+
+    def click_simpledrag_tab(self):
+        self._click_tab(DemoDraggableBoxPageLocators.simple_drag_tab_locator)
+
+    def click_checkevents_tab(self):
+        self._click_tab(DemoDraggableBoxPageLocators.check_events_tab_locator)
+
+    def click_handle_tab(self):
+        self._click_tab(DemoDraggableBoxPageLocators.handle_tab_locator)
+
+    def click_constraints_tab(self):
+        self._click_tab(DemoDraggableBoxPageLocators.constraints_tab_locator)

@@ -88,3 +88,10 @@ class DemoPage(BasePage):
         self.scroll_to_element(self.demoSitePageLocators.dragdrop_locator)
         self.element_click(self.demoSitePageLocators.dragdrop_locator)
         return DemoDragDropPage(self.driver)
+
+    def gotoDraggableBox(self):
+
+        from pages.demosite_DraggableBoxPage import DemoDraggableBoxPage
+        self.scroll_to_element(self.demoSitePageLocators.draggable_box_locator)
+        self.element_click(self.demoSitePageLocators.draggable_box_locator)
+        return DemoDraggableBoxPage(self.driver)
