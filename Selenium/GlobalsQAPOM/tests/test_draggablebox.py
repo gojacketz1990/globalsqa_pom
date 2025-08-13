@@ -123,21 +123,25 @@ class TestDraggableBox:
 
         # --- Test 1: Vertical Movement ---
 
-        initial_pos_vertical_test = demoDraggableBoxPage.get_draggable_box_position()
+        initial_pos_vertical_test = demoDraggableBoxPage.get_vertical_draggable_box_position()
+        print(initial_pos_vertical_test)
 
         # Drag vertically (0 x-offset, 50 y-offset)
         vertical_move_y_offset = 50
         demoDraggableBoxPage.drag_vertical_draggable_box_by_offset(0, vertical_move_y_offset)
 
         final_pos_vertical_test = demoDraggableBoxPage.get_vertical_draggable_box_position()
+        print(final_pos_vertical_test)
+
+        # Assert Y-coordinate changed by the expected amount
+        assert abs(final_pos_vertical_test['y'] - (initial_pos_vertical_test['y'] + vertical_move_y_offset)) <= tolerance, \
+            f"Expected Y position to change to {initial_pos_vertical_test['y'] + vertical_move_y_offset}, but got {final_pos_vertical_test['y']}"
+
 
         # Assert X-coordinate remained constant
         assert abs(final_pos_vertical_test['x'] - initial_pos_vertical_test['x']) <= tolerance, \
             f"Expected X position to remain constant ({initial_pos_vertical_test['x']}), but it changed to {final_pos_vertical_test['x']}"
 
-        # Assert Y-coordinate changed by the expected amount
-        assert abs(final_pos_vertical_test['y'] - (initial_pos_vertical_test['y'] + vertical_move_y_offset)) <= tolerance, \
-            f"Expected Y position to change to {initial_pos_vertical_test['y'] + vertical_move_y_offset}, but got {final_pos_vertical_test['y']}"
 
 
 
