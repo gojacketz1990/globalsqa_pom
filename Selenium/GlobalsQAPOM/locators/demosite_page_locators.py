@@ -51,3 +51,6 @@ class DemoSitePageLocators():
     draggable_box_locator = [
         ("link_text", "DraggableBox"),
     ]
+    sample_page_locator = [
+        ("link_text", "SamplePage"),
+    ]
