@@ -215,6 +215,17 @@ class DemoDraggableBoxPage(BasePage):
         finally:
             self.switch_to_default_content()
 
+    def get_horizontal_draggable_box_position(self) -> dict:
+        """
+        Retrieves the current x and y coordinates of the draggable box.
+        """
+        self.switch_to_frame(DemoDraggableBoxPageLocators.constraints_iframe)
+        try:
+            element = self.get_element(DemoDraggableBoxPageLocators.horizontal_drag_locator)
+            return element.location
+        finally:
+            self.switch_to_default_content()
+
     def drag_vertical_draggable_box_by_offset(self, x_offset: int, y_offset: int):
         """
         Performs a drag-and-drop action by offset on the draggable box.
@@ -224,5 +235,75 @@ class DemoDraggableBoxPage(BasePage):
             element_to_drag = self.get_element(DemoDraggableBoxPageLocators.vertical_drag_locator)
             self.drag_element_by_offset(element_to_drag, x_offset,y_offset)
 
+        finally:
+            self.switch_to_default_content()
+
+
+    def drag_horizontal_draggable_box_by_offset(self, x_offset: int, y_offset: int):
+        """
+        Performs a drag-and-drop action by offset on the draggable box.
+        """
+        self.switch_to_frame(DemoDraggableBoxPageLocators.constraints_iframe)
+        try:
+            element_to_drag = self.get_element(DemoDraggableBoxPageLocators.horizontal_drag_locator)
+            self.drag_element_by_offset(element_to_drag, x_offset,y_offset)
+
+        finally:
+            self.switch_to_default_content()
+
+
+    def get_containment_element_dimensions(self) -> dict:
+        """
+        Retrieves the x, y, width, and height of an element.
+        """
+        self.switch_to_frame(DemoDraggableBoxPageLocators.constraints_iframe)
+        try:
+            element = self.get_element(DemoDraggableBoxPageLocators.dom_container_locator)
+            return {
+                'x': element.location['x'],
+                'y': element.location['y'],
+                'width': element.size['width'],
+                'height': element.size['height']
+            }
+        finally:
+            self.switch_to_default_content()
+
+    def get_contained_element_dimensions(self) -> dict:
+        """
+        Retrieves the x, y, width, and height of an element.
+        """
+        self.switch_to_frame(DemoDraggableBoxPageLocators.constraints_iframe)
+        try:
+            element = self.get_element(DemoDraggableBoxPageLocators.box_contained_locator)
+            return {
+                'x': element.location['x'],
+                'y': element.location['y'],
+                'width': element.size['width'],
+                'height': element.size['height']
+            }
+        finally:
+            self.switch_to_default_content()
+
+    def drag_inside_containment_element_by_offset(self, x_offset: int, y_offset: int):
+        """
+        Performs a drag-and-drop action by offset on a specified element.
+        """
+        self.switch_to_frame(DemoDraggableBoxPageLocators.constraints_iframe)
+        try:
+            element_to_drag = self.get_element(DemoDraggableBoxPageLocators.box_contained_locator)
+            actions = ActionChains(self.driver)
+            self.drag_element_by_offset(element_to_drag, x_offset,y_offset)
+        finally:
+            self.switch_to_default_content()
+
+    def reset_contained_element_to_origin(self):
+        """
+        Drags the contained element back to its top-left origin (0,0) relative to the container.
+        """
+        self.switch_to_frame(DemoDraggableBoxPageLocators.constraints_iframe)
+        try:
+            element = self.get_element(DemoDraggableBoxPageLocators.box_contained_locator)
+            # Drag element back to its origin (0,0) relative to the container
+            ActionChains(self.driver).drag_and_drop_by_offset(element, -element.location['x'], -element.location['y']).perform()
         finally:
             self.switch_to_default_content()

@@ -164,3 +164,127 @@ class TestDraggableBox:
         assert abs(final_pos_horizontal_test['y'] - initial_pos_horizontal_test['y']) <= tolerance, \
             f"Expected Y position to remain constant ({initial_pos_horizontal_test['y']}), but it changed to {final_pos_horizontal_test['y']}"
 
+    def test_horizontal_constraints_drag_and_drop(self):
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        demoPage = globalsqaPage.header.gotoDemoSitePage()
+
+        # Step 1: Click the "Message Box" tab to reveal the download button
+        demoDraggableBoxPage = demoPage.gotoDraggableBox()
+        demoDraggableBoxPage.click_constraints_tab()
+
+
+        # Define a small tolerance for floating point comparisons if necessary
+        # (e.g., due to browser rendering or minor pixel shifts)
+        tolerance = 2
+
+        # --- Test 1: Horizontal Movement ---
+
+        initial_pos_horizontal_test = demoDraggableBoxPage.get_horizontal_draggable_box_position()
+        print(initial_pos_horizontal_test)
+
+        # Drag horizontally (50 x-offset, 0 y-offset)
+        horizontal_move_x_offset = 50
+        demoDraggableBoxPage.drag_horizontal_draggable_box_by_offset(horizontal_move_x_offset, 0) # Assuming a new method for horizontal box
+
+        final_pos_horizontal_test = demoDraggableBoxPage.get_horizontal_draggable_box_position()
+        print(f"Final Horizontal Position: {final_pos_horizontal_test}")
+
+        # Assert X-coordinate changed by the expected amount
+        assert abs(final_pos_horizontal_test['x'] - (initial_pos_horizontal_test['x'] + horizontal_move_x_offset)) <= tolerance, \
+            f"Expected X position to change to {initial_pos_horizontal_test['x'] + horizontal_move_x_offset}, but got {final_pos_horizontal_test['x']}"
+
+        # Assert Y-coordinate remained constant
+        assert abs(final_pos_horizontal_test['y'] - initial_pos_horizontal_test['y']) <= tolerance, \
+            f"Expected Y position to remain constant ({initial_pos_horizontal_test['y']}), but it changed to {final_pos_horizontal_test['y']}"
+
+
+        # --- Test 2: Vertical Restriction ---
+
+        # Get current position after the horizontal drag
+        initial_pos_vertical_restriction_test = demoDraggableBoxPage.get_horizontal_draggable_box_position()
+
+        # Attempt to drag vertically (0 x-offset, 50 y-offset)
+        vertical_attempt_y_offset = 50
+        demoDraggableBoxPage.drag_horizontal_draggable_box_by_offset(0, vertical_attempt_y_offset)
+
+        final_pos_vertical_restriction_test = demoDraggableBoxPage.get_horizontal_draggable_box_position()
+
+        # Assert X-coordinate did NOT change
+        assert abs(final_pos_vertical_restriction_test['x'] - initial_pos_vertical_restriction_test['x']) <= tolerance, \
+            f"Expected X position to remain constant ({initial_pos_vertical_restriction_test['x']}), but it changed to {final_pos_vertical_restriction_test['x']}"
+
+        # Assert Y-coordinate did NOT change
+        assert abs(final_pos_vertical_restriction_test['y'] - initial_pos_vertical_restriction_test['y']) <= tolerance, \
+            f"Expected Y position to remain constant ({initial_pos_vertical_restriction_test['y']}), but it changed to {final_pos_vertical_restriction_test['y']}"
+
+
+    def test_contained_in_DOM_element_drag_and_drop(self):
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        demoPage = globalsqaPage.header.gotoDemoSitePage()
+
+        # Step 1: Navigate to the correct page and tab
+        demoDraggableBoxPage = demoPage.gotoDraggableBox()
+        demoDraggableBoxPage.click_constraints_tab()
+
+        tolerance = 2
+        large_offset = 1000 # Use a large offset to guarantee hitting the boundaries
+        large_y_offset = 300
+
+        # Get initial dimensions of both the container and draggable box
+        container_dims = demoDraggableBoxPage.get_containment_element_dimensions()
+        draggable_dims = demoDraggableBoxPage.get_contained_element_dimensions()
+
+        # Calculate the four boundaries the draggable box should not cross
+        # Correct the right and bottom boundaries with the observed 22-pixel offset
+        left_boundary = container_dims['x'] + 12
+        right_boundary = container_dims['x'] + container_dims['width'] - draggable_dims['width'] - 22
+        top_boundary = container_dims['y'] + 12
+        bottom_boundary = container_dims['y'] + container_dims['height'] - draggable_dims['height'] - 22
+
+
+        # --- Test 1: Attempt to drag right past the boundary ---
+        # Reset the box to a known origin before each test
+        demoDraggableBoxPage.reset_contained_element_to_origin()
+        demoDraggableBoxPage.drag_inside_containment_element_by_offset(x_offset=large_offset, y_offset=0)
+        final_pos = demoDraggableBoxPage.get_contained_element_dimensions()
+
+        assert abs(final_pos['x'] - right_boundary) <= tolerance, \
+            f"Expected x to be at right boundary {right_boundary}, but got {final_pos['x']}"
+
+
+        # --- Test 2: Attempt to drag down past the boundary ---
+        demoDraggableBoxPage.reset_contained_element_to_origin()
+        time.sleep(3)
+        print(demoDraggableBoxPage.get_contained_element_dimensions())
+        demoDraggableBoxPage.drag_inside_containment_element_by_offset(x_offset=0, y_offset=large_y_offset)
+        final_pos = demoDraggableBoxPage.get_contained_element_dimensions()
+        print(final_pos)
+
+        assert abs(final_pos['y'] - bottom_boundary) <= tolerance, \
+            f"Expected y to be at bottom boundary {bottom_boundary}, but got {final_pos['y']}"
+
+
+        # --- Test 3: Attempt to drag left past the boundary ---
+        # Reset is not needed here if you assume a drag from the last position is fine
+        demoDraggableBoxPage.reset_contained_element_to_origin()
+
+        print(f"Contained before move for test 3: {demoDraggableBoxPage.get_contained_element_dimensions()}")
+
+        demoDraggableBoxPage.drag_inside_containment_element_by_offset(x_offset=-large_offset, y_offset=0)
+        final_pos = demoDraggableBoxPage.get_contained_element_dimensions()
+
+        assert abs(final_pos['x'] - left_boundary) <= tolerance, \
+            f"Expected x to be at left boundary {left_boundary}, but got {final_pos['x']}"
+
+
+        # --- Test 4: Attempt to drag up past the boundary ---
+        demoDraggableBoxPage.drag_inside_containment_element_by_offset(x_offset=0, y_offset=-100)
+        final_pos = demoDraggableBoxPage.get_contained_element_dimensions()
+
+        assert abs(final_pos['y'] - top_boundary) <= tolerance, \
+            f"Expected y to be at top boundary {top_boundary}, but got {final_pos['y']}"
+
+        demoDraggableBoxPage.drag_inside_containment_element_by_offset(x_offset=0, y_offset=-100)
+        final_pos = demoDraggableBoxPage.get_contained_element_dimensions()
+        assert abs(final_pos['y'] - top_boundary) <= tolerance, \
+            f"Expected y to be at top boundary {top_boundary}, but got {final_pos['y']}"
