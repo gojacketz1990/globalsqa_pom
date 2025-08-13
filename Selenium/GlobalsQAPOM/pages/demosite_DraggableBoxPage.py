@@ -202,3 +202,27 @@ class DemoDraggableBoxPage(BasePage):
             return handle_element.size['height']
         finally:
             self.switch_to_default_content()
+
+
+    def get_vertical_draggable_box_position(self) -> dict:
+        """
+        Retrieves the current x and y coordinates of the draggable box.
+        """
+        self.switch_to_frame(DemoDraggableBoxPageLocators.constraints_iframe)
+        try:
+            element = self.get_element(DemoDraggableBoxPageLocators.vertical_drag_locator)
+            return element.location
+        finally:
+            self.switch_to_default_content()
+
+    def drag_vertical_draggable_box_by_offset(self, x_offset: int, y_offset: int):
+        """
+        Performs a drag-and-drop action by offset on the draggable box.
+        """
+        self.switch_to_frame(DemoDraggableBoxPageLocators.constraints_iframe)
+        try:
+            element_to_drag = self.get_element(DemoDraggableBoxPageLocators.vertical_drag_locator)
+            self.drag_element_by_offset(element_to_drag, x_offset,y_offset)
+
+        finally:
+            self.switch_to_default_content()

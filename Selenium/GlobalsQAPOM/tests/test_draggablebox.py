@@ -108,10 +108,55 @@ class TestDraggableBox:
         assert final_container_position['x'] == initial_container_position['x'], "Container drag succeeded unexpectedly."
         assert final_container_position['y'] == initial_container_position['y'], "Container drag succeeded unexpectedly."
 
-    def test_constraints_drag_and_drop(self):
+    def test_vertical_constraints_drag_and_drop(self):
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
 
         # Step 1: Click the "Message Box" tab to reveal the download button
         demoDraggableBoxPage = demoPage.gotoDraggableBox()
         demoDraggableBoxPage.click_constraints_tab()
+
+
+        # Define a small tolerance for floating point comparisons if necessary
+        # (e.g., due to browser rendering or minor pixel shifts)
+        tolerance = 2
+
+        # --- Test 1: Vertical Movement ---
+
+        initial_pos_vertical_test = demoDraggableBoxPage.get_draggable_box_position()
+
+        # Drag vertically (0 x-offset, 50 y-offset)
+        vertical_move_y_offset = 50
+        demoDraggableBoxPage.drag_vertical_draggable_box_by_offset(0, vertical_move_y_offset)
+
+        final_pos_vertical_test = demoDraggableBoxPage.get_vertical_draggable_box_position()
+
+        # Assert X-coordinate remained constant
+        assert abs(final_pos_vertical_test['x'] - initial_pos_vertical_test['x']) <= tolerance, \
+            f"Expected X position to remain constant ({initial_pos_vertical_test['x']}), but it changed to {final_pos_vertical_test['x']}"
+
+        # Assert Y-coordinate changed by the expected amount
+        assert abs(final_pos_vertical_test['y'] - (initial_pos_vertical_test['y'] + vertical_move_y_offset)) <= tolerance, \
+            f"Expected Y position to change to {initial_pos_vertical_test['y'] + vertical_move_y_offset}, but got {final_pos_vertical_test['y']}"
+
+
+
+        # --- Test 2: Horizontal Restriction ---
+
+        # Get current position after the vertical drag (or re-get from page for isolation)
+        initial_pos_horizontal_test = demoDraggableBoxPage.get_vertical_draggable_box_position()
+
+        # Attempt to drag horizontally (50 x-offset, 0 y-offset)
+        horizontal_move_x_offset = 50
+        demoDraggableBoxPage.drag_vertical_draggable_box_by_offset(horizontal_move_x_offset, 0)
+
+        final_pos_horizontal_test = demoDraggableBoxPage.get_vertical_draggable_box_position()
+
+        # Assert X-coordinate did NOT change
+        assert abs(final_pos_horizontal_test['x'] - initial_pos_horizontal_test['x']) <= tolerance, \
+            f"Expected X position to remain constant ({initial_pos_horizontal_test['x']}), but it changed to {final_pos_horizontal_test['x']}"
+
+        # Assert Y-coordinate did NOT change (since only horizontal movement was attempted)
+        assert abs(final_pos_horizontal_test['y'] - initial_pos_horizontal_test['y']) <= tolerance, \
+            f"Expected Y position to remain constant ({initial_pos_horizontal_test['y']}), but it changed to {final_pos_horizontal_test['y']}"
+
