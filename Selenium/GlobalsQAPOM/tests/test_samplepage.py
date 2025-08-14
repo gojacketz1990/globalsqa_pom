@@ -25,7 +25,7 @@ class TestSamplePage:
 
         time.sleep(3)
 
-        #demoSamplePage.upload_file_path("/Users/gojacketz/Desktop/GlobalsQA/Selenium/GlobalsQAPOM/data/baseball.png")
+        demoSamplePage.upload_file_path("/Users/gojacketz/Desktop/GlobalsQA/Selenium/GlobalsQAPOM/data/Bo.jpg")
 
         #time.sleep(3)
 
@@ -46,7 +46,7 @@ class TestSamplePage:
 
         demoSamplePage.click_submit()
 
-        time.sleep(36)
+        time.sleep(3)
 
 
 
