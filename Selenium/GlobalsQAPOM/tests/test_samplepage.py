@@ -20,3 +20,7 @@ class TestSamplePage:
         demoSamplePage.select_education_option("Post Graduate")
 
         time.sleep(3)
+
+        demoSamplePage.upload_file_path("/Users/gojacketz/Desktop/GlobalsQA/Selenium/GlobalsQAPOM/data/baseball.png")
+
+        time.sleep(3)

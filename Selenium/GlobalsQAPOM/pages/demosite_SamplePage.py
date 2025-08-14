@@ -99,3 +99,7 @@ class DemoSamplePage(BasePage):
 
         self.logger.warning("No radio button is currently selected in the education group.")
         return ""
+
+    def upload_file_path(self, filePath):
+
+       self.upload_file(DemoSamplePageLocators.choose_file_button_locator,filePath)

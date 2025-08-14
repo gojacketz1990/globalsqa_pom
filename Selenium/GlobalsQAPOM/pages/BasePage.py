@@ -635,3 +635,21 @@ class BasePage:
 
         actions.perform()
         self.logger.info("Successfully performed 'Ctrl+A' action.")
+
+
+    def upload_file(self, locators: list, file_path: str):
+        """
+        Uploads a file by sending its absolute path to a file input element.
+
+        Args:
+            locators (list): A list of locator tuples for the file input element.
+            file_path (str): The relative or absolute path of the file to upload.
+        """
+        self.logger.info(f"Attempting to upload file at '{file_path}' to element with locators: {locators}")
+        try:
+            element = self.get_element(locators)
+            element.send_keys(file_path)
+            self.logger.info(f"Successfully uploaded file from path: {file_path}")
+        except Exception as e:
+            self.logger.error(f"Failed to upload file to element with locators {locators}. Error: {e}")
+            raise # Re-raise the exception to be handled by the calling method.

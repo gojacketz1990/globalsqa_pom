@@ -3,7 +3,7 @@ import pytest
 driver = None
 import os
 from selenium import webdriver
-
+from selenium.webdriver.chrome.options import Options
 
 def pytest_addoption(parser):
     parser.addoption(
@@ -24,7 +24,11 @@ def setup_globalsqa(request):
     print("Browser:")
     print(browser_name)
     if browser_name.lower() == "chrome":
-        driver = webdriver.Chrome()
+        options = Options()
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-gpu")
+        options.add_argument("--disable-dev-shm-usage")
+        driver = webdriver.Chrome(options=options)
     elif browser_name.lower() == "firefox":
         driver = webdriver.Firefox()
     elif browser_name.lower() == "safari":

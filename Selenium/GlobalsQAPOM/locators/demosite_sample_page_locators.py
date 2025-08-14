@@ -1,5 +1,9 @@
 class DemoSamplePageLocators():
 
+    choose_file_button_locator = [
+        ("name","file-553")
+    ]
+
     name_text_locator =  [
         ("id", "g2599-name"),
         ("class_name","name")
@@ -33,4 +37,17 @@ class DemoSamplePageLocators():
     education_radio_label_text_locator = [
         #("xpath", ".//label[.//span[text()='{}']]/input")
         ("xpath", "//label[.//span[text()='{}']]/preceding-sibling::input")
+    ]
+
+    alert_box_button_locator = [
+        ("css","button[onclick='myFunction()']")
+    ]
+
+    comment_text_box_locator = [
+        ("name","g2599-comment"),
+        ("id","contact-form-comment-g2599-comment")
+    ]
+
+    submit_button_locator = [
+        ("css","button[type='submit']")
     ]
