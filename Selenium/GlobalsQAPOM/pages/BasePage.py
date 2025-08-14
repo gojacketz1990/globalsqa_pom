@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException, NoAlertPresentException
 import requests
 import random
 import time
@@ -346,9 +346,33 @@ class BasePage:
                 break
 
     def switch_to_alert_and_accept_popup(self):
-        """Switch to an alert popup and accept."""
-        alert = self.wait.until(EC.alert_is_present())
-        alert.accept()
+        """Switches to an alert popup and accepts it."""
+        try:
+            alert = self.wait.until(EC.alert_is_present())
+            self.logger.info(f"Alert text: {alert.text}")
+            alert.accept()
+        except (TimeoutException, NoAlertPresentException):
+            self.logger.warning("No alert was present to accept.")
+            raise
+
+    def dismiss_all_alerts(self, timeout=2):
+        """
+        Dismisses all alert popups one after another.
+        This method will keep trying to accept alerts until no more appear
+        within a short timeout.
+
+        Args:
+            timeout (int): The maximum time to wait for a subsequent alert.
+        """
+        while True:
+            try:
+                # Use a very short wait to quickly check for the next alert
+                alert = WebDriverWait(self.driver, timeout).until(EC.alert_is_present())
+                self.logger.info(f"Dismissing alert with text: '{alert.text}'")
+                alert.accept()
+            except (TimeoutException, NoAlertPresentException):
+                self.logger.info("No more alerts found.")
+                break # Exit the loop when no alert is present
 
     def read_table(self, table_locator, row_locator, cell_locator):
         """Return table data given the table, row, and cell locators."""

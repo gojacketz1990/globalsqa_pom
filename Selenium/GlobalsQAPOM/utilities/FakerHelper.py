@@ -76,3 +76,8 @@ class FakerHelper:
     def generate_date_of_birth(self, min_age=18, max_age=90) -> str:
         """Generates a random date of birth within a given age range."""
         return self.fake.date_of_birth(minimum_age=min_age, maximum_age=max_age).strftime('%Y-%m-%d')
+
+
+    def generate_website(self):
+        """Generates a random website URL."""
+        return self.fake.url()

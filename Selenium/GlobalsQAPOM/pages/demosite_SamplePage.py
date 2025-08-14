@@ -103,3 +103,30 @@ class DemoSamplePage(BasePage):
     def upload_file_path(self, filePath):
 
        self.upload_file(DemoSamplePageLocators.choose_file_button_locator,filePath)
+
+
+    def enter_name(self, name):
+        self.type_into_element(name, DemoSamplePageLocators.name_text_locator)
+
+    def enter_email(self, email):
+        self.type_into_element(email, DemoSamplePageLocators.name_text_locator)
+
+    def enter_website(self, website):
+        self.type_into_element(website, DemoSamplePageLocators.website_locator)
+
+    def click_alert_box(self):
+        self.element_click(DemoSamplePageLocators.alert_box_button_locator)
+
+    def dismiss_alerts(self):
+        #Dismiss two popus
+        self.switch_to_alert_and_accept_popup()
+        self.switch_to_alert_and_accept_popup()
+
+    def dismiss_chain_alerts(self):
+        self.dismiss_all_alerts()
+
+    def enter_comments(self, comment):
+        self.type_into_element(comment, DemoSamplePageLocators.comment_text_box_locator)
+
+    def click_submit(self):
+        self.element_click(DemoSamplePageLocators.submit_button_locator)

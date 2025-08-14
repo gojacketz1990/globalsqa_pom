@@ -14,6 +14,11 @@ class DemoSamplePageLocators():
         ("class_name","email")
     ]
 
+    website_locator = [
+        ("id", "g2599-website"),
+        ("class_name","url")
+    ]
+
     experience_select_locator =  [
         ("id", "g2599-experienceinyears"),
         ("name", "g2599-experienceinyears"),

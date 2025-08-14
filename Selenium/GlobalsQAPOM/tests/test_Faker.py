@@ -30,6 +30,8 @@ class TestFaker:
         zipcode = data_generator.generate_zipcode()
         country = data_generator.generate_country()
         full_address = data_generator.generate_full_address()
+        web_address = data_generator.generate_website()
+
 
         print(f"Street Address: {street_address}")
         print(f"City: {city}")
