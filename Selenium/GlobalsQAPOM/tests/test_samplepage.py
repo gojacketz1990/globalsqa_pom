@@ -6,9 +6,17 @@ import time
 class TestSamplePage:
 
 
-    def test_draggable_box_moves_freely(self):
+    def test_expertise(self):
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
 
         # Step 1: Click the "Message Box" tab to reveal the download button
         demoSamplePage = demoPage.gotoSamplePage()
+
+        demoSamplePage.select_expertise_by_label("Automation Testing")
+
+        time.sleep(1)
+
+        demoSamplePage.select_education_option("Post Graduate")
+
+        time.sleep(3)

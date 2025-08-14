@@ -99,6 +99,6 @@ class DemoPage(BasePage):
     def gotoSamplePage(self):
 
         from pages.demosite_SamplePage import DemoSamplePage
-        self.scroll_to_element(self.demoSitePageLocators.draggable_box_locator)
-        self.element_click(self.demoSitePageLocators.draggable_box_locator)
+        self.scroll_to_element(self.demoSitePageLocators.sample_page_locator)
+        self.element_click(self.demoSitePageLocators.sample_page_locator)
         return DemoSamplePage(self.driver)
