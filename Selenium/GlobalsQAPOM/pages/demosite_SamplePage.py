@@ -109,7 +109,7 @@ class DemoSamplePage(BasePage):
         self.type_into_element(name, DemoSamplePageLocators.name_text_locator)
 
     def enter_email(self, email):
-        self.type_into_element(email, DemoSamplePageLocators.name_text_locator)
+        self.type_into_element(email, DemoSamplePageLocators.email_locator)
 
     def enter_website(self, website):
         self.type_into_element(website, DemoSamplePageLocators.website_locator)

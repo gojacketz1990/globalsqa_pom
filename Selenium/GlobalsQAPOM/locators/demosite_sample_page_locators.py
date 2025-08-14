@@ -10,8 +10,8 @@ class DemoSamplePageLocators():
     ]
 
     email_locator =  [
-        ("id", "g2599-email"),
-        ("class_name","email")
+        ("css", "input[id*='g2599-'][name*='email']"),
+        ("css", "input[id*='email']")
     ]
 
     website_locator = [
@@ -49,8 +49,9 @@ class DemoSamplePageLocators():
     ]
 
     comment_text_box_locator = [
-        ("name","g2599-comment"),
-        ("id","contact-form-comment-g2599-comment")
+        ("css", "textarea[id*='g2599-'][name*='comment']"),
+        ("css", "textarea[id*='comment']")
+
     ]
 
     submit_button_locator = [

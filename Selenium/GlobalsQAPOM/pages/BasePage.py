@@ -365,6 +365,7 @@ class BasePage:
             timeout (int): The maximum time to wait for a subsequent alert.
         """
         while True:
+            time.sleep(2)
             try:
                 # Use a very short wait to quickly check for the next alert
                 alert = WebDriverWait(self.driver, timeout).until(EC.alert_is_present())
