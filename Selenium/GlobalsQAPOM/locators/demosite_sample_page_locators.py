@@ -57,3 +57,7 @@ class DemoSamplePageLocators():
     submit_button_locator = [
         ("css","button[type='submit']")
     ]
+
+    success_header_locator = [
+        ("id", "contact-form-success-header")
+    ]

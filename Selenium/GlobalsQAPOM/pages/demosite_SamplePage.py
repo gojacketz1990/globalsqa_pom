@@ -130,3 +130,14 @@ class DemoSamplePage(BasePage):
 
     def click_submit(self):
         self.element_click(DemoSamplePageLocators.submit_button_locator)
+
+    def get_success_message_text(self):
+        """
+        Retrieves the text of the form submission success header.
+
+        Returns:
+            str: The text of the success message header.
+        """
+        self.wait_for_element_to_be_visible(DemoSamplePageLocators.success_header_locator)
+        return self.retrieve_element_text(DemoSamplePageLocators.success_header_locator)
+

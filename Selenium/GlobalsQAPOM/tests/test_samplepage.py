@@ -48,6 +48,15 @@ class TestSamplePage:
 
         time.sleep(3)
 
+        #Verify message here
+
+        # Call the page method to get the success message
+        actual_message = demoSamplePage.get_success_message_text()
+
+        # Assert that the message is correct
+        expected_message = "Your message has been sent"
+        assert actual_message == expected_message, \
+            f"Expected success message '{expected_message}' but got '{actual_message}'"
 
 
     #
