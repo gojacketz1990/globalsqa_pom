@@ -18,4 +18,6 @@ class HeaderComponent(BasePage):
 
 
     def gotoAngularSitePage(self):
+        from pages.angularsitepage import AngularJSPage
         self.hover_and_click_popup(self.headerLocators.testers_hub_dropdown_locator, self.headerLocators.angular_site_link_locator)
+        return AngularJSPage(self.driver)
