@@ -9,6 +9,7 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException,
 import requests
 import random
 import time
+import json
 
 # Basic logging configuration to output to the console
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -678,3 +679,53 @@ class BasePage:
         except Exception as e:
             self.logger.error(f"Failed to upload file to element with locators {locators}. Error: {e}")
             raise # Re-raise the exception to be handled by the calling method.
+
+    def get_elements_text(self, locators):
+        """
+        Finds multiple web elements and returns their text as a list of strings.
+
+        Args:
+            locators (list): A list of locator tuples for the elements.
+
+        Returns:
+            list: A list of strings, where each string is the text of an element.
+        """
+        try:
+            elements = self.get_elements(locators)
+            return [element.text.strip() for element in elements]
+        except NoSuchElementException:
+            self.logger.warning("No elements found with the provided locators.")
+            return []
+
+    def get_json_data_from_element(self, locators, timeout=10):
+        """
+        Retrieves and parses JSON data from a web element.
+
+        Args:
+            locators (list): A list of locator tuples for the element containing the JSON.
+            timeout (int): The maximum time to wait for the element.
+
+        Returns:
+            dict: The parsed JSON data as a dictionary.
+
+        Raises:
+            ValueError: If the text is not valid JSON.
+            NoSuchElementException: If the element is not found.
+        """
+        self.logger.info(f"Attempting to retrieve JSON from locators: {locators}")
+        try:
+            wait = WebDriverWait(self.driver, timeout)
+            element = wait.until(EC.presence_of_element_located((By.XPATH, locators[0][1])))
+
+            json_text = element.text.strip()
+            if not json_text:
+                raise ValueError("Element text is empty, cannot parse JSON.")
+
+            return json.loads(json_text)
+
+        except TimeoutException:
+            self.logger.error(f"Element with JSON not found after {timeout} seconds.")
+            raise
+        except json.JSONDecodeError as e:
+            self.logger.error(f"Failed to decode JSON from element text. Error: {e}")
+            raise ValueError("The element's text is not valid JSON.")
