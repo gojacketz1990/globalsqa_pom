@@ -143,3 +143,24 @@ class DemoSamplePage(BasePage):
 
     def select_experience(self, experience):
         self.select_from_dropdown_by_visible_text(DemoSamplePageLocators.experience_select_locator,experience)
+
+    def get_all_form_errors(self):
+        """
+        Retrieves a list of all form error messages displayed.
+        """
+        error_elements = self.wait_for_all_elements_to_be_visible(
+            DemoSamplePageLocators.error_messages_locator
+        )
+        return [element.text for element in error_elements]
+
+    def is_error_block_displayed(self):
+        """
+        Checks if the form error container is visible.
+        """
+        try:
+            self.wait_for_element_to_be_visible(
+                DemoSamplePageLocators.error_block_locator
+            )
+            return True
+        except TimeoutException:
+            return False

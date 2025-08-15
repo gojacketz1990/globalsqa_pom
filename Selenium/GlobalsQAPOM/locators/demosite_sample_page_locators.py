@@ -61,3 +61,14 @@ class DemoSamplePageLocators():
     success_header_locator = [
         ("id", "contact-form-success-header")
     ]
+
+    error_block_locator = [
+        ("css", "div.form-error"),
+        ("xpath", "//div[@class='form-error']"),
+        ("tag_name", "h3")  # A less specific but still useful option
+        ]
+    error_messages_locator = [
+        ("css", "ul.form-errors > li"),
+        ("xpath", "//ul[@class='form-errors']/li")
+    ]
+
