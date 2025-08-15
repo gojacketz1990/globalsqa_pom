@@ -35,6 +35,8 @@ class TestSamplePage:
 
         demoSamplePage.enter_website(data_generator.generate_website())
 
+        demoSamplePage.select_experience("5-7")
+
         #demoSamplePage.click_alert_box()
         #time.sleep(2)
 

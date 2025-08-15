@@ -141,3 +141,5 @@ class DemoSamplePage(BasePage):
         self.wait_for_element_to_be_visible(DemoSamplePageLocators.success_header_locator)
         return self.retrieve_element_text(DemoSamplePageLocators.success_header_locator)
 
+    def select_experience(self, experience):
+        self.select_from_dropdown_by_visible_text(DemoSamplePageLocators.experience_select_locator,experience)
