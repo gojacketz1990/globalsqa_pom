@@ -42,6 +42,6 @@ class TestDraggableBox:
         assert submitted_data['name'] == expected_name, f"Expected name: {expected_name}, but got: {submitted_data['name']}"
         assert submitted_data['email'] == expected_email, f"Expected email: {expected_email}, but got: {submitted_data['email']}"
 
-        # You can also assert that keys exist
+        # You can also assert that keys exist in the json
         assert 'name' in submitted_data
         assert 'email' in submitted_data
