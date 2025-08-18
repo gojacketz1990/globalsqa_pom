@@ -206,6 +206,23 @@ class BasePage:
         except NoSuchElementException:
             return False
 
+    def is_element_selected(self, locators):
+        """
+        Checks if an element is selected (e.g., radio button, checkbox).
+
+        Args:
+            locators (list): A list of locator tuples for the element.
+
+        Returns:
+            bool: True if the element is selected, False otherwise.
+        """
+        try:
+            element = self.get_element(locators)
+            return element.is_selected()
+        except NoSuchElementException:
+            self.logger.warning(f"Element not found, cannot check if selected: {locators}")
+            return False
+
     def select_from_dropdown_by_visible_text(self, locators, text):
         """Select from a dropdown list by text using self-healing locators."""
         element = self.get_element(locators)

@@ -18,4 +18,13 @@ class AngularJSMultiformPageLocators():
         ("xpath", "//label[contains(normalize-space(), 'Console of Choice')]"),
     ]
 
+    success_header_locator = [
+        ("xpath", "//h3[normalize-space()='Thanks For Your Money!']"),
+    ]
+
     json_data_locator = [("xpath", "//pre[@class='ng-binding']")]
+
+
+    console_radio_buttons = [("css", "input[type='radio'][value='{}']")]
+
+
