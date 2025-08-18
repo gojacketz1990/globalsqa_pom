@@ -19,6 +19,8 @@ class TestWebTable:
 
         time.sleep(3)
 
+        webtablePage.first_name_search("")
+
         webtablePage.global_search("Jac")
 
         time.sleep(3)

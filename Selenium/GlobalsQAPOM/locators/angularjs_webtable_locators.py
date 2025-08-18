@@ -5,5 +5,5 @@ class AngularJSWebTablePageLocators():
     ]
 
     global_search_locator = [
-        ("css","input[st-search='global search']")
+        ("css","input[placeholder='global search']")
     ]
