@@ -6,3 +6,7 @@ class AngularJSLocators():
     webtable_locator = [
         ("link_text", "WebTable"),
     ]
+
+    searchfilter_locator = [
+        ("link_text", "SearchFilter"),
+    ]
