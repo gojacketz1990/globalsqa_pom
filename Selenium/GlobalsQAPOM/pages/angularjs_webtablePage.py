@@ -15,14 +15,6 @@ class AngularJSWebTablePage(BasePage):
         self.angularJSWebTablePageLocators = AngularJSWebTablePageLocators()
 
 
-    def _click_tab(self, tab_locator: list):
-        """
-        Internal method to click on a tab.
-        """
-        self.logger.info(f"Clicking the tab with locator: {tab_locator}")
-        self.element_click(tab_locator)
-        time.sleep(2)
-
     def first_name_search(self, text):
         self.type_into_element(text, AngularJSWebTablePageLocators.first_name_search_locator)
 

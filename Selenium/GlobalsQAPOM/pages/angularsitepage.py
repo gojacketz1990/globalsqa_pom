@@ -20,5 +20,5 @@ class AngularJSPage(BasePage):
 
     def gotoSearchFilter(self):
         from pages.angularjs_searchfilterPage import AngularJSSearchFilterPage
-        self.element_click(AngularJSLocators.webtable_locator)
+        self.element_click(AngularJSLocators.searchfilter_locator)
         return AngularJSSearchFilterPage(self.driver)
