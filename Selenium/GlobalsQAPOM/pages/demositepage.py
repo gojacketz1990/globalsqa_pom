@@ -102,3 +102,4 @@ class DemoPage(BasePage):
         self.scroll_to_element(self.demoSitePageLocators.sample_page_locator)
         self.element_click(self.demoSitePageLocators.sample_page_locator)
         return DemoSamplePage(self.driver)
+

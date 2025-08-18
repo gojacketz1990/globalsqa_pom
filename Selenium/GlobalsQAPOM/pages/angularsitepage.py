@@ -12,3 +12,8 @@ class AngularJSPage(BasePage):
         from pages.angularjs_multiformPage import AngularJSMultiFormPage
         self.element_click(AngularJSLocators.multiform_locator)
         return AngularJSMultiFormPage(self.driver)
+
+    def gotoWebTable(self):
+        from pages.angularjs_webtablePage import AngularJSWebTablePage
+        self.element_click(AngularJSLocators.webtable_locator)
+        return AngularJSWebTablePage(self.driver)
