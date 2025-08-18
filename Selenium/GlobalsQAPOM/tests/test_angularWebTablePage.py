@@ -58,3 +58,23 @@ class TestWebTable:
         assert webtablePage.is_user_full_name_present_in_table(first_name, last_name), \
                 f"Expected to find user '{first_name} {last_name}', but they were not found."
 
+    def test_webtable_sort(self):
+
+        from utilities.FakerHelper import FakerHelper
+        data_generator = FakerHelper(locale='en_US')
+
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        angularjsPage = globalsqaPage.header.gotoAngularSitePage()
+
+        webtablePage = angularjsPage.gotoWebTable()
+
+        webtablePage.click_header_to_sort("lastName")
+
+        is_sorted_ascending = webtablePage.is_column_sorted_correctly("lastName", "ascending")
+        assert is_sorted_ascending, "Last Name column is not sorted in ascending order."
+
+
+        # Click again to test descending sort
+        # webtablePage.click_header_to_sort("lastName")
+        # is_sorted_ascending = webtablePage.is_column_sorted_correctly("lastName", "ascending")
+        # assert is_sorted_ascending, "Last Name column is not sorted in ascending order."

@@ -1,3 +1,4 @@
+
 from pages.BasePage import BasePage
 from pages.Header_Components import HeaderComponent
 from locators.angularjs_webtable_locators import AngularJSWebTablePageLocators
@@ -82,3 +83,89 @@ class AngularJSWebTablePage(BasePage):
         except TimeoutException:
             self.logger.error(f"User '{first_name} {last_name}' was not found in the table.")
             return False
+
+
+    def is_column_sorted_correctly(self, column_name: str, sort_order: str) -> bool:
+        """
+        Verifies if a column is sorted correctly based on a given order.
+        It DOES NOT perform the sort action.
+
+        Args:
+            column_name (str): The name of the column header (e.g., "First Name").
+            sort_order (str): "ascending" or "descending".
+
+        Returns:
+            bool: True if the column is sorted as expected, False otherwise.
+        """
+        self.logger.info(f"Verifying {column_name} column is sorted in {sort_order} order.")
+
+        # Step 1: Get the current table data directly from the page
+        table_data = self.read_table(
+            self.angularJSWebTablePageLocators.table_body_locator,
+            self.angularJSWebTablePageLocators.table_row_locator,
+            self.angularJSWebTablePageLocators.table_cell_locator
+        )
+
+        # Find the index of the column to verify
+        header_index = self._get_column_index(column_name)
+        if header_index is None:
+            self.logger.error(f"Column header '{column_name}' not found.")
+            return False
+
+        # Step 2: Extract the data from the target column
+        actual_data = [row[header_index] for row in table_data]
+
+        # Step 3: Sort the data programmatically to get the expected order
+        # The key=str.lower argument ensures the sort is case-insensitive.
+        expected_data = sorted(actual_data, key=str.lower, reverse=(sort_order == "descending"))
+
+        # Step 4: Compare the actual data with the expected data
+        is_sorted = actual_data == expected_data
+        if not is_sorted:
+            self.logger.error("Data is not sorted as expected.")
+            # Log the expected and actual data for debugging
+            self.logger.error(f"Expected sorted data: {expected_data}")
+            self.logger.error(f"Actual sorted data:   {actual_data}")
+        else:
+            self.logger.info(f"Column '{column_name}' is correctly sorted in {sort_order} order.")
+            # Also print on success for visual confirmation
+            self.logger.info(f"Expected sorted data: {expected_data}")
+            self.logger.info(f"Actual sorted data:   {actual_data}")
+
+        return is_sorted
+
+
+    def _get_column_index(self, column_name: str) -> int or None:
+        """
+        Helper method to find the index of a column by its header name.
+        """
+        # Read headers from the table, assuming a single header row
+        header_row_locator = [("xpath", "//thead/tr")]
+        header_cell_locator = [("xpath", "./th")]
+
+        headers = self.read_table(
+            self.angularJSWebTablePageLocators.table_locator,
+            header_row_locator,
+            header_cell_locator
+        )
+
+        if headers and headers[0]:
+            try:
+                # Find the index of the column name in the list of headers
+                return headers[0].index(column_name)
+            except ValueError:
+                return None
+        return None
+
+    def click_header_to_sort(self, header_text: str):
+        """Clicks on a table header to trigger a sort."""
+        self.logger.info(f"Attempting to click header: {header_text}")
+
+        # Use the dynamic locator to build the specific locator for the header
+        header_locator = self.get_dynamic_locator(
+            self.angularJSWebTablePageLocators.table_header_locator,
+            header_text
+        )
+
+        # Click the element using your BasePage's click method
+        self.element_click(header_locator)
