@@ -354,6 +354,23 @@ class BasePage:
     def get_dynamic_locator(self, locators: list, value: str):
         return [(loc_type, loc_value.format(value)) for loc_type, loc_value in locators]
 
+    def get_dynamic_locator_multiple(self, locators: list, *args):
+        """
+        Formats a dynamic locator with a variable number of values.
+
+        Args:
+            locators (list): A list of locator tuples with placeholders.
+            *args: The values to insert into the locator's placeholders.
+
+        Returns:
+            list: A new list of locator tuples with the formatted locator value.
+        """
+        formatted_locators = []
+        for locator_type, locator_value in locators:
+            formatted_locator = locator_value.format(*args)
+            formatted_locators.append((locator_type, formatted_locator))
+        return formatted_locators
+
     def switch_to_window_by_title(self, title):
         """Switch to a window by its title."""
         self.wait.until(lambda d: len(d.window_handles) > 1)
