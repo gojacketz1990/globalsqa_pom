@@ -75,6 +75,35 @@ class TestWebTable:
 
 
         # Click again to test descending sort
-        # webtablePage.click_header_to_sort("lastName")
-        # is_sorted_ascending = webtablePage.is_column_sorted_correctly("lastName", "ascending")
-        # assert is_sorted_ascending, "Last Name column is not sorted in ascending order."
+        webtablePage.click_header_to_sort("lastName")
+        is_sorted_ascending = webtablePage.is_column_sorted_correctly("lastName", "ascending")
+        assert is_sorted_ascending, "Last Name column is not sorted in ascending order."
+
+    def test_webtable_sort_numerical(self):
+
+        from utilities.FakerHelper import FakerHelper
+        data_generator = FakerHelper(locale='en_US')
+
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        angularjsPage = globalsqaPage.header.gotoAngularSitePage()
+
+        webtablePage = angularjsPage.gotoWebTable()
+
+        webtablePage.click_header_to_sort("balance")
+        is_sorted_ascending = webtablePage.is_column_sorted_correctly("balance", "ascending")
+        assert is_sorted_ascending, "Balance column is not sorted in ascending order."
+
+        # Click again to test descending sort
+        webtablePage.click_header_to_sort("balance")
+        is_sorted_ascending = webtablePage.is_column_sorted_correctly("balance", "descending")
+        assert is_sorted_ascending, "Balance column is not sorted in descending order."
+
+        # Click again to test descending sort
+        webtablePage.click_header_to_sort("age")
+        is_sorted_ascending = webtablePage.is_column_sorted_correctly("age", "ascending")
+        assert is_sorted_ascending, "Age column is not sorted in ascending order."
+
+        # Click again to test descending sort
+        webtablePage.click_header_to_sort("age")
+        is_sorted_ascending = webtablePage.is_column_sorted_correctly("age", "descending")
+        assert is_sorted_ascending, "Age column is not sorted in descending order."

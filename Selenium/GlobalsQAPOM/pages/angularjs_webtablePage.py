@@ -89,13 +89,6 @@ class AngularJSWebTablePage(BasePage):
         """
         Verifies if a column is sorted correctly based on a given order.
         It DOES NOT perform the sort action.
-
-        Args:
-            column_name (str): The name of the column header (e.g., "First Name").
-            sort_order (str): "ascending" or "descending".
-
-        Returns:
-            bool: True if the column is sorted as expected, False otherwise.
         """
         self.logger.info(f"Verifying {column_name} column is sorted in {sort_order} order.")
 
@@ -115,25 +108,29 @@ class AngularJSWebTablePage(BasePage):
         # Step 2: Extract the data from the target column
         actual_data = [row[header_index] for row in table_data]
 
-        # Step 3: Sort the data programmatically to get the expected order
-        # The key=str.lower argument ensures the sort is case-insensitive.
-        expected_data = sorted(actual_data, key=str.lower, reverse=(sort_order == "descending"))
+        # Step 3: Sort the data programmatically to get the expected order.
+        # Use 'float' as the key to sort numerical columns correctly.
+        # The 'try-except' block handles cases where the column might contain mixed data.
+        try:
+            expected_data = sorted(actual_data, key=float, reverse=(sort_order == "descending"))
+        except ValueError:
+            # If the conversion fails (e.g., a header or non-numerical data is present),
+            # fall back to a case-insensitive string sort.
+            self.logger.warning(f"Column '{column_name}' contains non-numerical data. Falling back to string sort.")
+            expected_data = sorted(actual_data, key=str.lower, reverse=(sort_order == "descending"))
 
         # Step 4: Compare the actual data with the expected data
         is_sorted = actual_data == expected_data
         if not is_sorted:
             self.logger.error("Data is not sorted as expected.")
-            # Log the expected and actual data for debugging
             self.logger.error(f"Expected sorted data: {expected_data}")
             self.logger.error(f"Actual sorted data:   {actual_data}")
         else:
             self.logger.info(f"Column '{column_name}' is correctly sorted in {sort_order} order.")
-            # Also print on success for visual confirmation
             self.logger.info(f"Expected sorted data: {expected_data}")
             self.logger.info(f"Actual sorted data:   {actual_data}")
 
         return is_sorted
-
 
     def _get_column_index(self, column_name: str) -> int or None:
         """
