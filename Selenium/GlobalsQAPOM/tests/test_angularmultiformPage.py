@@ -3,7 +3,7 @@ from pages.globalsqa_mainpage import GlobalsqaMainPage
 import time
 
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestDraggableBox:
+class TestMultiForm:
 
     def test_multiform(self):
 
@@ -91,7 +91,7 @@ class TestDraggableBox:
 
         multiformPage.select_radio_button_by_value("xbox")
 
-        assert multiformPage.is_radio_button_selected("xbox")
+        assert multiformPage.is_radio_button_selected_by_value("xbox")
 
         multiformPage.click_next_section_button()
 
