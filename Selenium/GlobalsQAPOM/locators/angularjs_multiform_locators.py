@@ -28,3 +28,6 @@ class AngularJSMultiformPageLocators():
     console_radio_buttons = [("css", "input[type='radio'][value='{}']")]
 
 
+    submit_payment_button = [
+        ("css","button[type='submit']")
+    ]

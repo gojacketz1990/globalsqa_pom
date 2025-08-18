@@ -75,3 +75,10 @@ class AngularJSMultiFormPage(BasePage):
         # Wait for the element to be visible to ensure it has loaded
         element = self.wait_for_element_to_be_visible(AngularJSMultiformPageLocators.success_header_locator)
         return element.text
+
+    def click_submit_button(self):
+        """
+        Selects a radio button based on its 'value' attribute.
+        """
+        # Create the specific locator using your get_dynamic_locator method
+        self.element_click(AngularJSMultiformPageLocators.submit_payment_button, value)
