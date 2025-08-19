@@ -25,5 +25,5 @@ class AngularJSPage(BasePage):
 
     def gotoScrollable(self):
         from pages.angularjs_scrollablePage import AngularJSScrollablePage
-        self.element_click(AngularJSLocators.searchfilter_locator)
+        self.element_click(AngularJSLocators.scrollable_locator)
         return AngularJSScrollablePage(self.driver)

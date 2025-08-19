@@ -18,7 +18,6 @@ class AngularJSSearchFilterPageLocators():
     search_results_table_locator = [
         ("css",".table.table-striped.table-bordered")
     ]
-    results_table_rows = [("xpath", "./tr")]
 
     results_table_body = [("xpath", "//table[@class='table table-striped table-bordered']/tbody")]
     results_table_rows = [("xpath", "./tr")]
