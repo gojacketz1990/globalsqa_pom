@@ -1,5 +1,7 @@
 class AngularJSUploadImagePageLocators():
 
-    first_name_search_locator = [
-        ("css","input[st-search='firstName']")
+    choose_file_button_locator = [
+        ("css","input[type='file']")
     ]
+
+    progress_bar = [("xpath", "//progress")]

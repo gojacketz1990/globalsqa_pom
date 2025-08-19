@@ -15,3 +15,15 @@ class AngularJSUploadImagePage(BasePage):
 
     def upload_file_path(self, filePath):
        self.upload_file(AngularJSUploadImagePageLocators.choose_file_button_locator,filePath)
+
+    def get_upload_progress_value(self) -> str:
+        """
+        Retrieves the 'value' attribute from the progress bar element.
+        """
+        # Locate the progress element using its locator.
+        progress_element = self.get_element(AngularJSUploadImagePageLocators.progress_bar)
+
+        # Directly get the attribute from the located element.
+        progress_value = progress_element.get_attribute("value")
+
+        return progress_value
