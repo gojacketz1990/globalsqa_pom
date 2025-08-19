@@ -37,3 +37,8 @@ class AngularJSPage(BasePage):
         from pages.angularjs_uploadimagePage import AngularJSUploadImagePage
         self.element_click(AngularJSLocators.upload_image_locator)
         return AngularJSUploadImagePage(self.driver)
+
+    def gotoBankingProject(self):
+        from pages.angularjs_bankingprojectPage import AngularJSBankingProjectPage
+        self.element_click(AngularJSLocators.banking_project_locator)
+        return AngularJSBankingProjectPage(self.driver)

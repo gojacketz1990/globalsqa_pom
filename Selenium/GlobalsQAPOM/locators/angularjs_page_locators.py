@@ -20,3 +20,6 @@ class AngularJSLocators():
     upload_image_locator = [
         ("link_text", "Upload Image"),
     ]
+    banking_project_locator = [
+        ("link_text", "Banking"),
+    ]
