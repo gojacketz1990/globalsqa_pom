@@ -22,3 +22,8 @@ class AngularJSPage(BasePage):
         from pages.angularjs_searchfilterPage import AngularJSSearchFilterPage
         self.element_click(AngularJSLocators.searchfilter_locator)
         return AngularJSSearchFilterPage(self.driver)
+
+    def gotoScrollable(self):
+        from pages.angularjs_scrollablePage import AngularJSScrollablePage
+        self.element_click(AngularJSLocators.searchfilter_locator)
+        return AngularJSScrollablePage(self.driver)

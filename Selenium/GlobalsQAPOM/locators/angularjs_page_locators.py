@@ -8,5 +8,9 @@ class AngularJSLocators():
     ]
 
     searchfilter_locator = [
-        ("link_text", "SearchFilter"),
+        ("link"
+         "_text", "SearchFilter"),
+    ]
+    scrollable_locator = [
+        ("link_text", "Scrollable"),
     ]
