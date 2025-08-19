@@ -21,3 +21,7 @@ class AngularJSBankingProjectPageLocators():
     account_number_locator = [("xpath", "//div[@class='center']/strong[1]")]
     balance_locator = [("xpath", "//div[@class='center']/strong[2]")]
     currency_locator = [("xpath", "//div[@class='center']/strong[3]")]
+
+    transactions_button_locator = [("xpath", "//button[text()='Transactions']")]
+    deposit_button_locator = [("xpath", "//button[text()='Deposit']")]
+    withdrawal_button_locator = [("xpath", "//button[text()='Withdrawl']")]
