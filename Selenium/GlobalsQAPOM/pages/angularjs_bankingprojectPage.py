@@ -52,3 +52,19 @@ class AngularJSBankingProjectPage(BasePage):
             "balance": balance.strip(),
             "currency": currency.strip()
         }
+
+
+
+    def make_deposit(self, amount: int):
+        """Performs a deposit of a specified amount."""
+        self.logger.info(f"Attempting to deposit {amount}.")
+
+        # Click the Deposit tab
+        self.element_click(AngularJSBankingProjectPageLocators.deposit_button_locator)
+
+        # Find the amount input field
+        amount_input = self.get_element(AngularJSBankingProjectPageLocators.deposit_amount_locator)
+
+        # Enter the amount and submit
+        amount_input.send_keys(str(amount))
+        self.element_click(AngularJSBankingProjectPageLocators.make_deposit_button_locator)
