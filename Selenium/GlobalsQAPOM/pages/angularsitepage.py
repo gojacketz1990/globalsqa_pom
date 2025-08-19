@@ -32,3 +32,8 @@ class AngularJSPage(BasePage):
         from pages.angularjs_registrationLoginPage import AngularJSRegistrationLoginPage
         self.element_click(AngularJSLocators.registration_login_locator)
         return AngularJSRegistrationLoginPage(self.driver)
+
+    def gotoUploadImage(self):
+        from pages.angularjs_uploadimagePage import AngularJSUploadImagePage
+        self.element_click(AngularJSLocators.upload_image_locator)
+        return AngularJSUploadImagePage(self.driver)

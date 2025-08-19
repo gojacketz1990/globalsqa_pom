@@ -17,3 +17,6 @@ class AngularJSLocators():
     registration_login_locator = [
         ("link_text", "RegistrationLogin"),
     ]
+    upload_image_locator = [
+        ("link_text", "Upload Image"),
+    ]
