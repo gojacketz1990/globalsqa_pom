@@ -30,3 +30,25 @@ class AngularJSBankingProjectPage(BasePage):
 
     def click_login_button(self):
         self.element_click(AngularJSBankingProjectPageLocators.login_button_locator)
+
+
+    def get_welcome_name(self) -> str:
+        """Retrieves the name from the welcome message."""
+        return self.get_element_text(AngularJSBankingProjectPageLocators.welcome_name_locator)
+
+    def get_account_details(self) -> dict:
+        """
+        Retrieves the account number, balance, and currency.
+
+        Returns:
+            dict: A dictionary containing the account details.
+        """
+        account_number = self.get_element_text(AngularJSBankingProjectPageLocators.account_number_locator)
+        balance = self.get_element_text(AngularJSBankingProjectPageLocators.balance_locator)
+        currency = self.get_element_text(AngularJSBankingProjectPageLocators.currency_locator)
+
+        return {
+            "account_number": account_number.strip(),
+            "balance": balance.strip(),
+            "currency": currency.strip()
+        }

@@ -23,3 +23,13 @@ class TestBankingProjectLogin:
         bankingprojectPage.click_login_button()
 
         time.sleep(2)
+        welcome_name = bankingprojectPage.get_welcome_name()
+        assert welcome_name == "Albus Dumbledore", f"Expected name 'Albus Dumbledore', but got '{welcome_name}'."
+
+        # Get the account details from the page
+        account_details = bankingprojectPage.get_account_details()
+
+        # Assert that the retrieved values match the expected values
+        assert account_details["account_number"] == "1010", "Account number is incorrect."
+        assert account_details["balance"] == "0", "Balance is incorrect."
+        assert account_details["currency"] == "Dollar", "Currency is incorrect."

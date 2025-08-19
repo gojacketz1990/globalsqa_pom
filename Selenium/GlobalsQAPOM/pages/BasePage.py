@@ -713,23 +713,32 @@ class BasePage:
         except Exception as e:
             self.logger.error(f"Failed to upload file to element with locators {locators}. Error: {e}")
             raise # Re-raise the exception to be handled by the calling method.
-
-    def get_elements_text(self, locators):
+    def get_element_text(self, locators: list) -> str:
         """
-        Finds multiple web elements and returns their text as a list of strings.
+        Retrieves the text from an element after waiting for its presence.
 
         Args:
-            locators (list): A list of locator tuples for the elements.
+            locators (list): A list of locator tuples.
 
         Returns:
-            list: A list of strings, where each string is the text of an element.
+            str: The visible text of the element.
         """
-        try:
-            elements = self.get_elements(locators)
-            return [element.text.strip() for element in elements]
-        except NoSuchElementException:
-            self.logger.warning("No elements found with the provided locators.")
-            return []
+        element = self.get_element(locators)
+        return element.text
+
+    def get_element_text(self, locators: list) -> str:
+        """
+        Retrieves the text from an element, cleaning it of non-breaking spaces.
+
+        Args:
+            locators (list): A list of locator tuples.
+
+        Returns:
+            str: The visible text of the element.
+        """
+        element = self.get_element(locators)
+        # Replace non-breaking space characters with an empty string before returning
+        return element.text.replace('\u00a0', '').strip()
 
     def get_json_data_from_element(self, locators, timeout=10):
         """
