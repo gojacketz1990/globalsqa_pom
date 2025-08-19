@@ -27,3 +27,8 @@ class AngularJSPage(BasePage):
         from pages.angularjs_scrollablePage import AngularJSScrollablePage
         self.element_click(AngularJSLocators.scrollable_locator)
         return AngularJSScrollablePage(self.driver)
+
+    def gotoRegistrationLogin(self):
+        from pages.angularjs_registrationLoginPage import AngularJSRegistrationLoginPage
+        self.element_click(AngularJSLocators.registration_login_locator)
+        return AngularJSRegistrationLoginPage(self.driver)

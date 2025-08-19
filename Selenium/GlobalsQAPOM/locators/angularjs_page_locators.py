@@ -14,3 +14,6 @@ class AngularJSLocators():
     scrollable_locator = [
         ("link_text", "Scrollable"),
     ]
+    registration_login_locator = [
+        ("link_text", "RegistrationLogin"),
+    ]
