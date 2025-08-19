@@ -14,4 +14,12 @@ class TestBankingProjectLogin:
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()
 
-        registrationloginPage = angularjsPage.gotoBankingProject()
+        bankingprojectPage = angularjsPage.gotoBankingProject()
+
+        bankingprojectPage.click_customer_login_button()
+
+        bankingprojectPage.select_name_dropdown("Albus Dumbledore")
+
+        bankingprojectPage.click_login_button()
+
+        time.sleep(2)
