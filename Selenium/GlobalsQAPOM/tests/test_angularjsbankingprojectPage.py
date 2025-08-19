@@ -85,3 +85,100 @@ class TestBankingProjectLogin:
         assert new_balance == expected_balance, f"Balance is incorrect. Expected {expected_balance}, but got {new_balance}."
 
 
+    def test_failed_withdrawal(self):
+
+        from utilities.FakerHelper import FakerHelper
+        data_generator = FakerHelper(locale='en_US')
+
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        angularjsPage = globalsqaPage.header.gotoAngularSitePage()
+
+        bankingprojectPage = angularjsPage.gotoBankingProject()
+
+        bankingprojectPage.click_customer_login_button()
+
+        bankingprojectPage.select_name_dropdown("Albus Dumbledore")
+
+        bankingprojectPage.click_login_button()
+
+        time.sleep(2)
+        welcome_name = bankingprojectPage.get_welcome_name()
+        assert welcome_name == "Albus Dumbledore", f"Expected name 'Albus Dumbledore', but got '{welcome_name}'."
+
+        # Get the account details from the page
+        account_details = bankingprojectPage.get_account_details()
+
+        # Assert that the retrieved values match the expected values
+        #assert account_details["account_number"] == "1010", "Account number is incorrect."
+        #assert account_details["balance"] == "0", "Balance is incorrect."
+        #assert account_details["currency"] == "Dollar", "Currency is incorrect."
+
+        current_balance = int(account_details["balance"])
+
+        # Attempt to withdraw more than the balance
+        withdrawal_amount = current_balance + 1
+        bankingprojectPage.make_withdrawal(withdrawal_amount)
+
+        # Verify the error message
+        is_error = bankingprojectPage.is_withdrawal_error_message_displayed()
+        assert is_error, "Insufficient funds error message was not displayed."
+        time.sleep(3)
+
+        # Get the new balance and assert it has not changed
+        new_balance = int(bankingprojectPage.get_account_details()["balance"])
+        assert new_balance == current_balance, "Balance was changed, but should have remained the same."
+        time.sleep(3)
+
+
+    def test_successful_withdrawal(self):
+
+        from utilities.FakerHelper import FakerHelper
+        data_generator = FakerHelper(locale='en_US')
+
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        angularjsPage = globalsqaPage.header.gotoAngularSitePage()
+
+        bankingprojectPage = angularjsPage.gotoBankingProject()
+
+        bankingprojectPage.click_customer_login_button()
+
+        bankingprojectPage.select_name_dropdown("Hermoine Granger")
+
+        bankingprojectPage.click_login_button()
+
+        time.sleep(2)
+        welcome_name = bankingprojectPage.get_welcome_name()
+        assert welcome_name == "Hermoine Granger", f"Expected name 'Hermoine Granger', but got '{welcome_name}'."
+
+        # Get the account details from the page
+        account_details = bankingprojectPage.get_account_details()
+
+        # Assert that the retrieved values match the expected values
+        #assert account_details["account_number"] == "1010", "Account number is incorrect."
+        #assert account_details["balance"] == "0", "Balance is incorrect."
+        #assert account_details["currency"] == "Dollar", "Currency is incorrect."
+
+        current_balance = int(account_details["balance"])
+
+
+        # Define the withdrawal amount
+        withdrawal_amount = 50
+
+        # Perform the withdrawal
+        bankingprojectPage.make_withdrawal(withdrawal_amount)
+
+        # Get the final account details
+        final_account_details = bankingprojectPage.get_account_details()
+        final_balance = int(final_account_details["balance"])
+
+        # Verify the successful transaction message
+        is_successful_message_displayed = bankingprojectPage.is_withdrawal_successful()
+        assert is_successful_message_displayed, "Successful transaction message was not displayed."
+
+        # Calculate the expected balance
+        expected_balance = current_balance - withdrawal_amount
+
+        # Assert that the final balance matches the expected balance
+        assert final_balance == expected_balance, f"Balance is incorrect. Expected {expected_balance}, but got {final_balance}."
+
+

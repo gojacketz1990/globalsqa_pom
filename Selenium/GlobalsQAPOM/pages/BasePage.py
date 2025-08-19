@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException, NoAlertPresentException
 import requests
@@ -772,3 +773,43 @@ class BasePage:
         except json.JSONDecodeError as e:
             self.logger.error(f"Failed to decode JSON from element text. Error: {e}")
             raise ValueError("The element's text is not valid JSON.")
+
+    def is_text_present_in_element(self, locators: list, text_to_verify: str) -> bool:
+        """
+        Checks if a specific text is present within an element found by locators.
+
+        Args:
+            locators (list): The locator tuples to find the element.
+            text_to_verify (str): The text to search for.
+
+        Returns:
+            bool: True if the text is found, False otherwise.
+        """
+        try:
+            element = self.get_element(locators)
+            # Check the element's visible text
+            if text_to_verify in element.text:
+                self.logger.info(f"Text '{text_to_verify}' found in element located by {locators}.")
+                return True
+            else:
+                self.logger.info(f"Text '{text_to_verify}' NOT found. Element text was '{element.text}'.")
+                return False
+        except NoSuchElementException:
+            self.logger.warning(f"Element not found using locators: {locators}. Cannot verify text.")
+            return False
+
+    def find_child_element_by_text(self, parent_element: WebElement, text_to_verify: str) -> WebElement:
+        """
+        Finds a child element by its exact text within a parent element.
+
+        Args:
+            parent_element (WebElement): The element to search within.
+            text_to_verify (str): The text to search for.
+
+        Returns:
+            WebElement: The found child element.
+
+        Raises:
+            NoSuchElementException: If the element is not found.
+        """
+        return parent_element.find_element(By.XPATH, f".//*[normalize-space(.)='{text_to_verify}']")

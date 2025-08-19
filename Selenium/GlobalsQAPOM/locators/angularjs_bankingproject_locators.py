@@ -24,12 +24,21 @@ class AngularJSBankingProjectPageLocators():
 
     transactions_button_locator = [("xpath", "//button[@ng-click='transactions()']]")]
     deposit_button_locator = [("xpath", "//button[@ng-click='deposit()']")]
-    withdrawal_button_locator = [("xpath", "///button[@ng-click='withdrawl()']")]
+    withdrawal_button_locator = [("xpath", "//button[@ng-click='withdrawl()']")]
 
     deposit_amount_locator = [
         ("css","input[placeholder='amount']")
     ]
-
+    withdrawal_amount_locator = [
+        ("css","input[placeholder='amount']")
+    ]
     make_deposit_button_locator = [
         ("css","button[type='submit']")
+    ]
+    make_withdrawal_button_locator = [
+        ("xpath","//button[normalize-space()='Withdraw']")
+    ]
+
+    withdraw_message_locator = [
+        ("xpath", "//span[@ng-show='message']")
     ]

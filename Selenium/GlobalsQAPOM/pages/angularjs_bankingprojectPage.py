@@ -68,3 +68,27 @@ class AngularJSBankingProjectPage(BasePage):
         # Enter the amount and submit
         amount_input.send_keys(str(amount))
         self.element_click(AngularJSBankingProjectPageLocators.make_deposit_button_locator)
+
+    def make_withdrawal(self, amount: int):
+        """Performs a deposit of a specified amount."""
+        self.logger.info(f"Attempting to withdraw {amount}.")
+
+        # Click the Deposit tab
+        self.element_click(AngularJSBankingProjectPageLocators.withdrawal_button_locator)
+
+        # Find the amount input field
+        amount_input = self.get_element(AngularJSBankingProjectPageLocators.withdrawal_amount_locator)
+
+        # Enter the amount and submit
+        amount_input.send_keys(str(amount))
+        self.element_click(AngularJSBankingProjectPageLocators.make_withdrawal_button_locator)
+
+    # In your Page Object class
+    def is_withdrawal_successful(self) -> bool:
+        """Verifies that the successful withdrawal message is displayed."""
+        return self.is_text_present_in_element(AngularJSBankingProjectPageLocators.withdraw_message_locator, "Transaction successful")
+
+    def is_withdrawal_error_message_displayed(self) -> bool:
+        """Checks if the withdrawal error message is displayed."""
+        # Using 'contains' is safer as the full error message is long.
+        return self.is_text_present_in_element(AngularJSBankingProjectPageLocators.withdraw_message_locator, "Transaction Failed. You can not withdraw amount more than the balance.")
