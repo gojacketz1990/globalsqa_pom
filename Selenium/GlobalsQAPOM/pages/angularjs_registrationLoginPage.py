@@ -23,7 +23,7 @@ class AngularJSRegistrationLoginPage(BasePage):
         self.element_click(AngularJSRegistrationLoginPageLocators.login_button_locator)
 
 
-    def click_register(self):
+    def click_register_link(self):
         self.element_click(AngularJSRegistrationLoginPageLocators.register_link_locator)
 
     def register_enter_first_name(self, firstname):

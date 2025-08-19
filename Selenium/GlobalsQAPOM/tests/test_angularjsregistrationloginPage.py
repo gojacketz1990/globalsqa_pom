@@ -1,6 +1,7 @@
 import pytest
 from pages.globalsqa_mainpage import GlobalsqaMainPage
 import time
+from utilities.FakerHelper import FakerHelper
 
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestRegistrationLogin:
@@ -16,3 +17,15 @@ class TestRegistrationLogin:
         registrationloginPage = angularjsPage.gotoRegistrationLogin()
 
         time.sleep(3)
+
+        registrationloginPage.click_register_link()
+
+        firstname = data_generator.generate_first_name()
+        lastname = data_generator.generate_last_name()
+        username = (firstname + lastname).lower()
+        #username = data_generator.generate_username()
+        password = data_generator.generate_strong_password()
+
+        #print(firstname, lastname, username, password)
+
+        

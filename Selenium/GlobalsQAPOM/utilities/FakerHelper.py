@@ -81,3 +81,13 @@ class FakerHelper:
     def generate_website(self):
         """Generates a random website URL."""
         return self.fake.url()
+
+    def generate_username(self):
+        return self.fake.user_name()
+
+    def generate_strong_password(self):
+        return self.fake.password( length=12,
+                            special_chars=True,
+                            digits=True,
+                            upper_case=True,
+                            lower_case=True)
