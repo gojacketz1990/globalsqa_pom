@@ -43,3 +43,17 @@ class AngularJSRegistrationLoginPage(BasePage):
 
     def click_cancel_registration_link(self):
         self.element_click(AngularJSRegistrationLoginPageLocators.cancel_link_locator)
+
+    def is_registration_successful(self) -> bool:
+        """Verifies that the registration successful message is displayed."""
+        return self.is_text_present("Registration successful")
+
+    def is_login_incorrect(self) -> bool:
+        """Verifies that an incorrect login error message is displayed."""
+        #print(self.is_text_present("Username or password is incorrect"))
+        return self.is_text_present("Username or password is incorrect")
+
+    def is_register_button_active(self) -> bool:
+        """Verifies if the Register button is active (not disabled)."""
+        # The absence of the 'disabled' attribute indicates the button is active.
+        return self.get_element_attribute(AngularJSRegistrationLoginPageLocators.register_button_locator, "disabled") is None

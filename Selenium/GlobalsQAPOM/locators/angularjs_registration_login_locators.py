@@ -36,8 +36,17 @@ class AngularJSRegistrationLoginPageLocators():
         ("name","password")
     ]
     register_button_locator = [
-        ("css","button[type='submit']")
+        ("css","button[type='submit']"),
+        ("xpath", "//button[text()='Register']")
     ]
     cancel_link_locator = [
         ("link_text","Cancel")
+    ]
+
+    successful_registration_locator = [
+        ("xpath", "//div[@class='ng-binding ng-scope alert alert-success']")
+    ]
+
+    invalid_login_locator = [
+        ("xpath","//div[@class='ng-binding ng-scope alert alert-danger']")
     ]
