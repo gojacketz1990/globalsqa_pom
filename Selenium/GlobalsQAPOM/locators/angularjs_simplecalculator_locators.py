@@ -20,3 +20,7 @@ class AngularJSSearchFilterPageLocators():
     operation_dropdown = [
         ("xpath","//select[@ng-model='operation']")
     ]
+
+    calculation_result = [
+        ("xpath", "//b[@class='result ng-binding']")
+    ]

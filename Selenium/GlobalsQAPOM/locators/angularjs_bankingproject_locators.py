@@ -93,3 +93,5 @@ class AngularJSBankingProjectPageLocators():
 
     # Add this new locator for the account number spans
     account_number_spans = [("tag_name", "span")]
+
+
