@@ -23,3 +23,6 @@ class AngularJSLocators():
     banking_project_locator = [
         ("link_text", "Banking"),
     ]
+    simple_calculator_locator = [
+        ("link_text", "Simple Calculator"),
+    ]

@@ -42,3 +42,8 @@ class AngularJSPage(BasePage):
         from pages.angularjs_bankingprojectPage import AngularJSBankingProjectPage
         self.element_click(AngularJSLocators.banking_project_locator)
         return AngularJSBankingProjectPage(self.driver)
+
+    def gotoSimpleCalculator(self):
+        from pages.angularjs_simplecalculatorPage import AngularJSSimpleCaculatorPage
+        self.element_click(AngularJSLocators.simple_calculator_locator)
+        return AngularJSSimpleCaculatorPage(self.driver)
