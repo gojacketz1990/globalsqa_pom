@@ -69,9 +69,27 @@ class AngularJSBankingProjectPageLocators():
     open_account_button_locator = [
         ("css","button[ng-click='openAccount()']")
     ]
+
+    open_account_customer_dropdown_locator = [
+        ("id","userSelect")
+    ]
+
+    process_new_account_button = [
+        ("xpath","//button[@type='submit']")
+    ]
+
+    currency_dropdown_locator = [
+        ("id","currency")
+    ]
+
     customers_button_locator = [
         ("css","button[ng-click='showCust()']")
     ]
 
     customer_row = [("xpath", "//tr[td[text()='{0}'] and td[text()='{1}']]")]
 
+    customer_and_account = [("xpath", "//tr[td[text()='{0}'] and td[text()='{1}'] and td/span]")]
+
+
+    # Add this new locator for the account number spans
+    account_number_spans = [("tag_name", "span")]

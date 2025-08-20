@@ -214,3 +214,102 @@ class TestBankingProjectLogin:
         # Assert that the customer was found in the table
         assert customer_is_present, f"Customer '{firstname} {lastname}' was not found in the customer table."
 
+
+
+    def test_verify_customer_and_get_accounts(self):
+
+        from utilities.FakerHelper import FakerHelper
+        data_generator = FakerHelper(locale='en_US')
+
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        angularjsPage = globalsqaPage.header.gotoAngularSitePage()
+
+        bankingprojectPage = angularjsPage.gotoBankingProject()
+
+        bankingprojectPage.click_manager_login_button()
+
+        bankingprojectPage.click_customers_button()
+        # Define the customer's name
+        customer_first_name = "Hermoine"
+        customer_last_name = "Granger"
+
+        # Get and save the list of account numbers
+        account_numbers = bankingprojectPage.get_customer_account_numbers(
+            customer_first_name,
+            customer_last_name
+        )
+
+        # Assert that the list of account numbers is not empty
+        assert account_numbers, f"No account numbers found for {customer_first_name} {customer_last_name}."
+
+        # Assert that the specific account numbers are in the list
+        assert "1001" in account_numbers, "Account number 1001 not found."
+        assert "1002" in account_numbers, "Account number 1002 not found."
+        assert "1003" in account_numbers, "Account number 1003 not found."
+
+        print(f"Verified that Hermoine Granger has accounts: {account_numbers}")
+
+
+    def test_add_customer_and_account(self):
+
+        from utilities.FakerHelper import FakerHelper
+        data_generator = FakerHelper(locale='en_US')
+
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        angularjsPage = globalsqaPage.header.gotoAngularSitePage()
+
+        bankingprojectPage = angularjsPage.gotoBankingProject()
+
+        bankingprojectPage.click_manager_login_button()
+
+        bankingprojectPage.click_add_customer_button()
+
+        firstname = data_generator.generate_first_name()
+        lastname = data_generator.generate_last_name()
+        full_name = f"{firstname} {lastname}"
+        postCode = data_generator.generate_zipcode()
+
+        bankingprojectPage.add_customer(firstname,lastname,postCode)
+        time.sleep(3)
+        bankingprojectPage.click_open_account_button()
+        time.sleep(3)
+
+        #bankingprojectPage.select_customer_by_name(full_name)
+
+        #bankingprojectPage.select_currency("Dollar")
+
+        bankingprojectPage.open_account(full_name,"Dollar")
+
+        time.sleep(3)
+
+
+        #
+        # bankingprojectPage.click_customers_button()
+        #
+        #
+        # # Verify the customer is present in the table
+        # customer_is_present = bankingprojectPage.is_customer_present_in_table(
+        #     firstname,
+        #     lastname
+        # )
+        #
+        # # Assert that the customer was found in the table
+        # assert customer_is_present, f"Customer '{firstname} {lastname}' was not found in the customer table."
+        #
+        # account_numbers = bankingprojectPage.get_customer_account_numbers(
+        #     firstname,
+        #     lastname
+        # )
+        #
+        #         # Assert that the list of account numbers is not empty
+        # assert account_numbers, f"No account numbers found for {firstname} {lastname}."
+        #
+        # # Select the customer by their full name from the dropdown
+        # bankingprojectPage.select_customer_by_name("Albus Dumbledore")
+        #
+        # # Click the login button
+        # bankingprojectPage.click_login_button()
+        #
+        # # Verify the welcome message
+        # welcome_name = bankingprojectPage.get_welcome_name()
+        # assert welcome_name == "Albus Dumbledore", f"Expected welcome message for 'Albus Dumbledore', but got '{welcome_name}'."

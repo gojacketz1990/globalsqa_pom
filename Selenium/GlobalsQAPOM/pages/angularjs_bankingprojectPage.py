@@ -100,6 +100,27 @@ class AngularJSBankingProjectPage(BasePage):
     def click_open_account_button(self):
         self.element_click(AngularJSBankingProjectPageLocators.open_account_button_locator)
 
+    def select_customer_by_name(self, customer_name: str):
+        """Selects a customer from the dropdown by their full name."""
+        self.logger.info(f"Selecting customer '{customer_name}' from dropdown.")
+        self.select_from_dropdown_by_visible_text(AngularJSBankingProjectPageLocators.open_account_customer_dropdown_locator, customer_name)
+
+
+    def select_currency(self, currency):
+        self.select_from_dropdown_by_visible_text(AngularJSBankingProjectPageLocators.currency_dropdown_locator, currency)
+
+    def process_new_account(self):
+        self.element_click(AngularJSBankingProjectPageLocators.process_new_account_button)
+
+
+    def open_account(self,customer_name, currency):
+
+        self.select_customer_by_name(customer_name)
+        self.select_currency(currency)
+        self.process_new_account()
+        self.dismiss_all_alerts()
+
+
     def click_customers_button(self):
         self.element_click(AngularJSBankingProjectPageLocators.customers_button_locator)
 
@@ -127,3 +148,51 @@ class AngularJSBankingProjectPage(BasePage):
 
         self.logger.info(f"Checking for customer '{first_name} {last_name}'. Found: {is_present}")
         return is_present
+
+    def is_customer_and_account_populated(self, first_name: str, last_name: str) -> bool:
+        """
+        Checks if a customer exists in the table and their account number is populated.
+        """
+        # Use the new dynamic locator
+        customer_account_locator = self.get_dynamic_locator_multiple(
+            AngularJSBankingProjectPageLocators.customer_and_account,
+            first_name,
+            last_name
+        )
+
+        # Check for the existence of the element
+        is_present = self.is_element_present(customer_account_locator)
+
+        self.logger.info(f"Checking for '{first_name} {last_name}' and populated account. Result: {is_present}")
+        return is_present
+
+
+    def get_customer_account_numbers(self, first_name: str, last_name: str) -> list:
+        """
+        Finds a customer's row and returns a list of their account numbers.
+        """
+        try:
+            # Use a dynamic locator to find the customer's row (the parent element)
+            customer_row_locator = self.get_dynamic_locator_multiple(
+                AngularJSBankingProjectPageLocators.customer_row,
+                first_name,
+                last_name
+            )
+            customer_row_element = self.get_element(customer_row_locator)
+
+            # Get the <td> element that contains the account numbers
+            account_cell_locator = [("xpath", "./td[4]")]  # The 4th <td> contains accounts
+            account_cell_element = self.get_child_element(customer_row_element, account_cell_locator)
+
+            # Now, get all the account number spans within that cell
+            account_number_spans = self.get_child_elements(account_cell_element, AngularJSBankingProjectPageLocators.account_number_spans)
+
+            # Extract the text and remove any leading/trailing whitespace
+            account_numbers = [span.text.strip() for span in account_number_spans]
+
+            self.logger.info(f"Retrieved account numbers for {first_name} {last_name}: {account_numbers}")
+            return account_numbers
+
+        except NoSuchElementException:
+            self.logger.error(f"Could not find customer '{first_name} {last_name}' to get account numbers.")
+            return []
