@@ -196,3 +196,20 @@ class AngularJSBankingProjectPage(BasePage):
         except NoSuchElementException:
             self.logger.error(f"Could not find customer '{first_name} {last_name}' to get account numbers.")
             return []
+
+
+    def delete_customer(self, first_name: str, last_name: str):
+        """
+        Deletes a customer from the table by clicking their Delete button.
+        """
+        self.logger.info(f"Attempting to delete customer '{first_name} {last_name}'.")
+
+        # Get the dynamic locator for the specific customer's delete button
+        delete_button_locator = self.get_dynamic_locator_multiple(
+            AngularJSBankingProjectPageLocators.delete_customer_button,
+            first_name,
+            last_name
+        )
+
+        # Click the button using your existing element_click method
+        self.element_click(delete_button_locator)

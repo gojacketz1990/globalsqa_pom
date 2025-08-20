@@ -72,7 +72,7 @@ class TestBankingProjectLogin:
         # Add a method to your page object for this if needed
         # assert bankingprojectPage.is_transaction_successful(), "Deposit was not successful."
 
-        # Step 3: Get the new balance and verify
+        # Step 3: Get the new balance and verifyac
         # Re-fetch the account details after the deposit
         new_account_details = bankingprojectPage.get_account_details()
         new_balance_str = new_account_details["balance"]
@@ -302,4 +302,80 @@ class TestBankingProjectLogin:
 
         print(account_numbers)
 
+        time.sleep(5)
+
+
+
+
+
+
+    def test_add_customer_and_delete_user(self):
+
+        from utilities.FakerHelper import FakerHelper
+        data_generator = FakerHelper(locale='en_US')
+
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        angularjsPage = globalsqaPage.header.gotoAngularSitePage()
+
+        bankingprojectPage = angularjsPage.gotoBankingProject()
+
+        bankingprojectPage.click_manager_login_button()
+
+        bankingprojectPage.click_add_customer_button()
+
+        firstname = data_generator.generate_first_name()
+        lastname = data_generator.generate_last_name()
+        full_name = f"{firstname} {lastname}"
+        postCode = data_generator.generate_zipcode()
+
+        bankingprojectPage.add_customer(firstname,lastname,postCode)
+
+        bankingprojectPage.click_open_account_button()
+
+
+        #bankingprojectPage.select_customer_by_name(full_name)
+
+        #bankingprojectPage.select_currency("Dollar")
+
+        bankingprojectPage.open_account(full_name,"Dollar")
+
+
+        bankingprojectPage.click_customers_button()
+
+        # Verify the customer is present in the table
+        customer_is_present = bankingprojectPage.is_customer_present_in_table(
+            firstname,
+            lastname
+        )
+
+        # Assert that the customer was found in the table
+        assert customer_is_present, f"Customer '{firstname} {lastname}' was not found in the customer table."
+
+        account_numbers = bankingprojectPage.get_customer_account_numbers(
+            firstname,
+            lastname
+        )
+
+        # Assert that the list of account numbers is not empty
+        assert account_numbers, f"No account numbers found for {firstname} {lastname}."
+
+        print(account_numbers)
+
+
+        # Assert that the customer is initially present
+        is_present_before = bankingprojectPage.is_customer_present_in_table(
+            firstname,
+            lastname
+        )
+        assert is_present_before, f"Customer {firstname} {lastname} was not found before deletion attempt."
+
         time.sleep(3)
+        # Delete the customer
+        bankingprojectPage.delete_customer(firstname, lastname)
+
+        # Verify the customer is no longer present
+        is_present_after = bankingprojectPage.is_customer_present_in_table(
+            firstname,
+            lastname
+        )
+        assert not is_present_after, f"Customer {firstname} {lastname} was still found after deletion."

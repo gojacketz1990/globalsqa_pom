@@ -64,7 +64,7 @@ class AngularJSBankingProjectPageLocators():
     add_customer_submit_locator = [
         ("xpath","//button[@type='submit']")
     ]
-
+    delete_customer_button = [("xpath", "//tr[td[text()='{0}'] and td[text()='{1}']]//button[text()='Delete']")]
 
     open_account_button_locator = [
         ("css","button[ng-click='openAccount()']")
