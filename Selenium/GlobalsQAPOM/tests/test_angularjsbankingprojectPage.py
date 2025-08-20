@@ -270,9 +270,9 @@ class TestBankingProjectLogin:
         postCode = data_generator.generate_zipcode()
 
         bankingprojectPage.add_customer(firstname,lastname,postCode)
-        time.sleep(3)
+
         bankingprojectPage.click_open_account_button()
-        time.sleep(3)
+
 
         #bankingprojectPage.select_customer_by_name(full_name)
 
@@ -280,36 +280,26 @@ class TestBankingProjectLogin:
 
         bankingprojectPage.open_account(full_name,"Dollar")
 
+
+        bankingprojectPage.click_customers_button()
+
+        # Verify the customer is present in the table
+        customer_is_present = bankingprojectPage.is_customer_present_in_table(
+            firstname,
+            lastname
+        )
+
+        # Assert that the customer was found in the table
+        assert customer_is_present, f"Customer '{firstname} {lastname}' was not found in the customer table."
+
+        account_numbers = bankingprojectPage.get_customer_account_numbers(
+            firstname,
+            lastname
+        )
+
+                # Assert that the list of account numbers is not empty
+        assert account_numbers, f"No account numbers found for {firstname} {lastname}."
+
+        print(account_numbers)
+
         time.sleep(3)
-
-
-        #
-        # bankingprojectPage.click_customers_button()
-        #
-        #
-        # # Verify the customer is present in the table
-        # customer_is_present = bankingprojectPage.is_customer_present_in_table(
-        #     firstname,
-        #     lastname
-        # )
-        #
-        # # Assert that the customer was found in the table
-        # assert customer_is_present, f"Customer '{firstname} {lastname}' was not found in the customer table."
-        #
-        # account_numbers = bankingprojectPage.get_customer_account_numbers(
-        #     firstname,
-        #     lastname
-        # )
-        #
-        #         # Assert that the list of account numbers is not empty
-        # assert account_numbers, f"No account numbers found for {firstname} {lastname}."
-        #
-        # # Select the customer by their full name from the dropdown
-        # bankingprojectPage.select_customer_by_name("Albus Dumbledore")
-        #
-        # # Click the login button
-        # bankingprojectPage.click_login_button()
-        #
-        # # Verify the welcome message
-        # welcome_name = bankingprojectPage.get_welcome_name()
-        # assert welcome_name == "Albus Dumbledore", f"Expected welcome message for 'Albus Dumbledore', but got '{welcome_name}'."
