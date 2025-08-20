@@ -42,3 +42,15 @@ class AngularJSBankingProjectPageLocators():
     withdraw_message_locator = [
         ("xpath", "//span[@ng-show='message']")
     ]
+
+    #Manager Items
+
+    add_customer_button_locator = [
+        ("css","button[ng-click='addCust()']")
+    ]
+    open_account_button_locator = [
+        ("css","button[ng-click='openAccount()']")
+    ]
+    customers_button_locator = [
+        ("css","button[ng-click='showCust()']")
+    ]
