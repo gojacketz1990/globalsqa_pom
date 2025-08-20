@@ -47,3 +47,8 @@ class AngularJSPage(BasePage):
         from pages.angularjs_simplecalculatorPage import AngularJSSimpleCaculatorPage
         self.element_click(AngularJSLocators.simple_calculator_locator)
         return AngularJSSimpleCaculatorPage(self.driver)
+
+    def gotoConsumptionCalculator(self):
+        from pages.angularjs_comsumptioncalculatorPage import AngularJSConsumptionCalculatorPage
+        self.element_click(AngularJSLocators.consumption_calculator_locator)
+        return AngularJSConsumptionCalculatorPage(self.driver)

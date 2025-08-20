@@ -26,3 +26,6 @@ class AngularJSLocators():
     simple_calculator_locator = [
         ("link_text", "Simple Calculator"),
     ]
+    consumption_calculator_locator = [
+        ("link_text", "Consumption Calculator"),
+    ]
