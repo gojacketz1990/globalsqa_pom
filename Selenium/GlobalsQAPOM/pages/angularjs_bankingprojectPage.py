@@ -26,9 +26,6 @@ class AngularJSBankingProjectPage(BasePage):
     def select_name_dropdown(self,name):
         self.select_from_dropdown_by_visible_text(AngularJSBankingProjectPageLocators.customer_name_dropdown_locator,name)
 
-    def select_manager_dropdown(self,name):
-        self.select_from_dropdown_by_visible_text(AngularJSBankingProjectPageLocators.bank_manager_login_locator,name)
-
 
     def click_login_button(self):
         self.element_click(AngularJSBankingProjectPageLocators.login_button_locator)
@@ -94,3 +91,39 @@ class AngularJSBankingProjectPage(BasePage):
         """Checks if the withdrawal error message is displayed."""
         # Using 'contains' is safer as the full error message is long.
         return self.is_text_present_in_element(AngularJSBankingProjectPageLocators.withdraw_message_locator, "Transaction Failed. You can not withdraw amount more than the balance.")
+
+    #Manager methods
+
+    def click_add_customer_button(self):
+        self.element_click(AngularJSBankingProjectPageLocators.add_customer_button_locator)
+
+    def click_open_account_button(self):
+        self.element_click(AngularJSBankingProjectPageLocators.open_account_button_locator)
+
+    def click_customers_button(self):
+        self.element_click(AngularJSBankingProjectPageLocators.customers_button_locator)
+
+    def add_customer(self, firstName, lastName, postCode):
+        self.click_add_customer_button()
+        self.type_into_element(firstName, AngularJSBankingProjectPageLocators.add_customer_first_name_locator)
+        self.type_into_element(lastName, AngularJSBankingProjectPageLocators.add_customer_last_name_locator)
+        self.type_into_element(postCode, AngularJSBankingProjectPageLocators.add_customer_post_code_locator)
+        self.element_click(AngularJSBankingProjectPageLocators.add_customer_submit_locator)
+        self.dismiss_all_alerts()
+
+    def is_customer_present_in_table(self, first_name: str, last_name: str) -> bool:
+        """
+        Checks if a customer is present in the table based on their first and last name.
+        """
+        # Use the dynamic locator to create a specific XPath for the customer
+        customer_locator = self.get_dynamic_locator_multiple(
+            AngularJSBankingProjectPageLocators.customer_row,
+            first_name,
+            last_name
+        )
+
+        # Check if the element exists in the DOM
+        is_present = self.is_element_present(customer_locator)
+
+        self.logger.info(f"Checking for customer '{first_name} {last_name}'. Found: {is_present}")
+        return is_present

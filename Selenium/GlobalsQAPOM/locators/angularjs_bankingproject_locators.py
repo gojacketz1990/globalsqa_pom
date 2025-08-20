@@ -48,9 +48,30 @@ class AngularJSBankingProjectPageLocators():
     add_customer_button_locator = [
         ("css","button[ng-click='addCust()']")
     ]
+
+    add_customer_first_name_locator = [
+        ("css","input[ng-model='fName']")
+    ]
+
+    add_customer_last_name_locator = [
+        ("css","input[ng-model='lName']")
+    ]
+
+    add_customer_post_code_locator = [
+        ("css","input[ng-model='postCd']")
+    ]
+
+    add_customer_submit_locator = [
+        ("xpath","//button[@type='submit']")
+    ]
+
+
     open_account_button_locator = [
         ("css","button[ng-click='openAccount()']")
     ]
     customers_button_locator = [
         ("css","button[ng-click='showCust()']")
     ]
+
+    customer_row = [("xpath", "//tr[td[text()='{0}'] and td[text()='{1}']]")]
+

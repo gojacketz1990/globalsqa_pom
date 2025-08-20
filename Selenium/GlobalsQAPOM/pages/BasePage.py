@@ -199,10 +199,10 @@ class BasePage:
         """Wait for an element to become visible."""
         return self._find_element_with_wait(locators, EC.visibility_of_element_located, timeout)
 
-    def is_element_present(self, locators, timeout=5):
+    def is_element_present(self, locators):
         """Checks if a web element is present."""
         try:
-            self.get_element(locators, timeout)
+            self.get_element(locators)
             return True
         except NoSuchElementException:
             return False

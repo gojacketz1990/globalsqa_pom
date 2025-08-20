@@ -182,3 +182,35 @@ class TestBankingProjectLogin:
         assert final_balance == expected_balance, f"Balance is incorrect. Expected {expected_balance}, but got {final_balance}."
 
 
+    def test_add_customer(self):
+
+        from utilities.FakerHelper import FakerHelper
+        data_generator = FakerHelper(locale='en_US')
+
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        angularjsPage = globalsqaPage.header.gotoAngularSitePage()
+
+        bankingprojectPage = angularjsPage.gotoBankingProject()
+
+        bankingprojectPage.click_manager_login_button()
+
+        bankingprojectPage.click_add_customer_button()
+
+        firstname = data_generator.generate_first_name()
+        lastname = data_generator.generate_last_name()
+        postCode = data_generator.generate_zipcode()
+
+        bankingprojectPage.add_customer(firstname,lastname,postCode)
+
+        bankingprojectPage.click_customers_button()
+
+
+        # Verify the customer is present in the table
+        customer_is_present = bankingprojectPage.is_customer_present_in_table(
+            firstname,
+            lastname
+        )
+
+        # Assert that the customer was found in the table
+        assert customer_is_present, f"Customer '{firstname} {lastname}' was not found in the customer table."
+
