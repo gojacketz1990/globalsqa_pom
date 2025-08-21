@@ -70,14 +70,14 @@ class TestWebTable:
 
         webtablePage.click_header_to_sort("lastName")
 
-        is_sorted_ascending = webtablePage.is_column_sorted_correctly("lastName", "descending")
-        assert is_sorted_ascending, "Last Name column is not sorted in descending order."
+        is_sorted_ascending = webtablePage.is_column_sorted_correctly("lastName", "ascending")
+        assert is_sorted_ascending, "Last Name column is not sorted in ascending order."
 
 
         # Click again to test descending sort
         webtablePage.click_header_to_sort("lastName")
-        is_sorted_ascending = webtablePage.is_column_sorted_correctly("lastName", "ascending")
-        assert is_sorted_ascending, "Last Name column is not sorted in ascending order."
+        is_sorted_descending = webtablePage.is_column_sorted_correctly("lastName", "descending")
+        assert is_sorted_descending, "Last Name column is not sorted in descending order."
 
     def test_webtable_numerical_sort(self):
 
