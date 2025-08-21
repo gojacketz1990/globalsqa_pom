@@ -84,6 +84,8 @@ class DemoSelectElementsPage(BasePage):
         try:
             # Step 1: Switch to the iframe before any interactions
 
+            self.wait_for_element_to_be_visible(DemoSelectElementsPageLocators.multiple_selection_items_locator)
+
             self.multiselect_items_by_text(DemoSelectElementsPageLocators.multiple_selection_items_locator, item_texts=item_texts_to_select)
 
             self.logger.info(f"Successfully performed multiselect on all requested items.")

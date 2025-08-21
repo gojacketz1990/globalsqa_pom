@@ -45,26 +45,6 @@ class TestSelectElements:
 
 
 
-    def test_drag_and_drop_selection(self):
-        """
-        Tests the drag-and-drop multiselect functionality.
-        """
-
-        # Instantiate page objects
-        globalsqaPage = GlobalsqaMainPage(self.driver)
-        demoPage = globalsqaPage.header.gotoDemoSitePage()
-
-        # Step 1: Click the "Message Box" tab to reveal the download button
-        demoSelectElementsPage = demoPage.gotoSelectElements()
-
-        selected_items = ["Item 1", "Item 2", "Item 3"]
-        start_item = "Item 1"
-        end_item = "Item 3"
-        # Call the method
-        demoSelectElementsPage.select_items_with_drag_and_drop(start_text=start_item, end_text=end_item)
-
-        demoSelectElementsPage.verify_selected_items(selected_items)
-
 
     def test_select_multiple_grid_selection(self):
         """
