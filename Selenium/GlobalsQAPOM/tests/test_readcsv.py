@@ -46,7 +46,7 @@ class Testcsv:
         headers = ['first_name', 'last_name', 'email', 'address', 'phone_number']
         file_name = 'customers.csv'
 
-        for i in range(10):
+        for i in range(100):
             record = {
                 'first_name': data_generator.generate_first_name(),
                 'last_name': data_generator.generate_last_name(),
@@ -66,13 +66,13 @@ class Testcsv:
         # Write the generated data to the CSV file
         csv_writer.write_data(all_customer_data, headers, mode='w')
         #
-        # # Optional: Read back the data to verify
-        # print("\nVerifying data written to CSV:")
-        # read_data = csv_writer.read_data()
-        # if read_data:
-        #     print(f"Read {len(read_data)} records from {csv_file_path}.")
-        #     # Print the first 3 records for a quick check
-        #     for i, record in enumerate(read_data[:3]):
-        #         print(f"Record {i+1}: {record}")
-        # else:
-        #     print("Failed to read data back from the CSV file.")
+        # Optional: Read back the data to verify
+        print("\nVerifying data written to CSV:")
+        read_data = csv_writer.read_data()
+        if read_data:
+            print(f"Read {len(read_data)} records from {csv_file_path}.")
+            # Print the first 3 records for a quick check
+            for i, record in enumerate(read_data[:3]):
+                print(f"Record {i+1}: {record}")
+        else:
+            print("Failed to read data back from the CSV file.")
