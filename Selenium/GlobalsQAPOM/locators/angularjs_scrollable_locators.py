@@ -22,7 +22,7 @@ class AngularJSScrollablePageLocators():
     ]
 
     user_full_name_locator = [
-        ("xpath", "//tr[normalize-space(td[1])='{}' and normalize-space(td[2])='{}' and normalize-space(td[3])='{}']")
+        ("xpath", "//tr[normalize-space(td[1])='{}' and normalize-space(td[2])='{}']")
     ]
 
     # Locator for the table body, assumed to be inside the table_locator

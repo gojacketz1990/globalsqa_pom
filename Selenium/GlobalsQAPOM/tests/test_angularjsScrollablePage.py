@@ -18,7 +18,9 @@ class TestMultiForm:
         time.sleep(3)
 
         # Call the new method to find the user
-        user_found = scrollablePage.find_user_by_scrolling("JACQUES", "Delcourt", "$526.34")
+        user_found = scrollablePage.find_user_by_scrolling("JACQUES", "Delcourt")
 
         # Assert that the user was found
         assert user_found, "The specified user was not found after scrolling."
+
+#Need to add tests for sorting

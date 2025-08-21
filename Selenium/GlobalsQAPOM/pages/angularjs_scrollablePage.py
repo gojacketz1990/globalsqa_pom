@@ -157,8 +157,9 @@ class AngularJSScrollablePage(BasePage):
         # Click the element using your BasePage's click method
         self.element_click(header_locator)
 
-    def find_user_by_scrolling(self, first_name: str, last_name: str, amount: str, max_scrolls: int = 10) -> bool:
+    def find_user_by_scrolling(self, first_name: str, last_name: str, max_scrolls: int = 10) -> bool:
         """
+
         Scrolls the table until it finds the specified user.
 
         Args:
@@ -173,7 +174,7 @@ class AngularJSScrollablePage(BasePage):
 
         # Use your dynamic locator to find the row
 
-        user_row_locator = self.get_dynamic_locator_multiple(AngularJSScrollablePageLocators.user_full_name_locator, first_name, last_name, amount)
+        user_row_locator = self.get_dynamic_locator_multiple(AngularJSScrollablePageLocators.user_full_name_locator, first_name, last_name)
 
 
         for i in range(max_scrolls):
