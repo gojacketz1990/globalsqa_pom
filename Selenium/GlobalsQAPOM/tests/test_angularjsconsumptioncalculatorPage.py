@@ -8,7 +8,7 @@ import math
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestConsumptionCalculator:
 
-    def test_registration(self):
+    def test_consumption(self):
 
         from utilities.FakerHelper import FakerHelper
         data_generator = FakerHelper(locale='en_US')
@@ -29,7 +29,6 @@ class TestConsumptionCalculator:
         # Get the total caffeine from the page
         total_caffeine = consumptioncalculatorPage.get_total_caffeine()
 
-        time.sleep(3)
 
         # Verify the total caffeine calculation (assuming 107.5mg per cup)
         expected_caffeine = cups_of_coffee * 107.5
@@ -48,6 +47,7 @@ class TestConsumptionCalculator:
         # Enter a quantity for cigarettes
         consumptioncalculatorPage.enter_cigarettes(number_of_cigarettes)
 
+
         # Get the total tar from the page
         total_tar = consumptioncalculatorPage.get_total_tar()
 
@@ -56,7 +56,7 @@ class TestConsumptionCalculator:
         assert total_tar == math.floor(expected_tar + 0.5), f"Tar total is incorrect. Expected {math.floor(expected_tar + 0.5)}, got {total_tar}"
 
         # Check if the total tar is over the limit and assert the warning appears
-        if expected_tar > 30:
+        if expected_tar >= 30:
             assert consumptioncalculatorPage.is_tar_limit_exceeded(), "Tar limit warning was NOT displayed when it should have been."
         else:
             assert not consumptioncalculatorPage.is_tar_limit_exceeded(), "Tar warning was displayed when it should NOT have been."

@@ -1,0 +1,1 @@
+{"uuid": "118ad036-a430-463a-8549-95912b73c65c", "children": ["478700ec-6a40-440c-a52e-4499d55f8fe6"], "befores": [{"name": "setup_globalsqa", "status": "passed", "start": 1755797942779, "stop": 1755797949014}], "afters": [{"name": "setup_globalsqa::0", "status": "passed", "start": 1755797958559, "stop": 1755797958691}], "start": 1755797942779, "stop": 1755797958691}
