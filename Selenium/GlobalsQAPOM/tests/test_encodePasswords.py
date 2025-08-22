@@ -67,4 +67,35 @@ class TestEncoding():
 
 
 
+    def test_readfromCSV(self):
+        # Create an instance of the CsvReader class
+        data_generator = FakerHelper(locale='en_US')
+        reader = CsvReader('data/customers_PW_encoded.csv')
 
+        # Read the data from the CSV file
+        customer_data = reader.read_data()
+
+        # Check if the data was read successfully
+        if customer_data:
+            # Print the entire list of dictionaries
+            print("All Data:")
+            print(customer_data)
+
+            print("\nAccessing a specific row:")
+            # Access a specific row (e.g., the second row)
+            second_customer = customer_data[1]
+
+            # Access a value by its header name
+            print(f"Customer Name: {second_customer['username']}")
+            print(f"Customer City: {second_customer['encoded_password']}")
+            decoded_password = data_generator.unencode(second_customer['encoded_password'])
+            print(f"Read Username: {second_customer['username']}, Decoded Password: {decoded_password}")
+            print("")
+        if customer_data:
+            print("All rows:")
+            for row in customer_data:
+                print(f"Customer username: {row['username']}")
+                print(f"Customer encoded_password: {row['encoded_password']}")
+                decoded_password = data_generator.unencode(row['encoded_password'])
+                print(f"Read Username: {row['username']}, Decoded Password: {decoded_password}")
+                print("")
