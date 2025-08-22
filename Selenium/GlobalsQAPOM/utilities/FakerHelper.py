@@ -1,4 +1,5 @@
 from faker import Faker
+import base64
 
 class FakerHelper:
     """
@@ -91,3 +92,28 @@ class FakerHelper:
                             digits=True,
                             upper_case=True,
                             lower_case=True)
+
+
+    # Your provided decoding method
+    def unencode(self, todecode: str) -> str:
+        """
+        Decodes a base64 encoded string.
+        """
+        try:
+            mydecode_bytes = todecode.encode("utf-8")
+            mydecode = base64.b64decode(mydecode_bytes).decode('ascii')
+            return mydecode
+        except Exception as e:
+            print(f"Error decoding string: {e}")
+            return ""
+
+    # Your provided encoding method (made it an instance method for consistency with others)
+    def encode_plaintext(self, toencode: str) -> str:
+        """
+        Encodes a plaintext string into base64.
+        """
+        try:
+            return base64.b64encode(toencode.encode('utf-8')).decode('ascii')
+        except Exception as e:
+            print(f"Error encoding string: {e}")
+            return ""
