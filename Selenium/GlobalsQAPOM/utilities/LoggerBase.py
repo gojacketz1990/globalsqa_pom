@@ -13,7 +13,8 @@ class LoggerBase:
             if not os.path.exists(log_dir):
                 os.makedirs(log_dir)
 
-            logger_name = inspect.stack()[1][3]
+            #logger_name = inspect.stack()[1][3]
+            logger_name = cls.__name__
             logger = logging.getLogger(logger_name)
             if not logger.handlers:
                 file_handler = logging.FileHandler(os.path.join(log_dir, 'logfile.log'))

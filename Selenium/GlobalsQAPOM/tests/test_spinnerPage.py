@@ -5,7 +5,9 @@ from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestSpinner(LoggerBase):
 
-    def test_select_currency(self):
+    def test_select_currency(self, logger):
+
+        logger.info("Starting test_select_currency test")
         """
         Verifies that clicking the 'Start Download' button makes the
         file download dialog box appear.
@@ -29,10 +31,10 @@ class TestSpinner(LoggerBase):
 
         time.sleep(5)
 
-        self.logger.info("Finished first test.")
+        self.logger.info("Finished test_select_currency test")
 
-    def test_spinner_value_retrieval(self):
-
+    def test_spinner_value_retrieval(self, logger):
+        logger.info("Starting test_spinner_value_retrieval test")
            # Instantiate page objects
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
@@ -50,7 +52,8 @@ class TestSpinner(LoggerBase):
         # Assert it's the expected initial value (e.g., 5)
         assert current_value == 5, f"Expected initial value to be 5, but got {current_value}"
 
-    def test_spinner_value_change(self):
+    def test_spinner_value_change(self, logger):
+        logger.info("Starting test_spinner_value_change test")
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
 

@@ -1,0 +1,693 @@
+2025-08-23 16:59:05,551 : INFO : __init__ : Clicking the tab with locator: [('id', 'Portlets'), ('xpath', "//li[normalize-space()='Currency']")]
+2025-08-23 16:59:15,782 : INFO : __init__ : Locator failed: id=Portlets. Retrying with next locator.
+2025-08-23 16:59:22,754 : INFO : __init__ : Clicking the tab with locator: [('id', 'Portlets'), ('xpath', "//li[normalize-space()='Currency']")]
+2025-08-23 16:59:33,067 : INFO : __init__ : Locator failed: id=Portlets. Retrying with next locator.
+2025-08-23 16:59:35,164 : INFO : __init__ : Getting current spinner value.
+2025-08-23 16:59:35,192 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 16:59:35,208 : INFO : __init__ : Retrieved spinner value: 5
+2025-08-23 16:59:41,369 : INFO : __init__ : Clicking the tab with locator: [('id', 'Portlets'), ('xpath', "//li[normalize-space()='Currency']")]
+2025-08-23 16:59:51,629 : INFO : __init__ : Locator failed: id=Portlets. Retrying with next locator.
+2025-08-23 16:59:53,706 : INFO : __init__ : Getting current spinner value.
+2025-08-23 16:59:53,732 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 16:59:53,745 : INFO : __init__ : Retrieved spinner value: 5
+2025-08-23 16:59:53,746 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 16:59:53,762 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 16:59:53,931 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 16:59:53,933 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 16:59:53,945 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 16:59:54,017 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 16:59:54,018 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 16:59:54,032 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 16:59:54,084 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 16:59:54,085 : INFO : __init__ : Getting current spinner value.
+2025-08-23 16:59:54,096 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 16:59:54,101 : INFO : __init__ : Retrieved spinner value: 80
+2025-08-23 16:59:54,102 : INFO : __init__ : Attempting to click spinner 'down' button. ⬆️⬇️
+2025-08-23 16:59:54,112 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 16:59:54,175 : INFO : __init__ : Clicked spinner 'down' button.
+2025-08-23 16:59:54,176 : INFO : __init__ : Getting current spinner value.
+2025-08-23 16:59:54,209 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 16:59:54,214 : INFO : __init__ : Retrieved spinner value: 55
+2025-08-23 16:59:59,277 : INFO : __init__ : Clicking the tab with locator: [('id', 'Portlets'), ('xpath', "//li[normalize-space()='Currency']")]
+2025-08-23 17:00:09,570 : INFO : __init__ : Locator failed: id=Portlets. Retrying with next locator.
+2025-08-23 17:00:11,643 : INFO : __init__ : Getting current spinner value.
+2025-08-23 17:00:11,678 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:11,692 : INFO : __init__ : Retrieved spinner value: 5
+2025-08-23 17:00:11,693 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:11,709 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:11,816 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:11,839 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:11,849 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:11,906 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:11,907 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:11,917 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:11,996 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:11,997 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:12,006 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:12,057 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:12,058 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:12,068 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:12,122 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:12,122 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:12,133 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:12,189 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:12,190 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:12,200 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:12,251 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:12,252 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:12,262 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:12,313 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:12,313 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:12,323 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:12,375 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:12,375 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:12,386 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:12,438 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:12,439 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:12,449 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:12,499 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:12,500 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:12,510 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:12,561 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:12,562 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:12,572 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:12,623 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:12,624 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:12,635 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:12,689 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:12,690 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:12,700 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:12,751 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:12,752 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:12,763 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:12,825 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:12,826 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:12,836 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:12,887 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:12,888 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:12,899 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:12,949 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:12,950 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:12,961 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:13,020 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:13,021 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:13,031 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:13,082 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:13,083 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:13,093 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:13,144 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:13,145 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:13,155 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:13,205 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:13,207 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:13,217 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:13,269 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:13,270 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:13,280 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:13,330 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:13,331 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:13,341 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:13,392 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:13,392 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:13,403 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:13,453 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:13,454 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:13,465 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:13,516 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:13,517 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:13,527 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:13,578 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:13,579 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:13,589 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:13,640 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:13,640 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:13,654 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:13,712 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:13,714 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:13,726 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:13,786 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:13,787 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:13,797 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:13,853 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:13,854 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:13,865 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:13,916 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:13,917 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:13,927 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:13,978 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:13,979 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:13,989 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:14,040 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:14,041 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:14,052 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:14,103 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:14,104 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:14,115 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:14,166 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:14,167 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:14,177 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:14,230 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:14,231 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:14,241 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:14,292 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:14,293 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:14,303 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:14,361 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:14,362 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:14,373 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:14,423 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:14,424 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:14,435 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:14,488 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:14,489 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:14,499 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:14,549 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:14,550 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:14,560 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:14,611 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:14,612 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:14,623 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:14,675 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:14,676 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:14,686 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:14,736 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:14,737 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:14,747 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:14,798 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:14,799 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:14,809 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:14,860 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:14,861 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:14,872 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:14,928 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:14,929 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:14,939 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:14,990 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:14,991 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:15,001 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:15,051 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:15,052 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:15,063 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:15,113 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:15,114 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:15,124 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:15,184 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:15,185 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:15,195 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:15,246 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:15,246 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:15,256 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:15,307 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:15,308 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:15,318 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:15,369 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:15,369 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:15,379 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:15,430 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:15,431 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:15,441 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:15,492 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:15,492 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:15,503 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:15,554 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:15,555 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:15,566 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:15,623 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:15,624 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:15,634 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:15,685 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:15,686 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:15,697 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:15,747 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:15,748 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:15,757 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:15,809 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:15,810 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:15,820 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:15,871 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:15,871 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:15,882 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:15,935 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:15,936 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:15,947 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:15,997 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:15,998 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:16,008 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:16,059 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:16,060 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:16,071 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:16,122 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:16,123 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:16,137 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:16,187 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:16,187 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:16,197 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:16,248 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:16,249 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:16,258 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:16,310 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:16,311 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:16,322 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:16,372 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:16,373 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:16,384 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:16,434 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:16,435 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:16,445 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:16,496 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:16,497 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:16,507 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:16,558 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:16,559 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:16,569 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:16,620 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:16,621 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:16,631 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:16,684 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:16,685 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:16,695 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:16,746 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:16,747 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:16,757 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:16,808 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:16,808 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:16,819 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:16,875 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:16,876 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:16,886 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:16,937 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:16,938 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:16,949 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:16,999 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:17,000 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:17,011 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:17,061 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:17,062 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:17,072 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:17,123 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:17,123 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:17,133 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:17,184 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:17,185 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:17,195 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:17,245 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:17,246 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:17,257 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:17,308 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:17,309 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:17,319 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:17,369 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:17,370 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:17,380 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:17,434 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:17,435 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:17,446 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:17,500 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:17,501 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:17,510 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:17,561 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:17,562 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:17,572 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:17,623 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:17,624 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:17,635 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:17,692 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:17,693 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:17,703 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:17,754 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:17,755 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:17,766 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:17,817 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:17,817 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:17,828 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:17,879 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:17,880 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:17,890 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:17,941 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:17,942 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:17,952 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:18,002 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:18,002 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:18,013 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:18,064 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:18,065 : INFO : __init__ : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:00:18,075 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:18,127 : INFO : __init__ : Clicked spinner 'up' button.
+2025-08-23 17:00:18,129 : INFO : __init__ : Getting current spinner value.
+2025-08-23 17:00:18,144 : INFO : __init__ : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:00:18,152 : INFO : __init__ : Retrieved spinner value: 2500
+2025-08-23 17:04:46,396 : INFO : DemoSpinnerPage : Clicking the tab with locator: [('id', 'Portlets'), ('xpath', "//li[normalize-space()='Currency']")]
+2025-08-23 17:04:56,687 : INFO : DemoSpinnerPage : Locator failed: id=Portlets. Retrying with next locator.
+2025-08-23 17:05:22,439 : INFO : HeaderComponent : Locator failed: link_text=Demo Testing Site. Retrying with next locator.
+2025-08-23 17:05:27,864 : INFO : DemoSpinnerPage : Clicking the tab with locator: [('id', 'Portlets'), ('xpath', "//li[normalize-space()='Currency']")]
+2025-08-23 17:05:38,267 : INFO : DemoSpinnerPage : Locator failed: id=Portlets. Retrying with next locator.
+2025-08-23 17:05:40,341 : INFO : DemoSpinnerPage : Getting current spinner value.
+2025-08-23 17:05:40,372 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:05:40,387 : INFO : DemoSpinnerPage : Retrieved spinner value: 5
+2025-08-23 17:05:44,731 : INFO : DemoSpinnerPage : Clicking the tab with locator: [('id', 'Portlets'), ('xpath', "//li[normalize-space()='Currency']")]
+2025-08-23 17:05:54,993 : INFO : DemoSpinnerPage : Locator failed: id=Portlets. Retrying with next locator.
+2025-08-23 17:05:57,077 : INFO : DemoSpinnerPage : Getting current spinner value.
+2025-08-23 17:05:57,109 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:05:57,123 : INFO : DemoSpinnerPage : Retrieved spinner value: 5
+2025-08-23 17:05:57,124 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:05:57,138 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:05:57,297 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:05:57,298 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:05:57,308 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:05:57,382 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:05:57,385 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:05:57,397 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:05:57,448 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:05:57,449 : INFO : DemoSpinnerPage : Getting current spinner value.
+2025-08-23 17:05:57,461 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:05:57,469 : INFO : DemoSpinnerPage : Retrieved spinner value: 80
+2025-08-23 17:05:57,469 : INFO : DemoSpinnerPage : Attempting to click spinner 'down' button. ⬆️⬇️
+2025-08-23 17:05:57,479 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:05:57,536 : INFO : DemoSpinnerPage : Clicked spinner 'down' button.
+2025-08-23 17:05:57,537 : INFO : DemoSpinnerPage : Getting current spinner value.
+2025-08-23 17:05:57,546 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:05:57,552 : INFO : DemoSpinnerPage : Retrieved spinner value: 55
+2025-08-23 17:06:03,673 : INFO : DemoSpinnerPage : Clicking the tab with locator: [('id', 'Portlets'), ('xpath', "//li[normalize-space()='Currency']")]
+2025-08-23 17:06:14,093 : INFO : DemoSpinnerPage : Locator failed: id=Portlets. Retrying with next locator.
+2025-08-23 17:06:16,183 : INFO : DemoSpinnerPage : Getting current spinner value.
+2025-08-23 17:06:16,215 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:16,230 : INFO : DemoSpinnerPage : Retrieved spinner value: 5
+2025-08-23 17:06:16,231 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:16,246 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:16,323 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:16,324 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:16,375 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:16,431 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:16,433 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:16,443 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:16,500 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:16,501 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:16,511 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:16,562 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:16,563 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:16,574 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:16,648 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:16,649 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:16,659 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:16,710 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:16,711 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:16,720 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:16,771 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:16,772 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:16,782 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:16,833 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:16,834 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:16,844 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:16,894 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:16,895 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:16,905 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:16,956 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:16,957 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:16,967 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:17,017 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:17,018 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:17,028 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:17,078 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:17,079 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:17,088 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:17,147 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:17,148 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:17,159 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:17,211 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:17,212 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:17,222 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:17,273 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:17,274 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:17,284 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:17,335 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:17,336 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:17,346 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:17,397 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:17,398 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:17,421 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:17,473 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:17,474 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:17,483 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:17,533 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:17,534 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:17,544 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:17,594 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:17,596 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:17,606 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:17,656 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:17,657 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:17,668 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:17,718 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:17,719 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:17,729 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:17,781 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:17,782 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:17,792 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:17,842 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:17,843 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:17,853 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:17,904 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:17,905 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:17,915 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:17,967 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:17,968 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:17,978 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:18,028 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:18,029 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:18,040 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:18,090 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:18,091 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:18,101 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:18,159 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:18,160 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:18,170 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:18,220 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:18,221 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:18,231 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:18,282 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:18,282 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:18,293 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:18,344 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:18,345 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:18,356 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:18,406 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:18,407 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:18,422 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:18,473 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:18,474 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:18,484 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:18,534 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:18,535 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:18,545 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:18,596 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:18,597 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:18,608 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:18,659 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:18,660 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:18,673 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:18,724 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:18,725 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:18,735 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:18,786 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:18,787 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:18,797 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:18,847 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:18,848 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:18,857 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:18,908 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:18,909 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:18,918 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:18,969 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:18,970 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:18,980 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:19,031 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:19,032 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:19,042 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:19,093 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:19,094 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:19,104 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:19,154 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:19,155 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:19,165 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:19,217 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:19,218 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:19,228 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:19,278 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:19,279 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:19,290 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:19,340 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:19,341 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:19,352 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:19,405 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:19,406 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:19,416 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:19,467 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:19,468 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:19,478 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:19,528 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:19,529 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:19,539 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:19,590 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:19,591 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:19,601 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:19,651 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:19,652 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:19,662 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:19,713 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:19,714 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:19,724 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:19,780 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:19,781 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:19,790 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:19,841 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:19,842 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:19,852 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:19,899 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:19,900 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:19,910 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:19,961 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:19,961 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:19,971 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:20,023 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:20,023 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:20,033 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:20,084 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:20,085 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:20,095 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:20,147 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:20,148 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:20,159 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:20,209 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:20,210 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:20,221 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:20,271 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:20,272 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:20,282 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:20,332 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:20,333 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:20,344 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:20,395 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:20,396 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:20,405 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:20,456 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:20,457 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:20,467 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:20,518 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:20,519 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:20,528 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:20,579 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:20,580 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:20,590 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:20,642 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:20,643 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:20,653 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:20,704 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:20,705 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:20,715 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:20,766 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:20,767 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:20,777 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:20,828 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:20,829 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:20,839 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:20,893 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:20,894 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:20,904 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:20,961 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:20,962 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:20,972 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:21,023 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:21,024 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:21,034 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:21,085 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:21,086 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:21,096 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:21,168 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:21,171 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:21,186 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:21,236 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:21,237 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:21,247 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:21,298 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:21,299 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:21,309 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:21,360 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:21,361 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:21,371 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:21,421 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:21,422 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:21,433 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:21,484 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:21,485 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:21,495 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:21,554 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:21,555 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:21,565 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:21,615 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:21,617 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:21,627 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:21,681 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:21,682 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:21,692 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:21,742 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:21,743 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:21,754 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:21,805 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:21,806 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:21,816 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:21,867 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:21,868 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:21,878 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:21,929 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:21,930 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:21,940 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:21,991 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:21,992 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:22,002 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:22,058 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:22,059 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:22,069 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:22,120 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:22,121 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:22,131 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:22,182 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:22,183 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:22,193 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:22,243 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:22,244 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:22,254 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:22,305 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:22,306 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:22,316 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:22,367 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:22,368 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:22,380 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:22,431 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:22,432 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:22,441 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:22,495 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:22,496 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:22,506 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:22,557 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:22,558 : INFO : DemoSpinnerPage : Attempting to click spinner 'up' button. ⬆️⬇️
+2025-08-23 17:06:22,567 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:22,617 : INFO : DemoSpinnerPage : Clicked spinner 'up' button.
+2025-08-23 17:06:22,618 : INFO : DemoSpinnerPage : Getting current spinner value.
+2025-08-23 17:06:22,628 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:06:22,633 : INFO : DemoSpinnerPage : Retrieved spinner value: 2500
+2025-08-23 17:15:01,201 : INFO : DemoSpinnerPage : Clicking the tab with locator: [('id', 'Portlets'), ('xpath', "//li[normalize-space()='Currency']")]
+2025-08-23 17:24:12,913 : INFO : test_select_currency : Starting test_select_currency test
+2025-08-23 17:24:15,281 : INFO : DemoSpinnerPage : Clicking the tab with locator: [('id', 'Portlets'), ('xpath', "//li[normalize-space()='Currency']")]
+2025-08-23 17:24:25,779 : INFO : DemoSpinnerPage : Locator failed: id=Portlets. Retrying with next locator.
+2025-08-23 17:24:27,885 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:24:28,040 : INFO : DemoSpinnerPage : Attempting to select dropdown option with value: 'de-DE'.
+2025-08-23 17:24:28,086 : INFO : DemoSpinnerPage : Selected dropdown option with value 'de-DE'.
+2025-08-23 17:24:28,086 : INFO : DemoSpinnerPage : Selected country with value 'de-DE' from the dropdown.
+2025-08-23 17:24:33,110 : INFO : TestSpinner : Finished test_select_currency test
+2025-08-23 17:24:56,244 : INFO : test_spinner_value_retrieval : Starting test_spinner_value_retrieval test
+2025-08-23 17:24:58,852 : INFO : DemoSpinnerPage : Clicking the tab with locator: [('id', 'Portlets'), ('xpath', "//li[normalize-space()='Currency']")]
+2025-08-23 17:25:09,084 : INFO : DemoSpinnerPage : Locator failed: id=Portlets. Retrying with next locator.
+2025-08-23 17:25:11,169 : INFO : DemoSpinnerPage : Getting current spinner value.
+2025-08-23 17:25:11,202 : INFO : DemoSpinnerPage : Switched to iframe using locator: class_name=demo-frame
+2025-08-23 17:25:11,216 : INFO : DemoSpinnerPage : Retrieved spinner value: 5
+2025-08-23 17:25:13,665 : INFO : test_spinner_value_change : Starting test_spinner_value_change test

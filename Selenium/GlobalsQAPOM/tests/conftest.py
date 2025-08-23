@@ -1,4 +1,5 @@
 import pytest
+from utilities.logger_setup import setup_test_logger
 
 driver = None
 import os
@@ -52,3 +53,14 @@ def setup_globalsqa(request):
     # tear down
     yield
     driver.close()
+
+@pytest.fixture(scope="function")
+def logger(request):
+        """
+        Fixture to provide a logger instance named after the current test function.
+        """
+        # Get the test function's name
+        test_name = request.node.name
+
+        # Set up and return the logger
+        return setup_test_logger(test_name)
