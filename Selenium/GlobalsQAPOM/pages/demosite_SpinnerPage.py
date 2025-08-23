@@ -10,7 +10,7 @@ class DemoSpinnerPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
         self.demoSpinnerPageLocators = DemoSpinnerPageLocators()
-
+        self.logger = self.getLogger()
 
     def _click_tab(self, tab_locator: list):
         """

@@ -1,4 +1,5 @@
 import logging
+from utilities.LoggerBase import LoggerBase
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -15,7 +16,7 @@ import json
 # Basic logging configuration to output to the console
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-class BasePage:
+class BasePage(LoggerBase):
     """
     A base class for all Page Objects.
     Contains common methods for interacting with web elements,
@@ -24,7 +25,7 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(driver, 10)
-        self.logger = logging.getLogger(__name__)
+        self.logger = self.getLogger()
 
     # Dictionary mapping locator types to Selenium's By attributes
     LOCATOR_DICT = {

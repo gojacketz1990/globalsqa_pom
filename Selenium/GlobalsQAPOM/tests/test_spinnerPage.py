@@ -1,16 +1,16 @@
 import pytest
 from pages.globalsqa_mainpage import GlobalsqaMainPage
 import time
-
+from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestSpinner:
+class TestSpinner(LoggerBase):
 
     def test_select_currency(self):
         """
         Verifies that clicking the 'Start Download' button makes the
         file download dialog box appear.
         """
-
+        self.logger = self.getLogger()
         # Instantiate page objects
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
@@ -29,7 +29,7 @@ class TestSpinner:
 
         time.sleep(5)
 
-
+        self.logger.info("Finished first test.")
 
     def test_spinner_value_retrieval(self):
 
