@@ -19,7 +19,7 @@ class BaseTests:
             logger_name = inspect.stack()[1][3]
             logger = logging.getLogger(logger_name)
             if not logger.handlers:
-                file_handler = logging.FileHandler('/Users/gojacketz/PycharmProjects/POMFramework/logfiles/logfile.log')
+                file_handler = logging.FileHandler('./logfiles/logfile.log')
                 formatter = logging.Formatter('%(asctime)s : %(levelname)s : %(name)s : %(message)s')
                 file_handler.setFormatter(formatter)
                 logger.addHandler(file_handler)
