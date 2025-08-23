@@ -16,6 +16,7 @@ class DemoSpinnerPage(BasePage):
         """
         Internal method to click on a tab.
         """
+        
         self.logger.info(f"Clicking the tab with locator: {tab_locator}")
         self.element_click(tab_locator)
         time.sleep(2)
