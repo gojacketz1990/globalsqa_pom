@@ -1,12 +1,12 @@
 import pytest
 from pages.globalsqa_mainpage import GlobalsqaMainPage
 import time
-
+from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestMultiForm:
+class TestMultiForm(LoggerBase):
 
-    def test_multiform(self):
-
+    def test_multiform(self, logger):
+        logger.info("Starting test_multiform test")
         from utilities.FakerHelper import FakerHelper
         data_generator = FakerHelper(locale='en_US')
 
