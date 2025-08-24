@@ -6,7 +6,7 @@ import time
 from utilities.LoggerBase import LoggerBase
 
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestDropdown:
+class TestDropdown(LoggerBase):
 
     def test_categories_autocomplete_appears_on_typing(self):
         # Instantiate page objects

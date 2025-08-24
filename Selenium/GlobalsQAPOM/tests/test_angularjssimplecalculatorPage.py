@@ -5,7 +5,7 @@ import random
 from utilities.LoggerBase import LoggerBase
 
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestSimpleCalculator:
+class TestSimpleCalculator(LoggerBase):
 
     def test_scrollable(self):
 

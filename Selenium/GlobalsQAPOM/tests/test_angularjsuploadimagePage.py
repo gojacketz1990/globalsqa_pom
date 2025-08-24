@@ -4,7 +4,7 @@ import time
 from utilities.LoggerBase import LoggerBase
 
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestMultiForm:
+class TestMultiForm(LoggerBase):
 
     def test_multiform(self):
 

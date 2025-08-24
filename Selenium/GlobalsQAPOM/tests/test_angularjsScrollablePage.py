@@ -3,7 +3,7 @@ from pages.globalsqa_mainpage import GlobalsqaMainPage
 import time
 from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestMultiForm:
+class TestMultiForm(LoggerBase):
 
     def test_scrollable(self):
 
