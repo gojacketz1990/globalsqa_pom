@@ -4,12 +4,12 @@ import time
 from utilities.FakerHelper import FakerHelper
 import random
 import math
-
+from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestConsumptionCalculator:
+class TestConsumptionCalculator(LoggerBase):
 
-    def test_consumption(self):
-
+    def test_consumption(self, logger):
+        logger.info("Starting test_consumption test")
         from utilities.FakerHelper import FakerHelper
         data_generator = FakerHelper(locale='en_US')
 
