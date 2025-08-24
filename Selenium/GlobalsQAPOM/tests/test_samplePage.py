@@ -9,7 +9,7 @@ class TestSamplePage(LoggerBase):
 
 
     def test_submission_with_empty_fields_shows_errors(self, logger):
-        logger.info("Starting test_registration test")
+        logger.info("Starting test_submission_with_empty_fields_shows_errors test")
         #This test does not work, the errors do not show up
 
         data_generator = FakerHelper(locale='en_US')

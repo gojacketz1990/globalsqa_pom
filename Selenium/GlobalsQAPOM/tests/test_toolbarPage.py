@@ -7,7 +7,7 @@ from utilities.LoggerBase import LoggerBase
 class TestToolbar(LoggerBase):
 
     def test_change_and_verify_font_size(self, logger):
-        logger.info("Starting test_registration test")
+        logger.info("Starting test_change_and_verify_font_size test")
         """
         Verifies that clicking the 'Start Download' button makes the
         file download dialog box appear.

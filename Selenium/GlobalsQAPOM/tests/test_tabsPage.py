@@ -7,6 +7,7 @@ from utilities.LoggerBase import LoggerBase
 class TestTabs(LoggerBase):
 
      def test_expandtabs(self, logger):
+        logger.info("Starting test_expandtabs test")
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
         demoTabsPage = demoPage.gotoTabs()

@@ -7,7 +7,7 @@ from utilities.LoggerBase import LoggerBase
 class TestDialogBoxTabs(LoggerBase):
 
     def test_verify_color_change(self, logger):
-        logger.info("Starting test_registration test")
+        logger.info("Starting test_verify_color_change test")
         """
         Verifies that clicking the 'Start Download' button makes the
         file download dialog box appear.
