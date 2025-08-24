@@ -7,7 +7,7 @@ from utilities.LoggerBase import LoggerBase
 class TestWebTable(LoggerBase):
 
     def test_webtable(self, logger):
-        logger.info("Starting test_registration test")
+        logger.info("Starting test_webtable test")
         from utilities.FakerHelper import FakerHelper
         data_generator = FakerHelper(locale='en_US')
 

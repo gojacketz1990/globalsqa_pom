@@ -6,7 +6,7 @@ from utilities.LoggerBase import LoggerBase
 class TestDialogBoxTabs(LoggerBase):
 
     def test_confirmation_box_cancel(self, logger):
-        logger.info("Starting test_registration test")
+        logger.info("Starting test_confirmation_box_cancel test")
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
         demoDialogBoxPage = demoPage.gotoDialogBox()

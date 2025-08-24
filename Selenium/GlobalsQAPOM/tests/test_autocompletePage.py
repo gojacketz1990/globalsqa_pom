@@ -9,7 +9,7 @@ from utilities.LoggerBase import LoggerBase
 class TestDropdown(LoggerBase):
 
     def test_categories_autocomplete_appears_on_typing(self, logger):
-        logger.info("Starting test_registration test")
+        logger.info("Starting test_categories_autocomplete_appears_on_typing test")
         # Instantiate page objects
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()

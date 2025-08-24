@@ -11,7 +11,7 @@ class TestEncoding(LoggerBase):
     # In your test file (e.g., test_csv.py or a dedicated setup script)
 
     def test_writetoCSV(self, logger):
-        logger.info("Starting test_registration test")
+        logger.info("Starting test_writetoCSV test")
         data_generator = FakerHelper(locale='en_US')
 
         all_customer_data = []
