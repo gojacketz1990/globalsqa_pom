@@ -7,6 +7,7 @@ from utilities.LoggerBase import LoggerBase
 class TestToolTips(LoggerBase):
 
     def test_visible_tooltips_display_correct_text(self, logger):
+        logger.info("Starting test_registration test")
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
         demoToolTipPage = demoPage.gotoToolTip()

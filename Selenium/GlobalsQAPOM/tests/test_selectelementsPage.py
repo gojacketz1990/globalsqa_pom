@@ -7,6 +7,7 @@ from utilities.LoggerBase import LoggerBase
 class TestSelectElements(LoggerBase):
 
     def test_select_multiple_selection(self, logger):
+        logger.info("Starting test_registration test")
         """
         Verifies that clicking the 'Start Download' button makes the
         file download dialog box appear.

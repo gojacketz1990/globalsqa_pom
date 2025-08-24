@@ -7,6 +7,7 @@ from utilities.LoggerBase import LoggerBase
 class TestSorting(LoggerBase):
 
     def test_drag_and_drop_to_sort(self, logger):
+        logger.info("Starting test_registration test")
         """
         Verifies that clicking the 'Start Download' button makes the
         file download dialog box appear.

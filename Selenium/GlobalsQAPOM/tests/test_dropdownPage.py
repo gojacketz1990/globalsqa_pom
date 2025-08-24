@@ -9,6 +9,7 @@ from utilities.LoggerBase import LoggerBase
 class TestDropdown(LoggerBase):
 
     def test_country_dropdown_opens(self, logger):
+        logger.info("Starting test_registration test")
         # Instantiate page objects
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()

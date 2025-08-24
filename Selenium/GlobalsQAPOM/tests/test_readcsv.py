@@ -10,7 +10,7 @@ class Testcsv(LoggerBase):
 
     def test_readfromCSV(self, logger):
 
-
+        logger.info("Starting test_registration test")
         # Create an instance of the CsvReader class
         reader = CsvReader('data/data.csv')
 

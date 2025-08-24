@@ -28,6 +28,7 @@ class TestMethods(LoggerBase):
 
 
      def test_demoSliders(self, logger):
+            logger.info("Starting test_registration test")
             globalsqaPage = GlobalsqaMainPage(self.driver)
             demoPage = globalsqaPage.header.gotoDemoSitePage()
             demoSliderPage = demoPage.gotoSlider()

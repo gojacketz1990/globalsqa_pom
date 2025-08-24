@@ -6,7 +6,7 @@ from utilities.LoggerBase import LoggerBase
 class TestMultiForm(LoggerBase):
 
     def test_scrollable(self, logger):
-
+        logger.info("Starting test_scrollable test")
         from utilities.FakerHelper import FakerHelper
         data_generator = FakerHelper(locale='en_US')
 

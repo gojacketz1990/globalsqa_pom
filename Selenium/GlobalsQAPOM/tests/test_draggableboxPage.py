@@ -8,6 +8,7 @@ class TestDraggableBox(LoggerBase):
 
 
     def test_draggable_box_moves_freely(self, logger):
+        logger.info("Starting test_registration test")
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
 
