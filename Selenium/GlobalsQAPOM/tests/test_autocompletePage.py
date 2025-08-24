@@ -3,6 +3,7 @@ import pytest
 from pages.globalsqa_mainpage import GlobalsqaMainPage
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 import time
+from utilities.LoggerBase import LoggerBase
 
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestDropdown:

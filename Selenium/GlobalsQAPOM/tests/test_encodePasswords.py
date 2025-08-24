@@ -4,6 +4,7 @@ import os
 from utilities.FakerHelper import FakerHelper # Make sure this path is correct
 from utilities.csvReader import CsvReader   # Make sure this path is correct
 
+from utilities.LoggerBase import LoggerBase
 
 class TestEncoding():
 

@@ -3,6 +3,7 @@ import pytest
 from pages.globalsqa_mainpage import GlobalsqaMainPage
 import time
 from utilities.FakerHelper import FakerHelper
+from utilities.LoggerBase import LoggerBase
 
 class TestFaker:
 

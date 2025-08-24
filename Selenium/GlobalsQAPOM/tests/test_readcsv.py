@@ -4,6 +4,7 @@ from pages.globalsqa_mainpage import GlobalsqaMainPage
 from utilities.csvReader import CsvReader
 import time
 import os
+from utilities.LoggerBase import LoggerBase
 
 class Testcsv:
 
