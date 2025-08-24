@@ -6,7 +6,7 @@ import time
 from utilities.LoggerBase import LoggerBase
 
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestDropdown:
+class TestDropdown(LoggerBase):
 
     def test_country_dropdown_opens(self):
         # Instantiate page objects

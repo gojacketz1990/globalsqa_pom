@@ -6,7 +6,7 @@ from utilities.csvReader import CsvReader   # Make sure this path is correct
 
 from utilities.LoggerBase import LoggerBase
 
-class TestEncoding():
+class TestEncoding(LoggerBase):
 
     # In your test file (e.g., test_csv.py or a dedicated setup script)
 

@@ -4,7 +4,7 @@ import time
 from utilities.LoggerBase import LoggerBase
 
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestDragAndDrop:
+class TestDragAndDrop(LoggerBase):
 
     def test_drag_and_drop(self):
         """

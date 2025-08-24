@@ -4,7 +4,7 @@ from pages.globalsqa_mainpage import GlobalsqaMainPage
 from utilities.LoggerBase import LoggerBase
 
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestMethods():
+class TestMethods(LoggerBase):
 
 
 

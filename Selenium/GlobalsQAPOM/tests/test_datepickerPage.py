@@ -4,7 +4,7 @@ import time
 from utilities.LoggerBase import LoggerBase
 
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestDatePicker:
+class TestDatePicker(LoggerBase):
 
     def test_simple_date_picker(self):
         """

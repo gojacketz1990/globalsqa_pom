@@ -5,7 +5,7 @@ import time
 from utilities.FakerHelper import FakerHelper
 from utilities.LoggerBase import LoggerBase
 
-class TestFaker:
+class TestFaker(LoggerBase):
 
     def test_faker(self):
         # Create an instance of the helper class

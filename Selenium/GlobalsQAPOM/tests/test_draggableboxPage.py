@@ -4,7 +4,7 @@ import time
 from utilities.LoggerBase import LoggerBase
 
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestDraggableBox:
+class TestDraggableBox(LoggerBase):
 
 
     def test_draggable_box_moves_freely(self):

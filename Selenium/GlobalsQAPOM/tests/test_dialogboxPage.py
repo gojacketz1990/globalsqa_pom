@@ -3,7 +3,7 @@ from pages.globalsqa_mainpage import GlobalsqaMainPage
 from utilities.LoggerBase import LoggerBase
 
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestDialogBoxTabs:
+class TestDialogBoxTabs(LoggerBase):
 
     def test_confirmation_box_cancel(self):
         globalsqaPage = GlobalsqaMainPage(self.driver)
