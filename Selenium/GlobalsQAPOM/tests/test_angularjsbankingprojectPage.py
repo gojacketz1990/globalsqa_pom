@@ -1,16 +1,17 @@
 import pytest
 from pages.globalsqa_mainpage import GlobalsqaMainPage
 import time
+from utilities.LoggerBase import LoggerBase
 from utilities.FakerHelper import FakerHelper
 
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestBankingProjectLogin:
+class TestBankingProjectLogin(LoggerBase):
 
-    def test_registration(self):
+    def test_registration(self, logger):
 
         from utilities.FakerHelper import FakerHelper
         data_generator = FakerHelper(locale='en_US')
-
+        logger.info("Starting test_registration test")
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()
 
@@ -35,7 +36,7 @@ class TestBankingProjectLogin:
         assert account_details["currency"] == "Dollar", "Currency is incorrect."
 
 
-    def test_deposit(self):
+    def test_deposit(self, logger):
 
         from utilities.FakerHelper import FakerHelper
         data_generator = FakerHelper(locale='en_US')
@@ -85,7 +86,7 @@ class TestBankingProjectLogin:
         assert new_balance == expected_balance, f"Balance is incorrect. Expected {expected_balance}, but got {new_balance}."
 
 
-    def test_failed_withdrawal(self):
+    def test_failed_withdrawal(self, logger):
 
         from utilities.FakerHelper import FakerHelper
         data_generator = FakerHelper(locale='en_US')
@@ -130,7 +131,7 @@ class TestBankingProjectLogin:
         time.sleep(3)
 
 
-    def test_successful_withdrawal(self):
+    def test_successful_withdrawal(self, logger):
 
         from utilities.FakerHelper import FakerHelper
         data_generator = FakerHelper(locale='en_US')
@@ -182,7 +183,7 @@ class TestBankingProjectLogin:
         assert final_balance == expected_balance, f"Balance is incorrect. Expected {expected_balance}, but got {final_balance}."
 
 
-    def test_add_customer(self):
+    def test_add_customer(self, logger):
 
         from utilities.FakerHelper import FakerHelper
         data_generator = FakerHelper(locale='en_US')
@@ -216,7 +217,7 @@ class TestBankingProjectLogin:
 
 
 
-    def test_verify_customer_and_get_accounts(self):
+    def test_verify_customer_and_get_accounts(self, logger):
 
         from utilities.FakerHelper import FakerHelper
         data_generator = FakerHelper(locale='en_US')
@@ -250,7 +251,7 @@ class TestBankingProjectLogin:
         print(f"Verified that Hermoine Granger has accounts: {account_numbers}")
 
 
-    def test_add_customer_and_account(self):
+    def test_add_customer_and_account(self, logger):
 
         from utilities.FakerHelper import FakerHelper
         data_generator = FakerHelper(locale='en_US')
@@ -309,7 +310,7 @@ class TestBankingProjectLogin:
 
 
 
-    def test_add_customer_and_delete_user(self):
+    def test_add_customer_and_delete_user(self, logger):
 
         from utilities.FakerHelper import FakerHelper
         data_generator = FakerHelper(locale='en_US')
