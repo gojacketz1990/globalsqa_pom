@@ -5,7 +5,7 @@ from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestMultiForm(LoggerBase):
 
-    def test_scrollable(self):
+    def test_scrollable(self, logger):
 
         from utilities.FakerHelper import FakerHelper
         data_generator = FakerHelper(locale='en_US')

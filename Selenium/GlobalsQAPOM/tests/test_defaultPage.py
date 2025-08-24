@@ -27,7 +27,7 @@ class TestMethods(LoggerBase):
     #         time.sleep(3)  # optional, better to wait dynamically
 
 
-     def test_demoSliders(self):
+     def test_demoSliders(self, logger):
             globalsqaPage = GlobalsqaMainPage(self.driver)
             demoPage = globalsqaPage.header.gotoDemoSitePage()
             demoSliderPage = demoPage.gotoSlider()

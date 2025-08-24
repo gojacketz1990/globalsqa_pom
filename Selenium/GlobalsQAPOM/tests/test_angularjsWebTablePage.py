@@ -6,7 +6,7 @@ from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestWebTable(LoggerBase):
 
-    def test_webtable(self):
+    def test_webtable(self, logger):
 
         from utilities.FakerHelper import FakerHelper
         data_generator = FakerHelper(locale='en_US')

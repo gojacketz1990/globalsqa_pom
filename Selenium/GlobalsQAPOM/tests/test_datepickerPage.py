@@ -6,7 +6,7 @@ from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestDatePicker(LoggerBase):
 
-    def test_simple_date_picker(self):
+    def test_simple_date_picker(self, logger):
         """
         Verifies that clicking the 'Start Download' button makes the
         file download dialog box appear.

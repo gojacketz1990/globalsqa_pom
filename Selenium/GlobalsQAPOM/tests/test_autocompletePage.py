@@ -8,7 +8,7 @@ from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestDropdown(LoggerBase):
 
-    def test_categories_autocomplete_appears_on_typing(self):
+    def test_categories_autocomplete_appears_on_typing(self, logger):
         # Instantiate page objects
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
