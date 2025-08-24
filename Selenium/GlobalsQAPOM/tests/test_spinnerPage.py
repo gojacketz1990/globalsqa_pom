@@ -80,7 +80,9 @@ class TestSpinner(LoggerBase):
         assert current_value == 55, f"Expected initial value to be 5, but got {current_value}"
 
 
-    def test_upper_limit_amount(self):
+    def test_upper_limit_amount(self,logger):
+
+        logger.info("Starting test_upper_limit_amount test")
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
 
@@ -103,7 +105,7 @@ class TestSpinner(LoggerBase):
         assert current_value == 2500, f"Expected initial value to be 5, but got {current_value}"
 
 
-    def test_lower_limit_amount(self):
+    def test_lower_limit_amount(self, logger):
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
 
@@ -128,7 +130,7 @@ class TestSpinner(LoggerBase):
 
         assert current_value == 5, f"Expected initial value to be 5, but got {current_value}"
 
-    def test_simple_spinner(self):
+    def test_simple_spinner(self, logger):
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
 
@@ -156,7 +158,7 @@ class TestSpinner(LoggerBase):
 
         assert current_value == 2, f"Expected initial value to be 2, but got {current_value}"
 
-    def test_spinner_disables_on_toggle_click(self):
+    def test_spinner_disables_on_toggle_click(self,logger):
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
 

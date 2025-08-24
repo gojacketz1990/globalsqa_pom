@@ -1,16 +1,16 @@
 import pytest
 from pages.globalsqa_mainpage import GlobalsqaMainPage
 import time
-
+from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestFrames:
 
-    def test_verify_link_in_iframe(self):
+    def test_verify_link_in_iframe(self, logger):
         """
         Verifies that clicking the 'Start Download' button makes the
         file download dialog box appear.
         """
-
+        logger.info("Starting test_verify_link_in_iframe test")
         # Instantiate page objects
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
@@ -27,12 +27,12 @@ class TestFrames:
 
 
 
-    def test_verify_new_tab(self):
+    def test_verify_new_tab(self, logger):
         """
         Verifies that clicking the 'Start Download' button makes the
         file download dialog box appear.
         """
-
+        logger.info("Starting test_verify_new_tab test")
         # Instantiate page objects
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
