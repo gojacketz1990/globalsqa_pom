@@ -6,7 +6,7 @@ from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestDialogBoxTabs(LoggerBase):
 
-    def test_verify_color_change(self):
+    def test_verify_color_change(self, logger):
         """
         Verifies that clicking the 'Start Download' button makes the
         file download dialog box appear.

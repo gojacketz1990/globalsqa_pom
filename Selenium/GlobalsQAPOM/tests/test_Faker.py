@@ -7,7 +7,7 @@ from utilities.LoggerBase import LoggerBase
 
 class TestFaker(LoggerBase):
 
-    def test_faker(self):
+    def test_faker(self, logger):
         # Create an instance of the helper class
         # You can specify a locale if you need data from a different region
         data_generator = FakerHelper(locale='en_US')

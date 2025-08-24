@@ -7,7 +7,7 @@ from utilities.LoggerBase import LoggerBase
 class TestDraggableBox(LoggerBase):
 
 
-    def test_draggable_box_moves_freely(self):
+    def test_draggable_box_moves_freely(self, logger):
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
 

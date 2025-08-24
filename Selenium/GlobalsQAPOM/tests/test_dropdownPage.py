@@ -8,7 +8,7 @@ from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestDropdown(LoggerBase):
 
-    def test_country_dropdown_opens(self):
+    def test_country_dropdown_opens(self, logger):
         # Instantiate page objects
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()

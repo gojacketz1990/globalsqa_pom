@@ -6,7 +6,7 @@ from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestSelectElements(LoggerBase):
 
-    def test_select_multiple_selection(self):
+    def test_select_multiple_selection(self, logger):
         """
         Verifies that clicking the 'Start Download' button makes the
         file download dialog box appear.

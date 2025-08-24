@@ -6,7 +6,7 @@ from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestTabs(LoggerBase):
 
-     def test_expandtabs(self):
+     def test_expandtabs(self, logger):
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
         demoTabsPage = demoPage.gotoTabs()

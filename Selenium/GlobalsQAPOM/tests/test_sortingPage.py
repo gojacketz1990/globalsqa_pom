@@ -6,7 +6,7 @@ from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestSorting(LoggerBase):
 
-    def test_drag_and_drop_to_sort(self):
+    def test_drag_and_drop_to_sort(self, logger):
         """
         Verifies that clicking the 'Start Download' button makes the
         file download dialog box appear.

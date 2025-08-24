@@ -8,7 +8,7 @@ from utilities.LoggerBase import LoggerBase
 
 class Testcsv(LoggerBase):
 
-    def test_readfromCSV(self):
+    def test_readfromCSV(self, logger):
 
 
         # Create an instance of the CsvReader class

@@ -7,7 +7,7 @@ from utilities.LoggerBase import LoggerBase
 class TestSliderPage(LoggerBase):
 
 
-   def test_demoSliders(self):
+   def test_demoSliders(self, logger):
             globalsqaPage = GlobalsqaMainPage(self.driver)
             demoPage = globalsqaPage.header.gotoDemoSitePage()
             demoSliderPage = demoPage.gotoSlider()

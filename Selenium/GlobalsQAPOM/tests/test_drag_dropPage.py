@@ -6,7 +6,7 @@ from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestDragAndDrop(LoggerBase):
 
-    def test_drag_and_drop(self):
+    def test_drag_and_drop(self, logger):
         """
         Verifies that clicking the 'Start Download' button makes the
         file download dialog box appear.

@@ -8,7 +8,7 @@ from utilities.LoggerBase import LoggerBase
 class TestSamplePage(LoggerBase):
 
 
-    def test_submission_with_empty_fields_shows_errors(self):
+    def test_submission_with_empty_fields_shows_errors(self, logger):
 
         #This test does not work, the errors do not show up
 

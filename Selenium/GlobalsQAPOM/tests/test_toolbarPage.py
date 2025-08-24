@@ -6,7 +6,7 @@ from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
 class TestToolbar(LoggerBase):
 
-    def test_change_and_verify_font_size(self):
+    def test_change_and_verify_font_size(self, logger):
         """
         Verifies that clicking the 'Start Download' button makes the
         file download dialog box appear.
