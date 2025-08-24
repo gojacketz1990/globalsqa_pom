@@ -2,12 +2,12 @@ import pytest
 from pages.globalsqa_mainpage import GlobalsqaMainPage
 import time
 from utilities.FakerHelper import FakerHelper
-
+from utilities.LoggerBase import LoggerBase
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestRegistrationLogin:
+class TestRegistrationLogin(LoggerBase):
 
-    def test_registration(self):
-
+    def test_registration(self, logger):
+        logger.info("Starting test_registration test")
         from utilities.FakerHelper import FakerHelper
         data_generator = FakerHelper(locale='en_US')
 
