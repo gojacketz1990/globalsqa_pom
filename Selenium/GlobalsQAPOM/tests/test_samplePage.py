@@ -5,7 +5,7 @@ from utilities.FakerHelper import FakerHelper
 from utilities.LoggerBase import LoggerBase
 
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestSamplePage:
+class TestSamplePage(LoggerBase):
 
 
     def test_submission_with_empty_fields_shows_errors(self):

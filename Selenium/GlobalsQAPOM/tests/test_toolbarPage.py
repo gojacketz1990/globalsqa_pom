@@ -4,7 +4,7 @@ import time
 from utilities.LoggerBase import LoggerBase
 
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestToolbar:
+class TestToolbar(LoggerBase):
 
     def test_change_and_verify_font_size(self):
         """

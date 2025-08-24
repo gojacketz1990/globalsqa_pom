@@ -6,7 +6,7 @@ import time
 import os
 from utilities.LoggerBase import LoggerBase
 
-class Testcsv:
+class Testcsv(LoggerBase):
 
     def test_readfromCSV(self):
 

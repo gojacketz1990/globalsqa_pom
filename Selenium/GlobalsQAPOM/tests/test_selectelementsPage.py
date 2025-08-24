@@ -4,7 +4,7 @@ import time
 from utilities.LoggerBase import LoggerBase
 
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestSelectElements:
+class TestSelectElements(LoggerBase):
 
     def test_select_multiple_selection(self):
         """

@@ -4,7 +4,7 @@ import time
 from utilities.LoggerBase import LoggerBase
 
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestSorting:
+class TestSorting(LoggerBase):
 
     def test_drag_and_drop_to_sort(self):
         """

@@ -4,7 +4,7 @@ from pages.globalsqa_mainpage import GlobalsqaMainPage
 from utilities.LoggerBase import LoggerBase
 
 @pytest.mark.usefixtures("setup_globalsqa")
-class TestToolTips:
+class TestToolTips(LoggerBase):
     def test_visible_tooltips_display_correct_text(self):
         globalsqaPage = GlobalsqaMainPage(self.driver)
         demoPage = globalsqaPage.header.gotoDemoSitePage()
