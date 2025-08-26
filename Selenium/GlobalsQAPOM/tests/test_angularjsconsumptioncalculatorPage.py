@@ -10,8 +10,6 @@ class TestConsumptionCalculator(LoggerBase):
 
     def test_consumption(self, logger):
         logger.info("Starting test_consumption test")
-        from utilities.FakerHelper import FakerHelper
-        data_generator = FakerHelper(locale='en_US')
 
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()

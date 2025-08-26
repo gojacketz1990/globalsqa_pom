@@ -8,8 +8,6 @@ class TestSearchFilter(LoggerBase):
 
     def test_searchfilter_payee(self, logger):
         logger.info("Starting test_searchfilter_payee test")
-        from utilities.FakerHelper import FakerHelper
-        data_generator = FakerHelper(locale='en_US')
 
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()
