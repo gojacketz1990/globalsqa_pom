@@ -21,7 +21,6 @@ class TestBankingProjectLogin(LoggerBase):
 
         bankingprojectPage.click_login_button()
 
-        time.sleep(2)
         welcome_name = bankingprojectPage.get_welcome_name()
         assert welcome_name == "Albus Dumbledore", f"Expected name 'Albus Dumbledore', but got '{welcome_name}'."
 
