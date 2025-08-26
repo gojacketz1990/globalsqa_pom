@@ -46,7 +46,6 @@ class TestBankingProjectLogin(LoggerBase):
 
         bankingprojectPage.click_login_button()
 
-        time.sleep(2)
         welcome_name = bankingprojectPage.get_welcome_name()
         assert welcome_name == "Albus Dumbledore", f"Expected name 'Albus Dumbledore', but got '{welcome_name}'."
 
@@ -93,7 +92,6 @@ class TestBankingProjectLogin(LoggerBase):
 
         bankingprojectPage.click_login_button()
 
-        time.sleep(2)
         welcome_name = bankingprojectPage.get_welcome_name()
         assert welcome_name == "Albus Dumbledore", f"Expected name 'Albus Dumbledore', but got '{welcome_name}'."
 
@@ -114,12 +112,11 @@ class TestBankingProjectLogin(LoggerBase):
         # Verify the error message
         is_error = bankingprojectPage.is_withdrawal_error_message_displayed()
         assert is_error, "Insufficient funds error message was not displayed."
-        time.sleep(3)
+
 
         # Get the new balance and assert it has not changed
         new_balance = int(bankingprojectPage.get_account_details()["balance"])
         assert new_balance == current_balance, "Balance was changed, but should have remained the same."
-        time.sleep(3)
 
 
     def test_successful_withdrawal(self, logger):
@@ -291,7 +288,7 @@ class TestBankingProjectLogin(LoggerBase):
 
         print(account_numbers)
 
-        time.sleep(5)
+        
 
 
 
