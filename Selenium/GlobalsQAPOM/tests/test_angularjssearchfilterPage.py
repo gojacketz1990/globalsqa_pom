@@ -33,9 +33,6 @@ class TestSearchFilter(LoggerBase):
 
     def test_searchfilter_account(self):
 
-        from utilities.FakerHelper import FakerHelper
-        data_generator = FakerHelper(locale='en_US')
-
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()
 

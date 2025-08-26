@@ -9,8 +9,6 @@ class TestBankingProjectLogin(LoggerBase):
 
     def test_registration(self, logger):
 
-        from utilities.FakerHelper import FakerHelper
-        data_generator = FakerHelper(locale='en_US')
         logger.info("Starting test_registration test")
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()
@@ -37,9 +35,6 @@ class TestBankingProjectLogin(LoggerBase):
 
 
     def test_deposit(self, logger):
-
-        from utilities.FakerHelper import FakerHelper
-        data_generator = FakerHelper(locale='en_US')
 
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()
@@ -88,9 +83,6 @@ class TestBankingProjectLogin(LoggerBase):
 
     def test_failed_withdrawal(self, logger):
 
-        from utilities.FakerHelper import FakerHelper
-        data_generator = FakerHelper(locale='en_US')
-
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()
 
@@ -132,9 +124,6 @@ class TestBankingProjectLogin(LoggerBase):
 
 
     def test_successful_withdrawal(self, logger):
-
-        from utilities.FakerHelper import FakerHelper
-        data_generator = FakerHelper(locale='en_US')
 
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()
