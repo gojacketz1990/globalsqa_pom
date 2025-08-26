@@ -739,7 +739,7 @@ class BasePage(LoggerBase):
             str: The visible text of the element.
         """
         element = self.get_element(locators)
-        # Replace non-breaking space characters with an empty string before returning
+
         return element.text.replace('\u00a0', '').strip()
 
     def get_json_data_from_element(self, locators, timeout=10):
