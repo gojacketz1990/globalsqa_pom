@@ -8,8 +8,6 @@ class TestWebTable(LoggerBase):
 
     def test_webtable(self, logger):
         logger.info("Starting test_webtable test")
-        from utilities.FakerHelper import FakerHelper
-        data_generator = FakerHelper(locale='en_US')
 
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()
@@ -27,9 +25,6 @@ class TestWebTable(LoggerBase):
         time.sleep(3)
 
     def test_webtable_data(self):
-
-        from utilities.FakerHelper import FakerHelper
-        data_generator = FakerHelper(locale='en_US')
 
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()
@@ -61,8 +56,6 @@ class TestWebTable(LoggerBase):
 
     def test_webtable_sort(self):
 
-        from utilities.FakerHelper import FakerHelper
-        data_generator = FakerHelper(locale='en_US')
 
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()
@@ -81,9 +74,6 @@ class TestWebTable(LoggerBase):
         assert is_sorted_descending, "Last Name column is not sorted in descending order."
 
     def test_webtable_numerical_sort(self):
-
-        from utilities.FakerHelper import FakerHelper
-        data_generator = FakerHelper(locale='en_US')
 
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()
