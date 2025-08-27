@@ -94,4 +94,6 @@ class AngularJSBankingProjectPageLocators():
     # Add this new locator for the account number spans
     account_number_spans = [("tag_name", "span")]
 
-
+    transaction_message_locator = [
+        ("xpath", "//span[@ng-show='message']")
+    ]

@@ -299,10 +299,25 @@ class BasePage(LoggerBase):
         """Switch to default content."""
         self.driver.switch_to.default_content()
 
-    def get_element_attribute(self, locators, attribute):
-        """Get a web element's attribute value."""
-        element = self.get_element(locators)
-        return element.get_attribute(attribute)
+    # def get_element_attribute(self, locators, attribute):
+    #     """Get a web element's attribute value."""
+    #     element = self.get_element(locators)
+    #     return element.get_attribute(attribute)
+    #
+    def get_element_attribute(self, locator: tuple, attribute: str) -> str:
+        """
+        Retrieves the value of a specified attribute from an element.
+        """
+        self.logger.info(f"Getting attribute '{attribute}' for element with locator {locator}.")
+        try:
+            element: WebElement = self.wait.until(EC.presence_of_element_located(locator))
+            return element.get_attribute(attribute)
+        except TimeoutException:
+            self.logger.error(f"Element with locator {locator} not found within the timeout period.")
+            return ""
+        except Exception as e:
+            self.logger.error(f"Failed to get attribute '{attribute}': {e}")
+            return ""
 
     def get_element_css_property(self, locators, property_name: str) -> str:
         """
@@ -814,3 +829,29 @@ class BasePage(LoggerBase):
             NoSuchElementException: If the element is not found.
         """
         return parent_element.find_element(By.XPATH, f".//*[normalize-space(.)='{text_to_verify}']")
+
+
+    def get_element_text_content(self, locator: tuple) -> str:
+        """
+        Retrieves an element's text content, whether visible or not.
+        This is useful for getting text from hidden elements or those styled with CSS that
+        prevents .text from working.
+        """
+        try:
+            # Wait for the element to be present in the DOM
+            element = self.wait.until(EC.presence_of_element_located(locator))
+
+            # Get the text content using the 'textContent' attribute
+            text_content = element.get_attribute("textContent")
+
+            # Log the action for debugging purposes
+            self.logger.info(f"Retrieved text content from element with locator {locator}: '{text_content}'")
+
+            return text_content.strip()  # .strip() removes leading/trailing whitespace
+
+        except TimeoutException:
+            self.logger.error(f"Element with locator {locator} not found within the timeout period.")
+            return ""
+        except Exception as e:
+            self.logger.error(f"Failed to get text content for element with locator {locator}: {e}")
+            return ""

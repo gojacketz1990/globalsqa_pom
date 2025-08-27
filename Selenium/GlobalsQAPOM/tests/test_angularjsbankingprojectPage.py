@@ -288,7 +288,7 @@ class TestBankingProjectLogin(LoggerBase):
 
         print(account_numbers)
 
-        
+
 
 
 
@@ -365,3 +365,49 @@ class TestBankingProjectLogin(LoggerBase):
             lastname
         )
         assert not is_present_after, f"Customer {firstname} {lastname} was still found after deletion."
+
+
+
+    def test_invalid_amount_withdrawal(self, logger):
+
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        angularjsPage = globalsqaPage.header.gotoAngularSitePage()
+
+        bankingprojectPage = angularjsPage.gotoBankingProject()
+
+        bankingprojectPage.click_customer_login_button()
+
+        bankingprojectPage.select_name_dropdown("Hermoine Granger")
+
+        bankingprojectPage.click_login_button()
+
+        time.sleep(2)
+        welcome_name = bankingprojectPage.get_welcome_name()
+        assert welcome_name == "Hermoine Granger", f"Expected name 'Hermoine Granger', but got '{welcome_name}'."
+
+        # Get the account details from the page
+        account_details = bankingprojectPage.get_account_details()
+
+        # Assert that the retrieved values match the expected values
+        #assert account_details["account_number"] == "1010", "Account number is incorrect."
+        #assert account_details["balance"] == "0", "Balance is incorrect."
+        #assert account_details["currency"] == "Dollar", "Currency is incorrect."
+
+        current_balance = int(account_details["balance"])
+
+
+        # Define the withdrawal amount
+        withdrawal_amount = .50
+        bankingprojectPage.make_withdrawal(withdrawal_amount)
+        # Perform the withdrawal
+        time.sleep(2)
+        validation_message = bankingprojectPage.get_transaction_message_text()
+        time.sleep(2)
+        expected_message = "Please enter a valid value. The two nearest valid values are 0 and 1."
+
+        # Assert that the validation message is displayed and contains the expected text
+        assert validation_message, "No validation message was displayed."
+        assert expected_message in validation_message, \
+            f"Expected message to contain '{expected_message}', but got '{validation_message}'."
+
+        self.logger.info(f"Successfully verified browser validation message: '{validation_message}'.")
