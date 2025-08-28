@@ -401,7 +401,7 @@ class TestBankingProjectLogin(LoggerBase):
         bankingprojectPage.make_withdrawal(withdrawal_amount)
         # Perform the withdrawal
         time.sleep(2)
-        validation_message = bankingprojectPage.get_transaction_message_text()
+        validation_message = bankingprojectPage.get_withdrawal_input_validation_message()
         time.sleep(2)
         expected_message = "Please enter a valid value. The two nearest valid values are 0 and 1."
 
@@ -410,4 +410,4 @@ class TestBankingProjectLogin(LoggerBase):
         assert expected_message in validation_message, \
             f"Expected message to contain '{expected_message}', but got '{validation_message}'."
 
-        self.logger.info(f"Successfully verified browser validation message: '{validation_message}'.")
+        print(f"Successfully verified browser validation message: '{validation_message}'.")

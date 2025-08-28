@@ -304,20 +304,36 @@ class BasePage(LoggerBase):
     #     element = self.get_element(locators)
     #     return element.get_attribute(attribute)
     #
-    def get_element_attribute(self, locator: tuple, attribute: str) -> str:
+    def get_element_attribute(self, locators: list, attribute: str) -> str:
         """
-        Retrieves the value of a specified attribute from an element.
+        Retrieves the value of a specified attribute from an element
+        using self-healing locators.
+
+        Args:
+            locators (list): A list of locator tuples for the element.
+            attribute (str): The name of the attribute to retrieve (e.g., 'value', 'validationMessage').
+
+        Returns:
+            str: The value of the attribute, or an empty string if not found.
         """
-        self.logger.info(f"Getting attribute '{attribute}' for element with locator {locator}.")
+        self.logger.info(f"Attempting to get attribute '{attribute}' for element with locators: {locators}")
         try:
-            element: WebElement = self.wait.until(EC.presence_of_element_located(locator))
-            return element.get_attribute(attribute)
-        except TimeoutException:
-            self.logger.error(f"Element with locator {locator} not found within the timeout period.")
+            # Use your private helper method to find the element and wait for it to be present
+            element = self._find_element_with_wait(locators, EC.presence_of_element_located)
+
+            # Get the attribute from the located element
+            attribute_value = element.get_attribute(attribute)
+
+            self.logger.info(f"Successfully retrieved attribute '{attribute}' with value: '{attribute_value}'")
+            return attribute_value
+
+        except NoSuchElementException as e:
+            self.logger.error(f"Element not found using any of the provided locators: {e}")
             return ""
         except Exception as e:
-            self.logger.error(f"Failed to get attribute '{attribute}': {e}")
+            self.logger.error(f"Failed to retrieve attribute '{attribute}' due to an error: {e}")
             return ""
+
 
     def get_element_css_property(self, locators, property_name: str) -> str:
         """
@@ -830,28 +846,28 @@ class BasePage(LoggerBase):
         """
         return parent_element.find_element(By.XPATH, f".//*[normalize-space(.)='{text_to_verify}']")
 
-
-    def get_element_text_content(self, locator: tuple) -> str:
+    def get_element_text_content(self, locators: list) -> str:
         """
         Retrieves an element's text content, whether visible or not.
         This is useful for getting text from hidden elements or those styled with CSS that
         prevents .text from working.
         """
         try:
-            # Wait for the element to be present in the DOM
-            element = self.wait.until(EC.presence_of_element_located(locator))
+            # Your self-healing locator logic
+            element = self._find_element_with_wait(locators, EC.presence_of_element_located)
 
             # Get the text content using the 'textContent' attribute
             text_content = element.get_attribute("textContent")
 
             # Log the action for debugging purposes
-            self.logger.info(f"Retrieved text content from element with locator {locator}: '{text_content}'")
+            self.logger.info(f"Retrieved text content from element with locator {locators}: '{text_content}'")
 
             return text_content.strip()  # .strip() removes leading/trailing whitespace
 
-        except TimeoutException:
-            self.logger.error(f"Element with locator {locator} not found within the timeout period.")
+        except (NoSuchElementException, TimeoutException) as e:
+            self.logger.error(
+                f"Element with locators {locators} not found or not present within the timeout period: {e}")
             return ""
         except Exception as e:
-            self.logger.error(f"Failed to get text content for element with locator {locator}: {e}")
+            self.logger.error(f"Failed to get text content for element with locators {locators}: {e}")
             return ""

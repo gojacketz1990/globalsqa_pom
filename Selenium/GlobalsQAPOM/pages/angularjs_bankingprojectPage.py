@@ -94,11 +94,14 @@ class AngularJSBankingProjectPage(BasePage):
         return validation_message if validation_message else None
 
     def get_transaction_message_text(self) -> str:
-        """Retrieves the text from the transaction message element."""
-        self.logger.info("Retrieving the transaction message from the page.")
-        # The locator for your span element
-
-        return self.get_element_text_content(AngularJSBankingProjectPageLocators.withdraw_message_locator)
+        """
+        Retrieves the text from the transaction message span using textContent.
+        This works even if the element is not yet visible.
+        """
+        # The locator is a list of tuples, just like your other locators
+        return self.get_element_text_content(
+            AngularJSBankingProjectPageLocators.transaction_message_locator
+        )
 
     def get_withdrawal_input_validation_message(self) -> str:
         """
@@ -108,7 +111,9 @@ class AngularJSBankingProjectPage(BasePage):
         locator = AngularJSBankingProjectPageLocators.withdrawal_amount_locator
 
         # Use the generic method from BasePage to get the attribute
+        print(self.get_element_attribute(locator, "validationMessage"))
         return self.get_element_attribute(locator, "validationMessage")
+
     # In your Page Object class
     def is_withdrawal_successful(self) -> bool:
         """Verifies that the successful withdrawal message is displayed."""
