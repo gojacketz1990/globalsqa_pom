@@ -34,6 +34,7 @@ class TestAPI(LoggerBase):
         if add_book_response:
             # Get the ID and save it to a variable
             new_book_id = add_book_response.get("ID")
+            assert new_book_id == str(isbn) + str(aisle)
 
             if new_book_id:
                 print(f"\nSuccessfully retrieved new book ID: {new_book_id}")

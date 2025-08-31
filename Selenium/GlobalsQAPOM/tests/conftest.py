@@ -1,10 +1,26 @@
 import pytest
+import os
+import sys
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+# ----------------------------------------------------------------------------------
+# This is the code that needs to be at the top of the file to fix the path
+# ----------------------------------------------------------------------------------
+# Get the path to the directory containing this conftest.py file ('tests')
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Get the path to the project root (one directory up from 'tests')
+project_root = os.path.abspath(os.path.join(current_dir, '..'))
+
+# Insert the project root path at the beginning of the system path
+# This ensures Python can find 'utilities' and other modules
+sys.path.insert(0, project_root)
+
+# The import statement now works because the path has been fixed
 from utilities.logger_setup import setup_test_logger
 
 driver = None
-import os
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 
 def pytest_addoption(parser):
     parser.addoption(
