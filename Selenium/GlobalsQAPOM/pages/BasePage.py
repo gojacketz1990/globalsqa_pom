@@ -72,6 +72,7 @@ class BasePage(LoggerBase):
             try:
                 by_method = self._get_by_method(locator_type)
                 return wait.until(expected_condition((by_method, locator_value)))
+                return wait.until(expected_condition((by_method, locator_value)))
             except (NoSuchElementException, TimeoutException):
                 self.logger.info(f"Locator failed: {locator_type}={locator_value}. Retrying with next locator.")
                 continue

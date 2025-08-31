@@ -23,6 +23,7 @@ class AngularJSBankingProjectPage(BasePage):
         self.element_click(AngularJSBankingProjectPageLocators.bank_manager_login_locator)
 
 
+
     def select_name_dropdown(self,name):
         self.select_from_dropdown_by_visible_text(AngularJSBankingProjectPageLocators.customer_name_dropdown_locator,name)
 

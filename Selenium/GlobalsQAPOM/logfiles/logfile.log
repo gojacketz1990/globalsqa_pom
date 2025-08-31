@@ -1571,3 +1571,7 @@
 2025-08-24 11:34:19,903 : INFO : DemoFramesPage : Waiting for a new tab to open.
 2025-08-24 11:34:19,914 : INFO : DemoFramesPage : New number of window handles: 3
 2025-08-24 11:34:19,933 : INFO : DemoFramesPage : Successfully switched to the new tab.
+2025-08-27 21:18:08,740 : INFO : test_select_currency : Starting test_select_currency test
+2025-08-27 21:25:55,917 : INFO : DemoPage : Locator failed: link_text=Spinner. Retrying with next locator.
+2025-08-27 21:26:47,414 : INFO : test_spinner_value_retrieval : Starting test_spinner_value_retrieval test
+2025-08-27 21:27:04,662 : INFO : DemoPage : Locator failed: link_text=Spinner. Retrying with next locator.

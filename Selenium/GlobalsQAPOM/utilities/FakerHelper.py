@@ -93,6 +93,11 @@ class FakerHelper:
                             upper_case=True,
                             lower_case=True)
 
+    def generate_random_integer(self,numdigits):
+        return self.fake.random_number(digits=numdigits)
+
+    def generate_book_name(self):
+        return self.fake.catch_phrase()
 
     # Your provided decoding method
     def unencode(self, todecode: str) -> str:
