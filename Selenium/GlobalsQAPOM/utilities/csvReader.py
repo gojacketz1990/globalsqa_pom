@@ -10,8 +10,8 @@ class CsvReader:
 
     def read_data(self):
         """
-        Reads the CSV file and returns its content as a list of dictionaries.
-        Each dictionary's keys correspond to the CSV headers.
+         method named read_data
+         This method is responsible for reading data from a CSV file and returning it as a list of dictionaries.
         """
         data = []
         try:

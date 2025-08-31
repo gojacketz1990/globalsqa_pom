@@ -9,8 +9,6 @@ class TestBankingProjectLogin(LoggerBase):
 
     def test_registration(self, logger):
 
-        from utilities.FakerHelper import FakerHelper
-        data_generator = FakerHelper(locale='en_US')
         logger.info("Starting test_registration test")
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()
@@ -23,7 +21,6 @@ class TestBankingProjectLogin(LoggerBase):
 
         bankingprojectPage.click_login_button()
 
-        time.sleep(2)
         welcome_name = bankingprojectPage.get_welcome_name()
         assert welcome_name == "Albus Dumbledore", f"Expected name 'Albus Dumbledore', but got '{welcome_name}'."
 
@@ -38,9 +35,6 @@ class TestBankingProjectLogin(LoggerBase):
 
     def test_deposit(self, logger):
 
-        from utilities.FakerHelper import FakerHelper
-        data_generator = FakerHelper(locale='en_US')
-
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()
 
@@ -52,7 +46,6 @@ class TestBankingProjectLogin(LoggerBase):
 
         bankingprojectPage.click_login_button()
 
-        time.sleep(2)
         welcome_name = bankingprojectPage.get_welcome_name()
         assert welcome_name == "Albus Dumbledore", f"Expected name 'Albus Dumbledore', but got '{welcome_name}'."
 
@@ -88,9 +81,6 @@ class TestBankingProjectLogin(LoggerBase):
 
     def test_failed_withdrawal(self, logger):
 
-        from utilities.FakerHelper import FakerHelper
-        data_generator = FakerHelper(locale='en_US')
-
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()
 
@@ -102,7 +92,6 @@ class TestBankingProjectLogin(LoggerBase):
 
         bankingprojectPage.click_login_button()
 
-        time.sleep(2)
         welcome_name = bankingprojectPage.get_welcome_name()
         assert welcome_name == "Albus Dumbledore", f"Expected name 'Albus Dumbledore', but got '{welcome_name}'."
 
@@ -123,18 +112,14 @@ class TestBankingProjectLogin(LoggerBase):
         # Verify the error message
         is_error = bankingprojectPage.is_withdrawal_error_message_displayed()
         assert is_error, "Insufficient funds error message was not displayed."
-        time.sleep(3)
+
 
         # Get the new balance and assert it has not changed
         new_balance = int(bankingprojectPage.get_account_details()["balance"])
         assert new_balance == current_balance, "Balance was changed, but should have remained the same."
-        time.sleep(3)
 
 
     def test_successful_withdrawal(self, logger):
-
-        from utilities.FakerHelper import FakerHelper
-        data_generator = FakerHelper(locale='en_US')
 
         globalsqaPage = GlobalsqaMainPage(self.driver)
         angularjsPage = globalsqaPage.header.gotoAngularSitePage()
@@ -303,7 +288,7 @@ class TestBankingProjectLogin(LoggerBase):
 
         print(account_numbers)
 
-        time.sleep(5)
+
 
 
 
@@ -380,3 +365,49 @@ class TestBankingProjectLogin(LoggerBase):
             lastname
         )
         assert not is_present_after, f"Customer {firstname} {lastname} was still found after deletion."
+
+
+
+    def test_invalid_amount_withdrawal(self, logger):
+
+        globalsqaPage = GlobalsqaMainPage(self.driver)
+        angularjsPage = globalsqaPage.header.gotoAngularSitePage()
+
+        bankingprojectPage = angularjsPage.gotoBankingProject()
+
+        bankingprojectPage.click_customer_login_button()
+
+        bankingprojectPage.select_name_dropdown("Hermoine Granger")
+
+        bankingprojectPage.click_login_button()
+
+        time.sleep(2)
+        welcome_name = bankingprojectPage.get_welcome_name()
+        assert welcome_name == "Hermoine Granger", f"Expected name 'Hermoine Granger', but got '{welcome_name}'."
+
+        # Get the account details from the page
+        account_details = bankingprojectPage.get_account_details()
+
+        # Assert that the retrieved values match the expected values
+        #assert account_details["account_number"] == "1010", "Account number is incorrect."
+        #assert account_details["balance"] == "0", "Balance is incorrect."
+        #assert account_details["currency"] == "Dollar", "Currency is incorrect."
+
+        current_balance = int(account_details["balance"])
+
+
+        # Define the withdrawal amount
+        withdrawal_amount = .50
+        bankingprojectPage.make_withdrawal(withdrawal_amount)
+        # Perform the withdrawal
+        time.sleep(2)
+        validation_message = bankingprojectPage.get_withdrawal_input_validation_message()
+        time.sleep(2)
+        expected_message = "Please enter a valid value. The two nearest valid values are 0 and 1."
+
+        # Assert that the validation message is displayed and contains the expected text
+        assert validation_message, "No validation message was displayed."
+        assert expected_message in validation_message, \
+            f"Expected message to contain '{expected_message}', but got '{validation_message}'."
+
+        print(f"Successfully verified browser validation message: '{validation_message}'.")

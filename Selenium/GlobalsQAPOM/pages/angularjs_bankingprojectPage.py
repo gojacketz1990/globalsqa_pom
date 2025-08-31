@@ -22,11 +22,8 @@ class AngularJSBankingProjectPage(BasePage):
     def click_manager_login_button(self):
         self.element_click(AngularJSBankingProjectPageLocators.bank_manager_login_locator)
 
-
-
     def select_name_dropdown(self,name):
         self.select_from_dropdown_by_visible_text(AngularJSBankingProjectPageLocators.customer_name_dropdown_locator,name)
-
 
     def click_login_button(self):
         self.element_click(AngularJSBankingProjectPageLocators.login_button_locator)
@@ -69,19 +66,53 @@ class AngularJSBankingProjectPage(BasePage):
         amount_input.send_keys(str(amount))
         self.element_click(AngularJSBankingProjectPageLocators.make_deposit_button_locator)
 
-    def make_withdrawal(self, amount: int):
-        """Performs a deposit of a specified amount."""
+    def make_withdrawal(self, amount: str):
+        """
+        Performs a withdrawal of a specified amount.
+        Returns the browser validation message if an invalid amount is entered.
+        """
         self.logger.info(f"Attempting to withdraw {amount}.")
 
-        # Click the Deposit tab
+        # Click the Withdrawal tab
         self.element_click(AngularJSBankingProjectPageLocators.withdrawal_button_locator)
+        time.sleep(2)
 
         # Find the amount input field
         amount_input = self.get_element(AngularJSBankingProjectPageLocators.withdrawal_amount_locator)
 
-        # Enter the amount and submit
-        amount_input.send_keys(str(amount))
+        # Enter the amount and click the submit button
+        amount_input.send_keys(amount)
         self.element_click(AngularJSBankingProjectPageLocators.make_withdrawal_button_locator)
+
+        # Check if a browser validation message is present
+        validation_message = self.get_element_attribute(
+            AngularJSBankingProjectPageLocators.withdrawal_amount_locator,
+            "validationMessage"
+        )
+
+        # Return the message if it exists, otherwise return None
+        return validation_message if validation_message else None
+
+    def get_transaction_message_text(self) -> str:
+        """
+        Retrieves the text from the transaction message span using textContent.
+        This works even if the element is not yet visible.
+        """
+        # The locator is a list of tuples, just like your other locators
+        return self.get_element_text_content(
+            AngularJSBankingProjectPageLocators.transaction_message_locator
+        )
+
+    def get_withdrawal_input_validation_message(self) -> str:
+        """
+        Retrieves the browser's validation message from the withdrawal input field.
+        """
+        # Assuming AngularJSBankingProjectPageLocators has a locator for the withdrawal input
+        locator = AngularJSBankingProjectPageLocators.withdrawal_amount_locator
+
+        # Use the generic method from BasePage to get the attribute
+        print(self.get_element_attribute(locator, "validationMessage"))
+        return self.get_element_attribute(locator, "validationMessage")
 
     # In your Page Object class
     def is_withdrawal_successful(self) -> bool:

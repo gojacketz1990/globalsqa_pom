@@ -1571,7 +1571,311 @@
 2025-08-24 11:34:19,903 : INFO : DemoFramesPage : Waiting for a new tab to open.
 2025-08-24 11:34:19,914 : INFO : DemoFramesPage : New number of window handles: 3
 2025-08-24 11:34:19,933 : INFO : DemoFramesPage : Successfully switched to the new tab.
-2025-08-27 21:18:08,740 : INFO : test_select_currency : Starting test_select_currency test
-2025-08-27 21:25:55,917 : INFO : DemoPage : Locator failed: link_text=Spinner. Retrying with next locator.
-2025-08-27 21:26:47,414 : INFO : test_spinner_value_retrieval : Starting test_spinner_value_retrieval test
-2025-08-27 21:27:04,662 : INFO : DemoPage : Locator failed: link_text=Spinner. Retrying with next locator.
+2025-08-27 15:35:42,910 : INFO : test_registration : Starting test_registration test
+2025-08-27 15:36:24,429 : INFO : HeaderComponent : Locator failed: link_text=AngularJS Protractor Practice Site. Retrying with next locator.
+2025-08-27 15:37:31,103 : INFO : AngularJSBankingProjectPage : Attempting to withdraw 0.5.
+2025-08-27 15:37:31,893 : INFO : AngularJSBankingProjectPage : Getting attribute 'validationMessage' for element with locator [('css', "input[placeholder='amount']")].
+2025-08-27 15:37:31,894 : ERROR : AngularJSBankingProjectPage : Failed to get attribute 'validationMessage': Message: invalid argument: 'using' must be a string
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+0   chromedriver                        0x0000000104a66e00 cxxbridge1$str$ptr + 2742224
+1   chromedriver                        0x0000000104a5ed00 cxxbridge1$str$ptr + 2709200
+2   chromedriver                        0x00000001045a90b8 cxxbridge1$string$len + 90520
+3   chromedriver                        0x00000001045efe70 cxxbridge1$string$len + 380752
+4   chromedriver                        0x0000000104631980 cxxbridge1$string$len + 649824
+5   chromedriver                        0x00000001045e48f4 cxxbridge1$string$len + 334292
+6   chromedriver                        0x0000000104a2a478 cxxbridge1$str$ptr + 2494024
+7   chromedriver                        0x0000000104a2d6a4 cxxbridge1$str$ptr + 2506868
+8   chromedriver                        0x0000000104a0b3b0 cxxbridge1$str$ptr + 2366848
+9   chromedriver                        0x0000000104a2df4c cxxbridge1$str$ptr + 2509084
+10  chromedriver                        0x00000001049fc4a8 cxxbridge1$str$ptr + 2305656
+11  chromedriver                        0x0000000104a4d644 cxxbridge1$str$ptr + 2637844
+12  chromedriver                        0x0000000104a4d7d0 cxxbridge1$str$ptr + 2638240
+13  chromedriver                        0x0000000104a5e94c cxxbridge1$str$ptr + 2708252
+14  libsystem_pthread.dylib             0x000000019d25af94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000019d255d34 thread_start + 8
+
+2025-08-27 15:38:36,071 : INFO : AngularJSBankingProjectPage : Attempting to withdraw 0.5.
+2025-08-27 15:38:38,385 : INFO : AngularJSBankingProjectPage : Getting attribute 'validationMessage' for element with locator [('css', "input[placeholder='amount']")].
+2025-08-27 15:38:38,388 : ERROR : AngularJSBankingProjectPage : Failed to get attribute 'validationMessage': Message: invalid argument: 'using' must be a string
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+0   chromedriver                        0x00000001011e2e00 cxxbridge1$str$ptr + 2742224
+1   chromedriver                        0x00000001011dad00 cxxbridge1$str$ptr + 2709200
+2   chromedriver                        0x0000000100d250b8 cxxbridge1$string$len + 90520
+3   chromedriver                        0x0000000100d6be70 cxxbridge1$string$len + 380752
+4   chromedriver                        0x0000000100dad980 cxxbridge1$string$len + 649824
+5   chromedriver                        0x0000000100d608f4 cxxbridge1$string$len + 334292
+6   chromedriver                        0x00000001011a6478 cxxbridge1$str$ptr + 2494024
+7   chromedriver                        0x00000001011a96a4 cxxbridge1$str$ptr + 2506868
+8   chromedriver                        0x00000001011873b0 cxxbridge1$str$ptr + 2366848
+9   chromedriver                        0x00000001011a9f4c cxxbridge1$str$ptr + 2509084
+10  chromedriver                        0x00000001011784a8 cxxbridge1$str$ptr + 2305656
+11  chromedriver                        0x00000001011c9644 cxxbridge1$str$ptr + 2637844
+12  chromedriver                        0x00000001011c97d0 cxxbridge1$str$ptr + 2638240
+13  chromedriver                        0x00000001011da94c cxxbridge1$str$ptr + 2708252
+14  libsystem_pthread.dylib             0x000000019d25af94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000019d255d34 thread_start + 8
+
+2025-08-27 15:39:23,685 : INFO : AngularJSBankingProjectPage : Attempting to withdraw 0.5.
+2025-08-27 15:39:25,924 : INFO : AngularJSBankingProjectPage : Getting attribute 'validationMessage' for element with locator [('css', "input[placeholder='amount']")].
+2025-08-27 15:39:25,925 : ERROR : AngularJSBankingProjectPage : Failed to get attribute 'validationMessage': Message: invalid argument: 'using' must be a string
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+0   chromedriver                        0x00000001054dae00 cxxbridge1$str$ptr + 2742224
+1   chromedriver                        0x00000001054d2d00 cxxbridge1$str$ptr + 2709200
+2   chromedriver                        0x000000010501d0b8 cxxbridge1$string$len + 90520
+3   chromedriver                        0x0000000105063e70 cxxbridge1$string$len + 380752
+4   chromedriver                        0x00000001050a5980 cxxbridge1$string$len + 649824
+5   chromedriver                        0x00000001050588f4 cxxbridge1$string$len + 334292
+6   chromedriver                        0x000000010549e478 cxxbridge1$str$ptr + 2494024
+7   chromedriver                        0x00000001054a16a4 cxxbridge1$str$ptr + 2506868
+8   chromedriver                        0x000000010547f3b0 cxxbridge1$str$ptr + 2366848
+9   chromedriver                        0x00000001054a1f4c cxxbridge1$str$ptr + 2509084
+10  chromedriver                        0x00000001054704a8 cxxbridge1$str$ptr + 2305656
+11  chromedriver                        0x00000001054c1644 cxxbridge1$str$ptr + 2637844
+12  chromedriver                        0x00000001054c17d0 cxxbridge1$str$ptr + 2638240
+13  chromedriver                        0x00000001054d294c cxxbridge1$str$ptr + 2708252
+14  libsystem_pthread.dylib             0x000000019d25af94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000019d255d34 thread_start + 8
+
+2025-08-27 15:57:02,625 : INFO : AngularJSBankingProjectPage : Attempting to withdraw 0.5.
+2025-08-27 15:57:05,938 : INFO : AngularJSBankingProjectPage : Getting attribute 'validationMessage' for element with locator [('css', "input[placeholder='amount']")].
+2025-08-27 15:57:05,940 : ERROR : AngularJSBankingProjectPage : Failed to get attribute 'validationMessage': Message: invalid argument: 'using' must be a string
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+0   chromedriver                        0x0000000104e12e00 cxxbridge1$str$ptr + 2742224
+1   chromedriver                        0x0000000104e0ad00 cxxbridge1$str$ptr + 2709200
+2   chromedriver                        0x00000001049550b8 cxxbridge1$string$len + 90520
+3   chromedriver                        0x000000010499be70 cxxbridge1$string$len + 380752
+4   chromedriver                        0x00000001049dd980 cxxbridge1$string$len + 649824
+5   chromedriver                        0x00000001049908f4 cxxbridge1$string$len + 334292
+6   chromedriver                        0x0000000104dd6478 cxxbridge1$str$ptr + 2494024
+7   chromedriver                        0x0000000104dd96a4 cxxbridge1$str$ptr + 2506868
+8   chromedriver                        0x0000000104db73b0 cxxbridge1$str$ptr + 2366848
+9   chromedriver                        0x0000000104dd9f4c cxxbridge1$str$ptr + 2509084
+10  chromedriver                        0x0000000104da84a8 cxxbridge1$str$ptr + 2305656
+11  chromedriver                        0x0000000104df9644 cxxbridge1$str$ptr + 2637844
+12  chromedriver                        0x0000000104df97d0 cxxbridge1$str$ptr + 2638240
+13  chromedriver                        0x0000000104e0a94c cxxbridge1$str$ptr + 2708252
+14  libsystem_pthread.dylib             0x000000019d25af94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000019d255d34 thread_start + 8
+
+2025-08-27 15:57:05,940 : INFO : AngularJSBankingProjectPage : Retrieving the transaction message from the page.
+2025-08-27 15:59:45,860 : INFO : AngularJSBankingProjectPage : Attempting to withdraw 0.5.
+2025-08-27 15:59:48,094 : INFO : AngularJSBankingProjectPage : Getting attribute 'validationMessage' for element with locator [('css', "input[placeholder='amount']")].
+2025-08-27 15:59:48,096 : ERROR : AngularJSBankingProjectPage : Failed to get attribute 'validationMessage': Message: invalid argument: 'using' must be a string
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+0   chromedriver                        0x0000000102a06e00 cxxbridge1$str$ptr + 2742224
+1   chromedriver                        0x00000001029fed00 cxxbridge1$str$ptr + 2709200
+2   chromedriver                        0x00000001025490b8 cxxbridge1$string$len + 90520
+3   chromedriver                        0x000000010258fe70 cxxbridge1$string$len + 380752
+4   chromedriver                        0x00000001025d1980 cxxbridge1$string$len + 649824
+5   chromedriver                        0x00000001025848f4 cxxbridge1$string$len + 334292
+6   chromedriver                        0x00000001029ca478 cxxbridge1$str$ptr + 2494024
+7   chromedriver                        0x00000001029cd6a4 cxxbridge1$str$ptr + 2506868
+8   chromedriver                        0x00000001029ab3b0 cxxbridge1$str$ptr + 2366848
+9   chromedriver                        0x00000001029cdf4c cxxbridge1$str$ptr + 2509084
+10  chromedriver                        0x000000010299c4a8 cxxbridge1$str$ptr + 2305656
+11  chromedriver                        0x00000001029ed644 cxxbridge1$str$ptr + 2637844
+12  chromedriver                        0x00000001029ed7d0 cxxbridge1$str$ptr + 2638240
+13  chromedriver                        0x00000001029fe94c cxxbridge1$str$ptr + 2708252
+14  libsystem_pthread.dylib             0x000000019d25af94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000019d255d34 thread_start + 8
+
+2025-08-27 15:59:48,096 : INFO : AngularJSBankingProjectPage : Retrieving the transaction message from the page.
+2025-08-27 16:01:02,984 : INFO : AngularJSBankingProjectPage : Attempting to withdraw 0.5.
+2025-08-27 16:01:05,229 : INFO : AngularJSBankingProjectPage : Getting attribute 'validationMessage' for element with locator [('css', "input[placeholder='amount']")].
+2025-08-27 16:01:05,231 : ERROR : AngularJSBankingProjectPage : Failed to get attribute 'validationMessage': Message: invalid argument: 'using' must be a string
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+0   chromedriver                        0x0000000101466e00 cxxbridge1$str$ptr + 2742224
+1   chromedriver                        0x000000010145ed00 cxxbridge1$str$ptr + 2709200
+2   chromedriver                        0x0000000100fa90b8 cxxbridge1$string$len + 90520
+3   chromedriver                        0x0000000100fefe70 cxxbridge1$string$len + 380752
+4   chromedriver                        0x0000000101031980 cxxbridge1$string$len + 649824
+5   chromedriver                        0x0000000100fe48f4 cxxbridge1$string$len + 334292
+6   chromedriver                        0x000000010142a478 cxxbridge1$str$ptr + 2494024
+7   chromedriver                        0x000000010142d6a4 cxxbridge1$str$ptr + 2506868
+8   chromedriver                        0x000000010140b3b0 cxxbridge1$str$ptr + 2366848
+9   chromedriver                        0x000000010142df4c cxxbridge1$str$ptr + 2509084
+10  chromedriver                        0x00000001013fc4a8 cxxbridge1$str$ptr + 2305656
+11  chromedriver                        0x000000010144d644 cxxbridge1$str$ptr + 2637844
+12  chromedriver                        0x000000010144d7d0 cxxbridge1$str$ptr + 2638240
+13  chromedriver                        0x000000010145e94c cxxbridge1$str$ptr + 2708252
+14  libsystem_pthread.dylib             0x000000019d25af94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000019d255d34 thread_start + 8
+
+2025-08-27 16:01:05,232 : INFO : AngularJSBankingProjectPage : Retrieving the transaction message from the page.
+2025-08-27 16:12:01,696 : INFO : AngularJSBankingProjectPage : Attempting to withdraw 0.5.
+2025-08-27 16:12:04,007 : INFO : AngularJSBankingProjectPage : Getting attribute 'validationMessage' for element with locator [('css', "input[placeholder='amount']")].
+2025-08-27 16:12:04,009 : ERROR : AngularJSBankingProjectPage : Failed to get attribute 'validationMessage': Message: invalid argument: 'using' must be a string
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+0   chromedriver                        0x00000001013b2e00 cxxbridge1$str$ptr + 2742224
+1   chromedriver                        0x00000001013aad00 cxxbridge1$str$ptr + 2709200
+2   chromedriver                        0x0000000100ef50b8 cxxbridge1$string$len + 90520
+3   chromedriver                        0x0000000100f3be70 cxxbridge1$string$len + 380752
+4   chromedriver                        0x0000000100f7d980 cxxbridge1$string$len + 649824
+5   chromedriver                        0x0000000100f308f4 cxxbridge1$string$len + 334292
+6   chromedriver                        0x0000000101376478 cxxbridge1$str$ptr + 2494024
+7   chromedriver                        0x00000001013796a4 cxxbridge1$str$ptr + 2506868
+8   chromedriver                        0x00000001013573b0 cxxbridge1$str$ptr + 2366848
+9   chromedriver                        0x0000000101379f4c cxxbridge1$str$ptr + 2509084
+10  chromedriver                        0x00000001013484a8 cxxbridge1$str$ptr + 2305656
+11  chromedriver                        0x0000000101399644 cxxbridge1$str$ptr + 2637844
+12  chromedriver                        0x00000001013997d0 cxxbridge1$str$ptr + 2638240
+13  chromedriver                        0x00000001013aa94c cxxbridge1$str$ptr + 2708252
+14  libsystem_pthread.dylib             0x000000019d25af94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000019d255d34 thread_start + 8
+
+2025-08-27 16:12:06,011 : INFO : AngularJSBankingProjectPage : Retrieving the transaction message from the page.
+2025-08-27 16:12:06,013 : ERROR : AngularJSBankingProjectPage : Failed to get text content for element with locator [('xpath', "//span[@ng-show='message']")]: Message: invalid argument: 'using' must be a string
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+0   chromedriver                        0x00000001013b2e00 cxxbridge1$str$ptr + 2742224
+1   chromedriver                        0x00000001013aad00 cxxbridge1$str$ptr + 2709200
+2   chromedriver                        0x0000000100ef50b8 cxxbridge1$string$len + 90520
+3   chromedriver                        0x0000000100f3be70 cxxbridge1$string$len + 380752
+4   chromedriver                        0x0000000100f7d980 cxxbridge1$string$len + 649824
+5   chromedriver                        0x0000000100f308f4 cxxbridge1$string$len + 334292
+6   chromedriver                        0x0000000101376478 cxxbridge1$str$ptr + 2494024
+7   chromedriver                        0x00000001013796a4 cxxbridge1$str$ptr + 2506868
+8   chromedriver                        0x00000001013573b0 cxxbridge1$str$ptr + 2366848
+9   chromedriver                        0x0000000101379f4c cxxbridge1$str$ptr + 2509084
+10  chromedriver                        0x00000001013484a8 cxxbridge1$str$ptr + 2305656
+11  chromedriver                        0x0000000101399644 cxxbridge1$str$ptr + 2637844
+12  chromedriver                        0x00000001013997d0 cxxbridge1$str$ptr + 2638240
+13  chromedriver                        0x00000001013aa94c cxxbridge1$str$ptr + 2708252
+14  libsystem_pthread.dylib             0x000000019d25af94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000019d255d34 thread_start + 8
+
+2025-08-27 16:18:07,238 : INFO : AngularJSBankingProjectPage : Attempting to withdraw 0.5.
+2025-08-27 16:18:09,506 : INFO : AngularJSBankingProjectPage : Getting attribute 'validationMessage' for element with locator [('css', "input[placeholder='amount']")].
+2025-08-27 16:18:09,508 : ERROR : AngularJSBankingProjectPage : Failed to get attribute 'validationMessage': Message: invalid argument: 'using' must be a string
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+0   chromedriver                        0x0000000102e16e00 cxxbridge1$str$ptr + 2742224
+1   chromedriver                        0x0000000102e0ed00 cxxbridge1$str$ptr + 2709200
+2   chromedriver                        0x00000001029590b8 cxxbridge1$string$len + 90520
+3   chromedriver                        0x000000010299fe70 cxxbridge1$string$len + 380752
+4   chromedriver                        0x00000001029e1980 cxxbridge1$string$len + 649824
+5   chromedriver                        0x00000001029948f4 cxxbridge1$string$len + 334292
+6   chromedriver                        0x0000000102dda478 cxxbridge1$str$ptr + 2494024
+7   chromedriver                        0x0000000102ddd6a4 cxxbridge1$str$ptr + 2506868
+8   chromedriver                        0x0000000102dbb3b0 cxxbridge1$str$ptr + 2366848
+9   chromedriver                        0x0000000102dddf4c cxxbridge1$str$ptr + 2509084
+10  chromedriver                        0x0000000102dac4a8 cxxbridge1$str$ptr + 2305656
+11  chromedriver                        0x0000000102dfd644 cxxbridge1$str$ptr + 2637844
+12  chromedriver                        0x0000000102dfd7d0 cxxbridge1$str$ptr + 2638240
+13  chromedriver                        0x0000000102e0e94c cxxbridge1$str$ptr + 2708252
+14  libsystem_pthread.dylib             0x000000019d25af94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000019d255d34 thread_start + 8
+
+2025-08-27 16:18:11,510 : INFO : AngularJSBankingProjectPage : Retrieving the transaction message from the page.
+2025-08-27 16:18:11,512 : ERROR : AngularJSBankingProjectPage : Failed to get text content for element with locator [('xpath', "//span[@ng-show='message']")]: Message: invalid argument: 'using' must be a string
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+0   chromedriver                        0x0000000102e16e00 cxxbridge1$str$ptr + 2742224
+1   chromedriver                        0x0000000102e0ed00 cxxbridge1$str$ptr + 2709200
+2   chromedriver                        0x00000001029590b8 cxxbridge1$string$len + 90520
+3   chromedriver                        0x000000010299fe70 cxxbridge1$string$len + 380752
+4   chromedriver                        0x00000001029e1980 cxxbridge1$string$len + 649824
+5   chromedriver                        0x00000001029948f4 cxxbridge1$string$len + 334292
+6   chromedriver                        0x0000000102dda478 cxxbridge1$str$ptr + 2494024
+7   chromedriver                        0x0000000102ddd6a4 cxxbridge1$str$ptr + 2506868
+8   chromedriver                        0x0000000102dbb3b0 cxxbridge1$str$ptr + 2366848
+9   chromedriver                        0x0000000102dddf4c cxxbridge1$str$ptr + 2509084
+10  chromedriver                        0x0000000102dac4a8 cxxbridge1$str$ptr + 2305656
+11  chromedriver                        0x0000000102dfd644 cxxbridge1$str$ptr + 2637844
+12  chromedriver                        0x0000000102dfd7d0 cxxbridge1$str$ptr + 2638240
+13  chromedriver                        0x0000000102e0e94c cxxbridge1$str$ptr + 2708252
+14  libsystem_pthread.dylib             0x000000019d25af94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000019d255d34 thread_start + 8
+
+2025-08-27 16:29:24,295 : INFO : AngularJSBankingProjectPage : Attempting to withdraw 0.5.
+2025-08-27 16:29:26,614 : INFO : AngularJSBankingProjectPage : Getting attribute 'validationMessage' for element with locator [('css', "input[placeholder='amount']")].
+2025-08-27 16:29:26,616 : ERROR : AngularJSBankingProjectPage : Failed to get attribute 'validationMessage': Message: invalid argument: 'using' must be a string
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+0   chromedriver                        0x00000001033bae00 cxxbridge1$str$ptr + 2742224
+1   chromedriver                        0x00000001033b2d00 cxxbridge1$str$ptr + 2709200
+2   chromedriver                        0x0000000102efd0b8 cxxbridge1$string$len + 90520
+3   chromedriver                        0x0000000102f43e70 cxxbridge1$string$len + 380752
+4   chromedriver                        0x0000000102f85980 cxxbridge1$string$len + 649824
+5   chromedriver                        0x0000000102f388f4 cxxbridge1$string$len + 334292
+6   chromedriver                        0x000000010337e478 cxxbridge1$str$ptr + 2494024
+7   chromedriver                        0x00000001033816a4 cxxbridge1$str$ptr + 2506868
+8   chromedriver                        0x000000010335f3b0 cxxbridge1$str$ptr + 2366848
+9   chromedriver                        0x0000000103381f4c cxxbridge1$str$ptr + 2509084
+10  chromedriver                        0x00000001033504a8 cxxbridge1$str$ptr + 2305656
+11  chromedriver                        0x00000001033a1644 cxxbridge1$str$ptr + 2637844
+12  chromedriver                        0x00000001033a17d0 cxxbridge1$str$ptr + 2638240
+13  chromedriver                        0x00000001033b294c cxxbridge1$str$ptr + 2708252
+14  libsystem_pthread.dylib             0x000000019d25af94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000019d255d34 thread_start + 8
+
+2025-08-27 16:29:28,627 : INFO : AngularJSBankingProjectPage : Retrieved text content from element with locator [('xpath', "//span[@ng-show='message']")]: ''
+2025-08-28 08:18:05,420 : INFO : AngularJSBankingProjectPage : Attempting to withdraw 0.5.
+2025-08-28 08:18:07,769 : INFO : AngularJSBankingProjectPage : Getting attribute 'validationMessage' for element with locator [('css', "input[placeholder='amount']")].
+2025-08-28 08:18:07,770 : ERROR : AngularJSBankingProjectPage : Failed to get attribute 'validationMessage': Message: invalid argument: 'using' must be a string
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+0   chromedriver                        0x0000000102ffee00 cxxbridge1$str$ptr + 2742224
+1   chromedriver                        0x0000000102ff6d00 cxxbridge1$str$ptr + 2709200
+2   chromedriver                        0x0000000102b410b8 cxxbridge1$string$len + 90520
+3   chromedriver                        0x0000000102b87e70 cxxbridge1$string$len + 380752
+4   chromedriver                        0x0000000102bc9980 cxxbridge1$string$len + 649824
+5   chromedriver                        0x0000000102b7c8f4 cxxbridge1$string$len + 334292
+6   chromedriver                        0x0000000102fc2478 cxxbridge1$str$ptr + 2494024
+7   chromedriver                        0x0000000102fc56a4 cxxbridge1$str$ptr + 2506868
+8   chromedriver                        0x0000000102fa33b0 cxxbridge1$str$ptr + 2366848
+9   chromedriver                        0x0000000102fc5f4c cxxbridge1$str$ptr + 2509084
+10  chromedriver                        0x0000000102f944a8 cxxbridge1$str$ptr + 2305656
+11  chromedriver                        0x0000000102fe5644 cxxbridge1$str$ptr + 2637844
+12  chromedriver                        0x0000000102fe57d0 cxxbridge1$str$ptr + 2638240
+13  chromedriver                        0x0000000102ff694c cxxbridge1$str$ptr + 2708252
+14  libsystem_pthread.dylib             0x000000019d25af94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000019d255d34 thread_start + 8
+
+2025-08-28 08:18:09,775 : INFO : AngularJSBankingProjectPage : Getting attribute 'validationMessage' for element with locator [('css', "input[placeholder='amount']")].
+2025-08-28 08:18:09,777 : ERROR : AngularJSBankingProjectPage : Failed to get attribute 'validationMessage': Message: invalid argument: 'using' must be a string
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+0   chromedriver                        0x0000000102ffee00 cxxbridge1$str$ptr + 2742224
+1   chromedriver                        0x0000000102ff6d00 cxxbridge1$str$ptr + 2709200
+2   chromedriver                        0x0000000102b410b8 cxxbridge1$string$len + 90520
+3   chromedriver                        0x0000000102b87e70 cxxbridge1$string$len + 380752
+4   chromedriver                        0x0000000102bc9980 cxxbridge1$string$len + 649824
+5   chromedriver                        0x0000000102b7c8f4 cxxbridge1$string$len + 334292
+6   chromedriver                        0x0000000102fc2478 cxxbridge1$str$ptr + 2494024
+7   chromedriver                        0x0000000102fc56a4 cxxbridge1$str$ptr + 2506868
+8   chromedriver                        0x0000000102fa33b0 cxxbridge1$str$ptr + 2366848
+9   chromedriver                        0x0000000102fc5f4c cxxbridge1$str$ptr + 2509084
+10  chromedriver                        0x0000000102f944a8 cxxbridge1$str$ptr + 2305656
+11  chromedriver                        0x0000000102fe5644 cxxbridge1$str$ptr + 2637844
+12  chromedriver                        0x0000000102fe57d0 cxxbridge1$str$ptr + 2638240
+13  chromedriver                        0x0000000102ff694c cxxbridge1$str$ptr + 2708252
+14  libsystem_pthread.dylib             0x000000019d25af94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x000000019d255d34 thread_start + 8
+
+2025-08-28 08:28:43,882 : INFO : AngularJSBankingProjectPage : Attempting to withdraw 0.5.
+2025-08-28 08:28:46,119 : INFO : AngularJSBankingProjectPage : Attempting to get attribute 'validationMessage' for element with locators: [('css', "input[placeholder='amount']")]
+2025-08-28 08:28:46,126 : INFO : AngularJSBankingProjectPage : Successfully retrieved attribute 'validationMessage' with value: 'Please enter a valid value. The two nearest valid values are 0 and 1.'
+2025-08-28 08:28:48,130 : INFO : AngularJSBankingProjectPage : Attempting to get attribute 'validationMessage' for element with locators: [('css', "input[placeholder='amount']")]
+2025-08-28 08:28:48,138 : INFO : AngularJSBankingProjectPage : Successfully retrieved attribute 'validationMessage' with value: 'Please enter a valid value. The two nearest valid values are 0 and 1.'
+2025-08-28 08:32:47,855 : INFO : AngularJSBankingProjectPage : Attempting to withdraw 0.5.
+2025-08-28 08:32:50,134 : INFO : AngularJSBankingProjectPage : Attempting to get attribute 'validationMessage' for element with locators: [('css', "input[placeholder='amount']")]
+2025-08-28 08:32:50,142 : INFO : AngularJSBankingProjectPage : Successfully retrieved attribute 'validationMessage' with value: 'Please enter a valid value. The two nearest valid values are 0 and 1.'
+2025-08-28 08:32:52,148 : INFO : AngularJSBankingProjectPage : Attempting to get attribute 'validationMessage' for element with locators: [('css', "input[placeholder='amount']")]
+2025-08-28 08:32:52,157 : INFO : AngularJSBankingProjectPage : Successfully retrieved attribute 'validationMessage' with value: 'Please enter a valid value. The two nearest valid values are 0 and 1.'
+2025-08-28 08:32:52,157 : INFO : AngularJSBankingProjectPage : Attempting to get attribute 'validationMessage' for element with locators: [('css', "input[placeholder='amount']")]
+2025-08-28 08:32:52,164 : INFO : AngularJSBankingProjectPage : Successfully retrieved attribute 'validationMessage' with value: 'Please enter a valid value. The two nearest valid values are 0 and 1.'
+2025-08-28 08:34:17,871 : INFO : AngularJSBankingProjectPage : Attempting to withdraw 0.5.
+2025-08-28 08:34:20,157 : INFO : AngularJSBankingProjectPage : Attempting to get attribute 'validationMessage' for element with locators: [('css', "input[placeholder='amount']")]
+2025-08-28 08:34:20,164 : INFO : AngularJSBankingProjectPage : Successfully retrieved attribute 'validationMessage' with value: 'Please enter a valid value. The two nearest valid values are 0 and 1.'
+2025-08-28 08:34:22,164 : INFO : AngularJSBankingProjectPage : Attempting to get attribute 'validationMessage' for element with locators: [('css', "input[placeholder='amount']")]
+2025-08-28 08:34:22,173 : INFO : AngularJSBankingProjectPage : Successfully retrieved attribute 'validationMessage' with value: 'Please enter a valid value. The two nearest valid values are 0 and 1.'
+2025-08-28 08:34:22,173 : INFO : AngularJSBankingProjectPage : Attempting to get attribute 'validationMessage' for element with locators: [('css', "input[placeholder='amount']")]
+2025-08-28 08:34:22,180 : INFO : AngularJSBankingProjectPage : Successfully retrieved attribute 'validationMessage' with value: 'Please enter a valid value. The two nearest valid values are 0 and 1.'
