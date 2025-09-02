@@ -137,3 +137,6 @@ class FakerHelper:
 
     def generate_fake_job_title(self):
         return self.fake.job()
+
+    def generate_fake_price(self):
+        return self.fake.pyfloat(left_digits=2, right_digits=2, positive=True, min_value=1.0, max_value=999.99)
