@@ -47,7 +47,7 @@ class Testcsv(LoggerBase):
         headers = ['first_name', 'last_name', 'email', 'address', 'phone_number']
         file_name = 'customers.csv'
 
-        for i in range(100):
+        for i in range(50):
             record = {
                 'first_name': data_generator.generate_first_name(),
                 'last_name': data_generator.generate_last_name(),
