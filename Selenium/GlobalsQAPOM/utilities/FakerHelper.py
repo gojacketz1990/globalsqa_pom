@@ -126,5 +126,14 @@ class FakerHelper:
     def generate_past_date(self):
         return self.fake.date_this_decade()
 
-    def generate_future_date(self):    
+    def generate_future_date(self):
         return self.fake.future_date()
+
+    def generate_product_name(self):
+        return self.fake.ecommerce_name()
+
+    def generate_fake_cc(self):
+        return self.fake.credit_card_full()
+
+    def generate_fake_job_title(self):
+        return self.fake.job()
