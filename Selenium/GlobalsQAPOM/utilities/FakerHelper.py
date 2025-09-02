@@ -140,3 +140,6 @@ class FakerHelper:
 
     def generate_fake_price(self):
         return self.fake.pyfloat(left_digits=2, right_digits=2, positive=True, min_value=1.0, max_value=999.99)
+
+    def generate_fake_ipv4(self):
+        return self.fake.ipv4_public()
