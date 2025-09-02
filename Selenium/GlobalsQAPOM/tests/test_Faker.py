@@ -48,6 +48,8 @@ class TestFaker(LoggerBase):
         email = data_generator.generate_email()
         dob = data_generator.generate_date_of_birth()
 
+
         print(f"Phone Number: {phone_number}")
         print(f"Email: {email}")
         print(f"Date of Birth (YYYY-MM-DD): {dob}")
+

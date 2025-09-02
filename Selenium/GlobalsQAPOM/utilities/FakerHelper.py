@@ -122,3 +122,9 @@ class FakerHelper:
         except Exception as e:
             print(f"Error encoding string: {e}")
             return ""
+
+    def generate_past_date(self):
+        return self.fake.date_this_decade()
+
+    def generate_future_date(self):    
+        return self.fake.future_date()
