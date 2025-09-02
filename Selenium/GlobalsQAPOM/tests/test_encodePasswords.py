@@ -18,7 +18,7 @@ class TestEncoding(LoggerBase):
         headers = ['first_name', 'last_name', 'username', 'encoded_password', 'email', 'address', 'phone_number']
         file_name = 'customers_PW_encoded.csv'
 
-        for i in range(100):
+        for i in range(50):
             first_name = data_generator.generate_first_name()
             last_name = data_generator.generate_last_name()
 
