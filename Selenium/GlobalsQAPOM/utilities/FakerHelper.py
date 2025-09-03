@@ -143,3 +143,29 @@ class FakerHelper:
 
     def generate_fake_ipv4(self):
         return self.fake.ipv4_public()
+
+    def generate_fake_user_list(self,quantity):
+
+        all_customer_data = []
+        headers = ['first_name', 'last_name', 'username', 'encoded_password', 'email', 'address', 'phone_number']
+        file_name = 'customers_PW_encoded.csv'
+
+        for i in range(quantity):
+            first_name = self.generate_first_name()
+            last_name = self.generate_last_name()
+
+            # Concatenate the first name and last name with a period
+            username = f"{first_name.lower()}.{last_name.lower()}"
+
+            record = {
+                'first_name': first_name,
+                'last_name': last_name,
+                'username': username,
+                'encoded_password': self.encode_plaintext(self.generate_strong_password()),
+                'email': self.generate_email(),
+                'address': self.generate_full_address(),
+                'phone_number': self.generate_phone_number()
+            }
+            all_customer_data.append(record)
+
+        return all_customer_data

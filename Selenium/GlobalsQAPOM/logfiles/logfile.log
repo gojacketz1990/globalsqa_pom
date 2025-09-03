@@ -1879,3 +1879,4 @@ Stacktrace:
 2025-08-28 08:34:22,173 : INFO : AngularJSBankingProjectPage : Successfully retrieved attribute 'validationMessage' with value: 'Please enter a valid value. The two nearest valid values are 0 and 1.'
 2025-08-28 08:34:22,173 : INFO : AngularJSBankingProjectPage : Attempting to get attribute 'validationMessage' for element with locators: [('css', "input[placeholder='amount']")]
 2025-08-28 08:34:22,180 : INFO : AngularJSBankingProjectPage : Successfully retrieved attribute 'validationMessage' with value: 'Please enter a valid value. The two nearest valid values are 0 and 1.'
+2025-08-31 16:48:45,175 : INFO : test_select_currency : Starting test_select_currency test

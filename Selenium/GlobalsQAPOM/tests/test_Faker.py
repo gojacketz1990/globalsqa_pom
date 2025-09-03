@@ -53,3 +53,6 @@ class TestFaker(LoggerBase):
         print(f"Email: {email}")
         print(f"Date of Birth (YYYY-MM-DD): {dob}")
 
+    def test_userlist(self):
+        data_generator = FakerHelper(locale='en_US')
+        print(data_generator.generate_fake_user_list(20))
