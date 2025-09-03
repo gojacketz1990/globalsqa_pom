@@ -26,5 +26,5 @@ def calculate_pairs(num_list, sum_total):
                 return_array.append([sorted_list[i],sorted_list[j]])
     return return_array
 
-print(calculate_pairs([4, 3, 1,7,3,5,4, 2, 7, 4, 1, 6, 5, 3, 9, 11],8))
+print(calculate_pairs([4, 4, 4, 31, 2, 5, 6, 3, 3, 1,7,3,5,4, 2, 7, 4, 1, 6, 5, 3, 9, 11],8))
 
