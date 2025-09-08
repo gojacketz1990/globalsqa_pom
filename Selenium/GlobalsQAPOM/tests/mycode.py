@@ -28,3 +28,14 @@ def calculate_pairs(num_list, sum_total):
 
 print(calculate_pairs([4, 4, 4, 31, 2, 5, 6, 3, 3, 1,7,3,5,4, 2, 7, 4, 1, 6, 5, 3, 9, 11],8))
 
+def isPrime(num):
+    if (num <= 1):
+        return False
+    if num > 2:
+        for i in range(2, num**0.5 + 1):
+            if num%i == 0:
+                return False
+        else:
+            return True
+
+print(isPrime(11))
