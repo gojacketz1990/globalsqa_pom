@@ -4,4 +4,6 @@ class AngularJSUploadImagePageLocators():
         ("css","input[type='file']")
     ]
 
-    progress_bar = [("xpath", "//progress")]
+    progress_bar = [
+        ("xpath", "//progress")
+    ]
