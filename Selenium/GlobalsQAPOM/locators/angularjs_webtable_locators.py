@@ -12,10 +12,14 @@ class AngularJSWebTablePageLocators():
     table_locator = [("css", "table")]
 
     # Locator for a single row within the table body
-    row_locator = [("tag_name", "tr")]
+    row_locator = [
+        ("tag_name", "tr")
+    ]
 
     # Locator for a single cell within a row
-    cell_locator = [("tag_name", "td")]
+    cell_locator = [
+        ("tag_name", "td")
+    ]
 
     # This is a dynamic locator template to find a cell containing the user's name
     user_first_name_in_table_locator = [
