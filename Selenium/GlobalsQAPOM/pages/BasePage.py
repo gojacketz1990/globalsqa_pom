@@ -27,6 +27,8 @@ class BasePage(LoggerBase):
         self.wait = WebDriverWait(driver, 10)
         self.logger = self.getLogger()
 
+######    LOCATORS and LOCATOR METHODS
+
     # Dictionary mapping locator types to Selenium's By attributes
     LOCATOR_DICT = {
         "id": By.ID,
@@ -38,8 +40,6 @@ class BasePage(LoggerBase):
         "partial_link_text": By.PARTIAL_LINK_TEXT,
         "tag_name": By.TAG_NAME,
     }
-
-
 
     def _get_by_method(self, locator_type):
         """Retrieve the Selenium By method for a given locator type.
@@ -55,6 +55,8 @@ class BasePage(LoggerBase):
         if locator_type not in self.LOCATOR_DICT:
             raise ValueError(f"Invalid locator type: {locator_type}. Valid types are: {list(self.LOCATOR_DICT.keys())}")
         return self.LOCATOR_DICT[locator_type]
+
+######   FIND METHODS PRIVATE
 
     def _find_element_with_wait(self, locators, expected_condition, timeout=None):
         """
@@ -90,7 +92,7 @@ class BasePage(LoggerBase):
                 continue
         raise NoSuchElementException(f"Elements not found using any of the provided locators: {locators}")
 
-
+######  GET ELEMENT METHODS
 
     def get_element(self, locators):
         """Find a single web element using self-healing locators."""
