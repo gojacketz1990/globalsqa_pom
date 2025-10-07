@@ -40,10 +40,6 @@ class BasePage(LoggerBase):
     }
 
 
-    def scroll_to_element(self, locators):
-        """Scrolls the element into the center of the viewport."""
-        element = self.get_element(locators)
-        self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
 
     def _get_by_method(self, locator_type):
         """Retrieve the Selenium By method for a given locator type.
@@ -150,6 +146,12 @@ class BasePage(LoggerBase):
         element.click()
         element.clear()
         element.send_keys(text)
+
+    def scroll_to_element(self, locators):
+        """Scrolls the element into the center of the viewport."""
+        element = self.get_element(locators)
+        self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
+
 
     def type_into_element_clear_js(self, text, locators):
         """Clear an element with JavaScript and then type text."""
