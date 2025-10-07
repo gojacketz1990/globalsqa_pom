@@ -31,11 +31,19 @@ class AngularJSWebTablePageLocators():
     ]
 
     # Locator for the table body, assumed to be inside the table_locator
-    table_body_locator = [("xpath", "//tbody")]
+    table_body_locator = [
+        ("xpath", "//tbody")
+    ]
     # Locator for a single table row inside the table body
-    table_row_locator = [("xpath", "./tr")]
+    table_row_locator = [
+        ("xpath", "./tr")
+    ]
     # Locator for a single table cell inside a row
-    table_cell_locator = [("xpath", "./td")]
+    table_cell_locator = [
+        ("xpath", "./td")
+    ]
     # Dynamic locator for a table header based on its text
 
-    table_header_locator = [("xpath", "//th[text()='{}']")]
+    table_header_locator = [
+        ("xpath", "//th[text()='{}']")
+    ]

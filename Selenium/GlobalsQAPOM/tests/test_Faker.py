@@ -41,7 +41,7 @@ class TestFaker(LoggerBase):
         print(f"Postal Code: {zipcode}")
         print(f"Country: {country}")
         print(f"Full Address: {full_address}")
-        print("---l--")
+        print("------")
 
         # Generate other data
         phone_number = data_generator.generate_phone_number()
