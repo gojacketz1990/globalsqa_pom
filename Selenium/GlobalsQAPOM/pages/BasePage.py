@@ -147,11 +147,6 @@ class BasePage(LoggerBase):
         element.clear()
         element.send_keys(text)
 
-    def scroll_to_element(self, locators):
-        """Scrolls the element into the center of the viewport."""
-        element = self.get_element(locators)
-        self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
-
 
     def type_into_element_clear_js(self, text, locators):
         """Clear an element with JavaScript and then type text."""
@@ -349,10 +344,7 @@ class BasePage(LoggerBase):
         element = self.get_element(locators)
         return element.value_of_css_property(property_name)
 
-    def scroll_into_center_view(self, locators):
-        """Scroll the web element into the center of the visible view."""
-        element = self.get_element(locators)
-        self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
+
 
     def verify_link_presence(self, text):
         """Verify that a link with the given text is present."""
@@ -874,3 +866,13 @@ class BasePage(LoggerBase):
 
 
 ######   SCROLL Methods
+
+    def scroll_to_element(self, locators):
+        """Scrolls the element into the center of the viewport."""
+        element = self.get_element(locators)
+        self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
+
+    def scroll_into_center_view(self, locators):
+        """Scroll the web element into the center of the visible view."""
+        element = self.get_element(locators)
+        self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
