@@ -251,19 +251,7 @@ class BasePage(LoggerBase):
         select.select_by_value(value)
         self.logger.info(f"Selected dropdown option with value '{value}'.")
 
-    def hover_over_element(self, locators):
-        """Hover over a web element using ActionChains using self-healing locators."""
-        element = self.get_element(locators)
-        actions = ActionChains(self.driver)
-        actions.move_to_element(element).perform()
 
-    def hover_and_click_popup(self, hover_element_locator, click_element_locator):
-        """Hover over an element and then click a subsequent popup element."""
-        hover_element = self.get_element(hover_element_locator)
-        actions = ActionChains(self.driver)
-        actions.move_to_element(hover_element).perform()
-        popup_element = self.wait_for_element_to_be_visible(click_element_locator)
-        popup_element.click()
 
     def switch_to_frame(self, iframe_locators, timeout=None):
             """Switch to an iframe given the iframe locator."""
@@ -468,35 +456,6 @@ class BasePage(LoggerBase):
         self.driver.execute_script("arguments[0].value = arguments[1]; arguments[0].dispatchEvent(new Event('change'));", slider, value_to_set)
 
 
-    def set_slider_to_value(self, slider_element, handle_element, target_value, min_value, max_value):
-        slider_width = self.driver.execute_script("return arguments[0].offsetWidth;", slider_element)
-        range = max_value - min_value
-        if not (min_value <= target_value <= max_value):
-            raise ValueError(f"Value {target_value} out of range {min_value}–{max_value}")
-
-        relative_pos = (target_value - min_value) / range
-        target_x = slider_width * relative_pos
-
-        # Current position of handle (left style %)
-        current_left = float(self.driver.execute_script("return arguments[0].style.left;", handle_element).replace('%','') or 0)
-        current_x = slider_width * current_left / 100
-
-        offset = target_x - current_x
-
-        actions = ActionChains(self.driver)
-        actions.move_to_element(handle_element).click_and_hold().move_by_offset(offset, 0).release().perform()
-
-
-    def drag_element_by_offset(self, element, offset_x, offset_y=0):
-        actions = ActionChains(self.driver)
-        actions.move_to_element(element).click_and_hold().move_by_offset(offset_x, offset_y).release().perform()
-
-    def drag_element_not_center(self, element, offset_x, offset_y=0):
-        actions = ActionChains(self.driver)
-        actions.click_and_hold(element)
-        actions.move_by_offset(offset_x, offset_y)
-        actions.release()
-        actions.perform()
 
 
     def get_progress_bar_value(self, progress_bar_locator):
@@ -581,80 +540,6 @@ class BasePage(LoggerBase):
 
 
 
-    def multiselect_items_by_text(self, items_locator: tuple, item_texts: list):
-        """
-        Multiselects a list of items by their text using Ctrl + click.
-        This method assumes the driver is already in the correct context (e.g., inside an iframe).
-
-        Args:
-            items_locator (tuple): A locator tuple that points to all the selectable items
-                                   (e.g., (By.CSS_SELECTOR, "#selectable li")).
-            item_texts (list): A list of strings, where each string is the exact text
-                              of an item to be selected.
-
-        Raises:
-            NoSuchElementException: If any of the specified items are not found.
-        """
-        self.logger.info(f"Attempting to multiselect items with texts: {item_texts}.")
-
-        # Get all the selectable elements in a single call for efficiency.
-        all_selectable_items = self.get_elements(items_locator)
-        if not all_selectable_items:
-            raise NoSuchElementException(f"No elements found with locator {items_locator}.")
-
-        # Find the elements that match the requested text.
-        elements_to_select = [
-            item for item in all_selectable_items if item.text in item_texts
-        ]
-
-        if not elements_to_select:
-            raise NoSuchElementException(f"None of the requested items ({item_texts}) were found.")
-
-        # Check if all requested items were found before proceeding.
-        if len(elements_to_select) != len(item_texts):
-            found_texts = {item.text for item in elements_to_select}
-            not_found_texts = [text for text in item_texts if text not in found_texts]
-            raise NoSuchElementException(f"The following requested items were not found: {not_found_texts}")
-
-        actions = ActionChains(self.driver)
-
-        # Iterate through the filtered list of elements and build the action chain.
-        # This is more direct and less error-prone than iterating through all items.
-        actions.key_down(Keys.COMMAND)
-        for element in elements_to_select:
-            actions.click(element)
-            self.logger.info(f"Action added: Ctrl + click on item '{element.text}'.")
-
-        actions.key_up(Keys.COMMAND)
-
-        # Execute the entire chain of actions at once.
-        actions.perform()
-        self.logger.info("Successfully executed multiselect action.")
-
-
-    def click_and_drag_elements(self, start_element, end_element):
-        """
-        Performs a click-and-drag action from a start element to an end element.
-        This method is a generic, reusable function for any drag-and-drop action.
-
-        Args:
-            start_element: The starting WebElement for the drag.
-            end_element: The ending WebElement for the drop.
-        """
-        try:
-            self.logger.info("Attempting a click-and-drag action.")
-            action_chains = ActionChains(self.driver)
-            action_chains.click_and_hold(start_element) \
-                         .pause(0.5) \
-                         .move_to_element(end_element) \
-                         .pause(0.5) \
-                         .release() \
-                         .perform()
-            self.logger.info("Successfully performed click and drag action.")
-        except Exception as e:
-            self.logger.error(f"Failed to perform click and drag action: {e}")
-            raise # Re-raise the exception to be handled by the calling method.
-
 
 
 
@@ -683,28 +568,6 @@ class BasePage(LoggerBase):
 
             raise NoSuchElementException(f"Could not find element with text '{item_text}'.")
 
-
-    def select_all_text_in_element(self, locators):
-        """
-        Clicks an element and performs a 'Ctrl+A' action to select all text.
-
-        Args:
-            locators (list): A list of locator tuples for the element.
-        """
-        self.logger.info(f"Attempting to select all text in element with locators: {locators}")
-        element = self.get_element_clickable(locators)
-
-        actions = ActionChains(self.driver)
-        actions.click(element)
-
-        # Check for macOS to use Command key
-        # if self.is_mac(): # You would need to implement this helper method
-        actions.key_down(Keys.COMMAND).send_keys("a").key_up(Keys.COMMAND)
-        # else:
-        #     actions.key_down(Keys.CONTROL).send_keys("a").key_up(Keys.CONTROL)
-
-        actions.perform()
-        self.logger.info("Successfully performed 'Ctrl+A' action.")
 
 
     def upload_file(self, locators: list, file_path: str):
@@ -889,3 +752,145 @@ class BasePage(LoggerBase):
 
 #####   ACTION CLASS
 
+    def hover_over_element(self, locators):
+        """Hover over a web element using ActionChains using self-healing locators."""
+        element = self.get_element(locators)
+        actions = ActionChains(self.driver)
+        actions.move_to_element(element).perform()
+
+    def hover_and_click_popup(self, hover_element_locator, click_element_locator):
+        """Hover over an element and then click a subsequent popup element."""
+        hover_element = self.get_element(hover_element_locator)
+        actions = ActionChains(self.driver)
+        actions.move_to_element(hover_element).perform()
+        popup_element = self.wait_for_element_to_be_visible(click_element_locator)
+        popup_element.click()
+
+    def set_slider_to_value(self, slider_element, handle_element, target_value, min_value, max_value):
+        slider_width = self.driver.execute_script("return arguments[0].offsetWidth;", slider_element)
+        range = max_value - min_value
+        if not (min_value <= target_value <= max_value):
+            raise ValueError(f"Value {target_value} out of range {min_value}–{max_value}")
+
+        relative_pos = (target_value - min_value) / range
+        target_x = slider_width * relative_pos
+
+        # Current position of handle (left style %)
+        current_left = float(
+            self.driver.execute_script("return arguments[0].style.left;", handle_element).replace('%', '') or 0)
+        current_x = slider_width * current_left / 100
+
+        offset = target_x - current_x
+
+        actions = ActionChains(self.driver)
+        actions.move_to_element(handle_element).click_and_hold().move_by_offset(offset, 0).release().perform()
+
+    def drag_element_by_offset(self, element, offset_x, offset_y=0):
+        actions = ActionChains(self.driver)
+        actions.move_to_element(element).click_and_hold().move_by_offset(offset_x, offset_y).release().perform()
+
+    def drag_element_not_center(self, element, offset_x, offset_y=0):
+        actions = ActionChains(self.driver)
+        actions.click_and_hold(element)
+        actions.move_by_offset(offset_x, offset_y)
+        actions.release()
+        actions.perform()
+
+
+
+    def multiselect_items_by_text(self, items_locator: tuple, item_texts: list):
+        """
+        Multiselects a list of items by their text using Ctrl + click.
+        This method assumes the driver is already in the correct context (e.g., inside an iframe).
+
+        Args:
+            items_locator (tuple): A locator tuple that points to all the selectable items
+                                   (e.g., (By.CSS_SELECTOR, "#selectable li")).
+            item_texts (list): A list of strings, where each string is the exact text
+                              of an item to be selected.
+
+        Raises:
+            NoSuchElementException: If any of the specified items are not found.
+        """
+        self.logger.info(f"Attempting to multiselect items with texts: {item_texts}.")
+
+        # Get all the selectable elements in a single call for efficiency.
+        all_selectable_items = self.get_elements(items_locator)
+        if not all_selectable_items:
+            raise NoSuchElementException(f"No elements found with locator {items_locator}.")
+
+        # Find the elements that match the requested text.
+        elements_to_select = [
+            item for item in all_selectable_items if item.text in item_texts
+        ]
+
+        if not elements_to_select:
+            raise NoSuchElementException(f"None of the requested items ({item_texts}) were found.")
+
+        # Check if all requested items were found before proceeding.
+        if len(elements_to_select) != len(item_texts):
+            found_texts = {item.text for item in elements_to_select}
+            not_found_texts = [text for text in item_texts if text not in found_texts]
+            raise NoSuchElementException(f"The following requested items were not found: {not_found_texts}")
+
+        actions = ActionChains(self.driver)
+
+        # Iterate through the filtered list of elements and build the action chain.
+        # This is more direct and less error-prone than iterating through all items.
+        actions.key_down(Keys.COMMAND)
+        for element in elements_to_select:
+            actions.click(element)
+            self.logger.info(f"Action added: Ctrl + click on item '{element.text}'.")
+
+        actions.key_up(Keys.COMMAND)
+
+        # Execute the entire chain of actions at once.
+        actions.perform()
+        self.logger.info("Successfully executed multiselect action.")
+
+
+    def click_and_drag_elements(self, start_element, end_element):
+        """
+        Performs a click-and-drag action from a start element to an end element.
+        This method is a generic, reusable function for any drag-and-drop action.
+
+        Args:
+            start_element: The starting WebElement for the drag.
+            end_element: The ending WebElement for the drop.
+        """
+        try:
+            self.logger.info("Attempting a click-and-drag action.")
+            action_chains = ActionChains(self.driver)
+            action_chains.click_and_hold(start_element) \
+                         .pause(0.5) \
+                         .move_to_element(end_element) \
+                         .pause(0.5) \
+                         .release() \
+                         .perform()
+            self.logger.info("Successfully performed click and drag action.")
+        except Exception as e:
+            self.logger.error(f"Failed to perform click and drag action: {e}")
+            raise # Re-raise the exception to be handled by the calling method.
+
+
+    def select_all_text_in_element(self, locators):
+        """
+        Clicks an element and performs a 'Ctrl+A' action to select all text.
+
+        Args:
+            locators (list): A list of locator tuples for the element.
+        """
+        self.logger.info(f"Attempting to select all text in element with locators: {locators}")
+        element = self.get_element_clickable(locators)
+
+        actions = ActionChains(self.driver)
+        actions.click(element)
+
+        # Check for macOS to use Command key
+        # if self.is_mac(): # You would need to implement this helper method
+        actions.key_down(Keys.COMMAND).send_keys("a").key_up(Keys.COMMAND)
+        # else:
+        #     actions.key_down(Keys.CONTROL).send_keys("a").key_up(Keys.CONTROL)
+
+        actions.perform()
+        self.logger.info("Successfully performed 'Ctrl+A' action.")
