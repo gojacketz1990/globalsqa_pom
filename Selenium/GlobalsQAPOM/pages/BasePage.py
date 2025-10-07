@@ -302,11 +302,7 @@ class BasePage(LoggerBase):
         """Switch to default content."""
         self.driver.switch_to.default_content()
 
-    # def get_element_attribute(self, locators, attribute):
-    #     """Get a web element's attribute value."""
-    #     element = self.get_element(locators)
-    #     return element.get_attribute(attribute)
-    #
+
     def get_element_attribute(self, locators: list, attribute: str) -> str:
         """
         Retrieves the value of a specified attribute from an element
