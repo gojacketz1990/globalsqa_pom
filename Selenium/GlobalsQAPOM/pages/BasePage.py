@@ -134,11 +134,6 @@ class BasePage(LoggerBase):
                 continue
         raise NoSuchElementException(f"Child elements not found using any of the provided locators: {locators}")
 
-    def is_button_active(self, locators):
-        """Check if a button is active based on its class attribute."""
-        button = self.get_element(locators)
-        button_class = button.get_attribute("class")
-        return "active" in button_class
 
     def type_into_element(self, text, locators):
         """Type text into a web element."""
@@ -180,10 +175,7 @@ class BasePage(LoggerBase):
         element = self.get_element(locators)
         return element.text
 
-    def check_display_status_of_element(self, locators):
-        """Check that a web element is displayed using self-healing locators."""
-        element = self.get_element(locators)
-        return element.is_displayed()
+
 
     def get_response_code(self, url):
         """Get a response code given a url."""
@@ -346,9 +338,6 @@ class BasePage(LoggerBase):
 
 
 
-    def verify_link_presence(self, text):
-        """Verify that a link with the given text is present."""
-        self.wait.until(EC.presence_of_element_located((By.LINK_TEXT, text)))
 
     def get_auto_suggestive_items(self, locators):
         """Get a list of auto suggestive items."""
@@ -584,9 +573,6 @@ class BasePage(LoggerBase):
         self.logger.error(f"All locators failed to find element with attribute '{attribute}' having value '{expected_value}'.")
         return False
 
-    def is_text_present(self, text):
-        """Checks if a given text exists anywhere on the page."""
-        return self.find_text_on_page(text) is not None
 
     def take_screenshot(self, filename):
         """Take a full page screenshot."""
@@ -797,29 +783,7 @@ class BasePage(LoggerBase):
             self.logger.error(f"Failed to decode JSON from element text. Error: {e}")
             raise ValueError("The element's text is not valid JSON.")
 
-    def is_text_present_in_element(self, locators: list, text_to_verify: str) -> bool:
-        """
-        Checks if a specific text is present within an element found by locators.
 
-        Args:
-            locators (list): The locator tuples to find the element.
-            text_to_verify (str): The text to search for.
-
-        Returns:
-            bool: True if the text is found, False otherwise.
-        """
-        try:
-            element = self.get_element(locators)
-            # Check the element's visible text
-            if text_to_verify in element.text:
-                self.logger.info(f"Text '{text_to_verify}' found in element located by {locators}.")
-                return True
-            else:
-                self.logger.info(f"Text '{text_to_verify}' NOT found. Element text was '{element.text}'.")
-                return False
-        except NoSuchElementException:
-            self.logger.warning(f"Element not found using locators: {locators}. Cannot verify text.")
-            return False
 
     def find_child_element_by_text(self, parent_element: WebElement, text_to_verify: str) -> WebElement:
         """
@@ -863,6 +827,51 @@ class BasePage(LoggerBase):
             self.logger.error(f"Failed to get text content for element with locators {locators}: {e}")
             return ""
 
+#####    CHECK METHODS
+
+    def is_button_active(self, locators):
+        """Check if a button is active based on its class attribute."""
+        button = self.get_element(locators)
+        button_class = button.get_attribute("class")
+        return "active" in button_class
+
+    def is_text_present_in_element(self, locators: list, text_to_verify: str) -> bool:
+        """
+        Checks if a specific text is present within an element found by locators.
+
+        Args:
+            locators (list): The locator tuples to find the element.
+            text_to_verify (str): The text to search for.
+
+        Returns:
+            bool: True if the text is found, False otherwise.
+        """
+        try:
+            element = self.get_element(locators)
+            # Check the element's visible text
+            if text_to_verify in element.text:
+                self.logger.info(f"Text '{text_to_verify}' found in element located by {locators}.")
+                return True
+            else:
+                self.logger.info(f"Text '{text_to_verify}' NOT found. Element text was '{element.text}'.")
+                return False
+        except NoSuchElementException:
+            self.logger.warning(f"Element not found using locators: {locators}. Cannot verify text.")
+            return False
+
+    def is_text_present(self, text):
+        """Checks if a given text exists anywhere on the page."""
+        return self.find_text_on_page(text) is not None
+
+    def check_display_status_of_element(self, locators):
+        """Check that a web element is displayed using self-healing locators."""
+        element = self.get_element(locators)
+        return element.is_displayed()
+
+
+    def verify_link_presence(self, text):
+        """Verify that a link with the given text is present."""
+        self.wait.until(EC.presence_of_element_located((By.LINK_TEXT, text)))
 
 
 ######   SCROLL Methods
@@ -876,3 +885,7 @@ class BasePage(LoggerBase):
         """Scroll the web element into the center of the visible view."""
         element = self.get_element(locators)
         self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", element)
+
+
+#####   ACTION CLASS
+
